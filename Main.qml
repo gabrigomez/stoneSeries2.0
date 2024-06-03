@@ -3,11 +3,13 @@ import QtQuick.Controls
 
 ApplicationWindow {
   width: 640
-  minimumWidth: 400
+  minimumWidth: 500
   height: 480
-  minimumHeight: 400
+  minimumHeight: 480
 
   visible: true
   title: qsTr("Stone Series 2.0")
-  color: "#D1F2EB"
+  color: "#A9DFBF"
+
+  Navbar {}
 }
