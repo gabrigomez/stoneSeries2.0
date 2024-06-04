@@ -2,7 +2,6 @@ import QtQuick
 
 Rectangle {
   id: navBar
-
   height: 50
   width: parent.width
   color: "#27AE60"

@@ -2,6 +2,7 @@ import QtQuick
 import QtQuick.Controls
 
 ApplicationWindow {
+  id: root
   width: 640
   minimumWidth: 500
   height: 480
@@ -11,5 +12,11 @@ ApplicationWindow {
   title: qsTr("Stone Series 2.0")
   color: "#A9DFBF"
 
-  Navbar {}
+  header: Navbar {}
+
+  StackView {
+    id: stackView
+    anchors.fill: parent
+    initialItem: Home {}
+  }
 }
