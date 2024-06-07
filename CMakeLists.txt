@@ -21,6 +21,7 @@ qt_add_qml_module(appStoneSeries2
         RESOURCES fonts/TopShow.otf
         QML_FILES Home.qml
         QML_FILES Search.qml
+        QML_FILES pages/Results.qml
 )
 
 # Qt for iOS sets MACOSX_BUNDLE_GUI_IDENTIFIER automatically since Qt 6.1.

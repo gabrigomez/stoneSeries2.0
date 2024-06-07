@@ -15,6 +15,11 @@ Rectangle {
 
     onAccepted: () => {
                   console.log(searchInput.text)
+                  stackView.push("pages/Results.qml")
                 }
+
+    Keys.onEscapePressed: () => {
+                            stackView.push("Home.qml")
+                          }
   }
 }
