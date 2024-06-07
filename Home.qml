@@ -39,25 +39,25 @@ Rectangle {
         ListElement {
           name: ""
           imageUrl: ""
-          rating: 0
+          rating: ''
           show: 526
         }
         ListElement {
           name: ""
           imageUrl: ""
-          rating: 0
+          rating: ''
           show: 169
         }
         ListElement {
           name: ""
           imageUrl: ""
-          rating: 0
+          rating: ''
           show: 66
         }
         ListElement {
           name: ""
           imageUrl: ""
-          rating: 0
+          rating: ''
           show: 73
         }
         ListElement {
@@ -69,31 +69,31 @@ Rectangle {
         ListElement {
           name: ""
           imageUrl: ""
-          rating: 0
+          rating: ''
           show: 41007
         }
         ListElement {
           name: ""
           imageUrl: ""
-          rating: 0
+          rating: ''
           show: 82
         }
         ListElement {
           name: ""
           imageUrl: ""
-          rating: 0
+          rating: ''
           show: 46562
         }
         ListElement {
           name: ""
           imageUrl: ""
-          rating: 0
+          rating: ''
           show: 44778
         }
         ListElement {
           name: ""
           imageUrl: ""
-          rating: 0
+          rating: ''
           show: 15299
         }
       }
@@ -140,6 +140,17 @@ Rectangle {
               styleColor: "black"
               font.pixelSize: 40
             }
+
+            Text {
+              anchors {
+                top: trendingShowTitle.bottom
+              }
+              color: "black"
+              text: model.rating + "/10"
+              style: Text.Outline
+              styleColor: "white"
+              font.pixelSize: 26
+            }
           }
         }
 
@@ -147,11 +158,11 @@ Rectangle {
           if (typeof show !== 'undefined' && trendingShowTitle.text === "") {
             console.log('chamou a api')
             Api.fetchShowDetails(show, function (result) {
-              console.log(result.image.original)
               showListView.set(index, {
                                  "show": show,
                                  "name": result.name,
-                                 "imageUrl": result.image.original
+                                 "imageUrl": result.image.original,
+                                 "rating": result.rating.average.toString()
                                })
             })
           }
