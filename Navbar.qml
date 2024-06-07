@@ -1,4 +1,5 @@
 import QtQuick
+import QtQuick.Layouts
 
 Rectangle {
   id: navBar
@@ -11,15 +12,25 @@ Rectangle {
     source: "fonts/TopShow.otf"
   }
 
+  Search {
+    anchors {
+      right: navBar.right
+      rightMargin: 10
+      verticalCenter: parent.verticalCenter
+    }
+  }
+
   Text {
     id: title
-    anchors {
-      centerIn: parent
-    }
     text: "STONE SERIES 2.0"
+    anchors {
+      left: navBar.left
+      leftMargin: 10
+      verticalCenter: parent.verticalCenter
+    }
 
     font.family: titleFont.font.family
-    font.pixelSize: 40
+    font.pixelSize: 30
     style: Text.Outline
     styleColor: "lightgray"
   }
