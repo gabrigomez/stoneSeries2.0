@@ -1,4 +1,5 @@
 import QtQuick
+import "Api.js" as Api
 
 Rectangle {
   id: home
@@ -34,35 +35,66 @@ Rectangle {
       orientation: Qt.Horizontal
       spacing: 40
       model: ListModel {
+        id: showListView
         ListElement {
-          bgColor: "red"
+          name: ""
+          imageUrl: ""
+          rating: 0
+          show: 526
         }
         ListElement {
-          bgColor: "black"
+          name: ""
+          imageUrl: ""
+          rating: 0
+          show: 169
         }
         ListElement {
-          bgColor: "dodgerblue"
+          name: ""
+          imageUrl: ""
+          rating: 0
+          show: 66
         }
         ListElement {
-          bgColor: "yellow"
+          name: ""
+          imageUrl: ""
+          rating: 0
+          show: 73
         }
         ListElement {
-          bgColor: "black"
+          name: ""
+          imageUrl: ""
+          rating: 8.5
+          show: 2993
         }
         ListElement {
-          bgColor: "red"
+          name: ""
+          imageUrl: ""
+          rating: 0
+          show: 41007
         }
         ListElement {
-          bgColor: "dodgerblue"
+          name: ""
+          imageUrl: ""
+          rating: 0
+          show: 82
         }
         ListElement {
-          bgColor: "red"
+          name: ""
+          imageUrl: ""
+          rating: 0
+          show: 46562
         }
         ListElement {
-          bgColor: "yellow"
+          name: ""
+          imageUrl: ""
+          rating: 0
+          show: 44778
         }
         ListElement {
-          bgColor: "red"
+          name: ""
+          imageUrl: ""
+          rating: 0
+          show: 15299
         }
       }
 
@@ -83,10 +115,45 @@ Rectangle {
         Rectangle {
           x: 6
           y: 6
+
           Rectangle {
-            color: bgColor
+            color: "green"
             width: 500
             height: 650
+
+            Image {
+              id: trendingShowImage
+              y: 2
+              source: imageUrl
+              width: 500
+              height: 650
+            }
+
+            Text {
+              id: trendingShowTitle
+              anchors {
+                top: trendingShowImage.bottom
+              }
+              color: "white"
+              text: name
+              style: Text.Outline
+              styleColor: "black"
+              font.pixelSize: 40
+            }
+          }
+        }
+
+        Component.onCompleted: {
+          if (typeof show !== 'undefined' && trendingShowTitle.text === "") {
+            console.log('chamou a api')
+            Api.fetchShowDetails(show, function (result) {
+              console.log(result.image.original)
+              showListView.set(index, {
+                                 "show": show,
+                                 "name": result.name,
+                                 "imageUrl": result.image.original
+                               })
+            })
           }
         }
 
