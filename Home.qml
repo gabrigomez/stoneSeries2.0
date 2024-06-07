@@ -89,6 +89,13 @@ Rectangle {
             height: 650
           }
         }
+
+        MouseArea {
+          anchors.fill: parent
+          onClicked: () => {
+                       stackView.push("pages/Show.qml")
+                     }
+        }
       }
     }
   }
