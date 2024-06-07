@@ -5,8 +5,8 @@ ApplicationWindow {
   id: root
   width: 640
   minimumWidth: 500
-  height: 480
-  minimumHeight: 480
+  height: 930
+  minimumHeight: 930
 
   visible: true
   title: qsTr("Stone Series 2.0")
