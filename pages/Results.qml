@@ -76,7 +76,7 @@ Rectangle {
   MouseArea {
     anchors.fill: parent
     onClicked: () => {
-                 stackView.push("pages/ShowDetails.qml")
+                 stackView.push("../pages/Show.qml")
                }
   }
 
