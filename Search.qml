@@ -14,7 +14,8 @@ Rectangle {
     focus: true
 
     onAccepted: () => {
-                  console.log(searchInput.text)
+                  //console.log(searchInput.text)
+                  searchText = searchInput.text
                   stackView.push("pages/Results.qml")
                 }
 

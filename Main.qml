@@ -12,6 +12,9 @@ ApplicationWindow {
   title: qsTr("Stone Series 2.0")
   color: "#A9DFBF"
 
+  property var showDetailsResult
+  property var searchText
+
   header: Navbar {}
 
   StackView {
