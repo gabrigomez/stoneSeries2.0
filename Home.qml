@@ -27,7 +27,8 @@ Rectangle {
     height: 700
     width: root.width
     x: 10
-    y: 100
+    y: 70
+
     color: "transparent"
 
     ListView {
