@@ -6,19 +6,12 @@ import "../Api.js" as Api
 Item {
   Rectangle {
     id: searchedShowCards
-    width: 512
+    width: root.width
     height: 820
     x: 10
     y: 10
 
-    color: "#08FF5B"
-    border.color: "white"
-    border.width: 2
-
-    topRightRadius: 5
-    topLeftRadius: 5
-    bottomRightRadius: 20
-    bottomLeftRadius: 20
+    color: "transparent"
 
     ListView {
       anchors.fill: parent
@@ -26,79 +19,97 @@ Item {
       spacing: 40
       model: ListModel {
         id: resultsModel
-      }
-      delegate: searchDelegate
-    }
-
-    Rectangle {
-      id: searchDelegate
-      x: 6
-
-      Image {
-        id: searchedShowImage
-        y: 2
-        source: "https://static.tvmaze.com/uploads/images/original_untouched/501/1253519.jpg"
-        width: 500
-        height: 650
-      }
-
-      Rectangle {
-        x: 4
-        anchors {
-          top: searchedShowImage.bottom
-          topMargin: 10
+        ListElement {
+          name: ""
+          image: ""
+          rating: ""
         }
-        width: 500
-        height: 100
+      }
+      delegate: Rectangle {
+        id: searchDelegate
+        x: 6
 
-        color: "transparent"
+        color: "#08FF5B"
+        border.color: "white"
+        border.width: 2
 
-        Text {
-          id: searchedShowTitle
-          color: "white"
-          text: "Show Result"
-          style: Text.Outline
+        topRightRadius: 5
+        topLeftRadius: 5
+        bottomRightRadius: 20
+        bottomLeftRadius: 20
 
-          styleColor: "black"
-          wrapMode: Text.Wrap
-          font.pixelSize: 40
+        width: 512
+        height: parent?.height
 
-          maximumLineCount: 2
-          width: searchedShowImage.width
-          height: 100
+        Image {
+          id: searchedShowImage
+          y: 2
+          source: image
+          width: 500
+          height: 650
         }
 
-        Text {
-          color: "black"
+        Rectangle {
+          x: 4
           anchors {
-            top: searchedShowTitle.bottom
+            top: searchedShowImage.bottom
+            topMargin: 10
+          }
+          width: 500
+          height: 100
+
+          color: "transparent"
+
+          Text {
+            id: searchedShowTitle
+            color: "white"
+            text: name
+            style: Text.Outline
+
+            styleColor: "black"
+            wrapMode: Text.Wrap
+            font.pixelSize: 40
+
+            maximumLineCount: 2
+            width: searchedShowImage.width
+            height: 100
           }
 
-          text: "8/10"
+          Text {
+            color: "black"
+            anchors {
+              top: searchedShowTitle.bottom
+            }
+            text: rating
 
-          style: Text.Outline
-          styleColor: "white"
-          font.pixelSize: 26
+            style: Text.Outline
+            styleColor: "white"
+            font.pixelSize: 26
+          }
+        }
+        MouseArea {
+          anchors.fill: parent
+          onClicked: () => {
+                       stackView.push("../pages/Show.qml")
+                     }
         }
       }
     }
-    MouseArea {
-      anchors.fill: parent
-      onClicked: () => {
-                   stackView.push("../pages/Show.qml")
-                 }
-    }
+  }
 
-    // Component.onCompleted: {
-    //   console.log('chamou resultados')
-    //   Api.fetchShows(show, function (result) {
-    //     resultsModel.set({
-    //                        "show": show,
-    //                        "name": result.name,
-    //                        "imageUrl": result.image.original,
-    //                        "rating": result.rating.average.toString()
-    //                      })
-    //   })
-    // }
+  Component.onCompleted: {
+    console.log('chamou resultados')
+    Api.fetchShows(searchText).then(result => {
+                                      resultsModel.clear()
+                                      const shows = result.map(item => ({
+                                                                          "name": item.show.name,
+                                                                          "image": item.show.image ? item.show.image.original : "",
+                                                                          "rating": item.show.rating.average ? `${item.show.rating.average.toString()}/10` : "Sem nota"
+                                                                        }))
+                                      shows.forEach(
+                                        show => resultsModel.append(show))
+                                    }).catch(error => {
+                                               console.error(error)
+                                             })
   }
 }

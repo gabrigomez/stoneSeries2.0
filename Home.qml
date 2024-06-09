@@ -147,7 +147,7 @@ Rectangle {
                 top: trendingShowTitle.bottom
               }
               color: "black"
-              text: model.rating + "/10"
+              text: rating + "/10"
               style: Text.Outline
               styleColor: "white"
               font.pixelSize: 26
