@@ -71,10 +71,10 @@ Rectangle {
           bottom: showCardContainer.bottom
           right: showCardContainer.right
         }
-        color: "white"
+        color: "black"
         text: ""
         style: Text.Outline
-        styleColor: "black"
+        styleColor: "white"
         font.pixelSize: 36
       }
     }
