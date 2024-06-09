@@ -1,5 +1,7 @@
 import QtQuick
 import QtQuick.Controls
+import QtQuick.Controls.Material 2.12
+
 import "../Api.js" as Api
 
 Rectangle {
@@ -33,9 +35,19 @@ Rectangle {
     bottomRightRadius: 20
     bottomLeftRadius: 20
 
+    BusyIndicator {
+      id: busyIndicator
+      visible: busy
+      anchors.centerIn: parent
+      width: 281
+      height: 281
+      Material.accent: "black"
+    }
+
     Rectangle {
       x: 6
       y: 4
+      visible: !busy
 
       Image {
         id: showImage
@@ -124,7 +136,8 @@ Rectangle {
     console.log('chamou a api no detalhe')
     Api.fetchShowDetails(showId, function (result) {
       showDetails.name = result.name
-      showDetails.image = result.image.original
+      showDetails.image = result.image?.original
+          ?? 'https://t3.ftcdn.net/jpg/03/34/83/22/360_F_334832255_IMxvzYRygjd20VlSaIAFZrQWjozQH6BQ.jpg'
       showDetails.rating = result.rating.average
       showDetails.genres = result.genres
       showDetails.description = result.summary

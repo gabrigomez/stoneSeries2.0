@@ -1,6 +1,6 @@
 function fetchShowDetails(id, callback) {
   return new Promise((resolve, reject) => {
-                       //busy = true
+                       busy = true
                        var xhr = new XMLHttpRequest()
                        xhr.onreadystatechange = function () {
                          if (xhr.readyState === XMLHttpRequest.DONE) {
@@ -12,7 +12,7 @@ function fetchShowDetails(id, callback) {
                                    new Error("Erro ao buscar detalhes do show: "
                                              + xhr.status + " - " + xhr.statusText))
                            }
-                           //busy = false
+                           busy = false
                          }
                        }
                        xhr.open("GET", "https://api.tvmaze.com/shows/" + id)

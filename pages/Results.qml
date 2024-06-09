@@ -1,5 +1,6 @@
 import QtQuick
 import QtQuick.Controls
+import QtQuick.Controls.Material 2.12
 import QtQuick.Layouts
 import "../Api.js" as Api
 
@@ -27,8 +28,7 @@ Item {
         }
       }
       delegate: Rectangle {
-        id: searchDelegate
-
+        id: homeCards
         color: "#08FF5B"
         border.color: "black"
         border.width: 2
@@ -39,59 +39,68 @@ Item {
         bottomLeftRadius: 20
 
         width: 512
-        height: parent?.height
-
-        Image {
-          id: searchedShowImage
-          anchors {
-            top: searchDelegate.top
-            topMargin: 4
-          }
-          x: 6
-
-          source: image
-          width: 500
-          height: 650
-        }
+        height: 820
 
         Rectangle {
-          x: 4
-          anchors {
-            top: searchedShowImage.bottom
-            topMargin: 10
-          }
-          width: 500
-          height: 100
+          x: 6
+          y: 6
 
-          color: "transparent"
+          BusyIndicator {
+            id: busyIndicator
+            x: 120
+            y: 250
+            visible: image === "" ? true : false
 
-          Text {
-            id: searchedShowTitle
-            color: "white"
-            text: name
-            style: Text.Outline
-
-            styleColor: "black"
-            wrapMode: Text.Wrap
-            font.pixelSize: 40
-
-            maximumLineCount: 2
-            width: searchedShowImage.width
-            height: 100
+            width: 281
+            height: 281
+            Material.accent: "black"
           }
 
-          Text {
-            color: "black"
-            anchors {
-              top: searchedShowTitle.bottom
+          Rectangle {
+            color: "transparent"
+            width: 500
+            height: 650
+
+            visible: image === "" ? false : true
+
+            Image {
+              id: trendingShowImage
+              y: 2
+              source: image
+              width: 500
+              height: 650
             }
-            text: rating
 
-            style: Text.Outline
-            styleColor: "white"
-            font.pixelSize: 26
+            Text {
+              id: trendingShowTitle
+              width: trendingShowImage.width
+              height: 100
+              anchors {
+                top: trendingShowImage.bottom
+              }
+              color: "white"
+              text: name
+              style: Text.Outline
+              styleColor: "black"
+              font.pixelSize: 40
+
+              maximumLineCount: 2
+              wrapMode: Text.Wrap
+            }
+
+            Text {
+              anchors {
+                top: trendingShowTitle.bottom
+              }
+              color: "black"
+              text: rating
+              style: Text.Outline
+              styleColor: "white"
+              font.pixelSize: 26
+            }
           }
         }
+
         MouseArea {
           anchors.fill: parent
           onClicked: () => {
@@ -109,7 +118,7 @@ Item {
                                       resultsModel.clear()
                                       const shows = result.map(item => ({
                                                                           "name": item.show.name,
-                                                                          "image": item.show.image ? item.show.image.original : "",
+                                                                          "image": item.show.image ? item.show.image.original : "https://t3.ftcdn.net/jpg/03/34/83/22/360_F_334832255_IMxvzYRygjd20VlSaIAFZrQWjozQH6BQ.jpg",
                                                                           "rating": item.show.rating.average ? `${item.show.rating.average.toString()}/10` : "Sem nota",
                                                                           "_id": item.show.id.toString()
                                                                         }))

@@ -15,6 +15,7 @@ ApplicationWindow {
   property var showDetailsResult
   property var searchText
   property var showId
+  property var busy
 
   header: Navbar {}
 

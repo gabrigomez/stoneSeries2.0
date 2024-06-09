@@ -1,4 +1,5 @@
 import QtQuick
+import QtQuick.Controls.Material 2.12
 import "Api.js" as Api
 
 Rectangle {
@@ -117,10 +118,22 @@ Rectangle {
           x: 6
           y: 6
 
+          BusyIndicator {
+            id: busyIndicator
+            visible: trendingShowTitle.text === "" ? true : false
+            x: 120
+            y: 250
+
+            width: 281
+            height: 281
+            Material.accent: "black"
+          }
+
           Rectangle {
             color: "transparent"
             width: 500
             height: 650
+            visible: trendingShowTitle.text === "" ? false : true
 
             Image {
               id: trendingShowImage
