@@ -35,9 +35,10 @@ Rectangle {
     }
 
     Rectangle {
-      color: "transparent"
+      id: showCardContainer
       width: 500
-      height: 650
+      height: homeCards.height - 10
+      color: "transparent"
       visible: trendingShowTitle.text === "" ? false : true
 
       Image {
@@ -67,13 +68,14 @@ Rectangle {
       Text {
         id: trendingShowRating
         anchors {
-          top: trendingShowTitle.bottom
+          bottom: showCardContainer.bottom
+          right: showCardContainer.right
         }
-        color: "black"
+        color: "white"
         text: ""
         style: Text.Outline
-        styleColor: "white"
-        font.pixelSize: 26
+        styleColor: "black"
+        font.pixelSize: 36
       }
     }
   }

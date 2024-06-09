@@ -33,7 +33,7 @@ Item {
         id: homeCards
         text: name
         image: imageUrl
-        showRating: rating + "/10"
+        showRating: rating
 
         height: 820
 
