@@ -24,6 +24,7 @@ qt_add_qml_module(appStoneSeries2
         QML_FILES pages/Results.qml
         QML_FILES pages/Show.qml
         QML_FILES Api.js
+        QML_FILES pages/NotFound.qml
 )
 
 # Qt for iOS sets MACOSX_BUNDLE_GUI_IDENTIFIER automatically since Qt 6.1.

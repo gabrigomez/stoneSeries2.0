@@ -116,6 +116,9 @@ Item {
     console.log('chamou resultados')
     Api.fetchShows(searchText).then(result => {
                                       resultsModel.clear()
+                                      if (result.length === 0) {
+                                        stackView.push("../pages/NotFound.qml")
+                                      }
                                       const shows = result.map(item => ({
                                                                           "name": item.show.name,
                                                                           "image": item.show.image ? item.show.image.original : "https://t3.ftcdn.net/jpg/03/34/83/22/360_F_334832255_IMxvzYRygjd20VlSaIAFZrQWjozQH6BQ.jpg",
