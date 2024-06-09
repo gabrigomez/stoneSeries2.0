@@ -10,8 +10,8 @@ ApplicationWindow {
 
   visible: true
   title: qsTr("Stone Series 2.0")
-  color: "#A9DFBF"
 
+  //color: "#A9DFBF"
   property var showDetailsResult
   property var searchText
   property var showId

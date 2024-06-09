@@ -28,10 +28,9 @@ Item {
       }
       delegate: Rectangle {
         id: searchDelegate
-        x: 6
 
         color: "#08FF5B"
-        border.color: "white"
+        border.color: "black"
         border.width: 2
 
         topRightRadius: 5
@@ -44,7 +43,12 @@ Item {
 
         Image {
           id: searchedShowImage
-          y: 2
+          anchors {
+            top: searchDelegate.top
+            topMargin: 4
+          }
+          x: 6
+
           source: image
           width: 500
           height: 650

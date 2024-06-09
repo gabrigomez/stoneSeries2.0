@@ -7,6 +7,8 @@ Rectangle {
   width: parent.width
   color: "#27AE60"
 
+  border.color: "black"
+
   FontLoader {
     id: titleFont
     source: "fonts/TopShow.otf"

@@ -102,7 +102,7 @@ Rectangle {
       delegate: Rectangle {
         id: homeCards
         color: "#08FF5B"
-        border.color: "white"
+        border.color: "black"
         border.width: 2
 
         topRightRadius: 5
@@ -118,7 +118,7 @@ Rectangle {
           y: 6
 
           Rectangle {
-            color: "green"
+            color: "transparent"
             width: 500
             height: 650
 
