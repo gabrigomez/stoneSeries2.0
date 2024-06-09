@@ -3,7 +3,7 @@ import QtQuick.Layouts
 
 Rectangle {
   id: navBar
-  height: 80
+  height: 60
   width: parent.width
   color: "#27AE60"
 
@@ -25,6 +25,7 @@ Rectangle {
   Text {
     id: title
     text: "STONE SERIES 2.0"
+    color: "white"
     anchors {
       left: navBar.left
       leftMargin: 10
@@ -34,6 +35,6 @@ Rectangle {
     font.family: titleFont.font.family
     font.pixelSize: 30
     style: Text.Outline
-    styleColor: "lightgray"
+    styleColor: "black"
   }
 }
