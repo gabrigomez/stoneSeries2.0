@@ -4,6 +4,8 @@ import QtQuick.Controls.Material 2.12
 import QtQuick.Layouts
 import "../Api.js" as Api
 
+import "../components" as Components
+
 Item {
   Rectangle {
     id: searchedShowCards
@@ -22,84 +24,18 @@ Item {
         id: resultsModel
         ListElement {
           name: ""
-          image: ""
+          imageUrl: ""
           rating: ""
           _id: ""
         }
       }
-      delegate: Rectangle {
+      delegate: Components.ShowCard {
         id: homeCards
-        color: "#08FF5B"
-        border.color: "black"
-        border.width: 2
+        text: name
+        image: imageUrl
+        showRating: rating + "/10"
 
-        topRightRadius: 5
-        topLeftRadius: 5
-        bottomRightRadius: 20
-        bottomLeftRadius: 20
-
-        width: 512
         height: 820
-
-        Rectangle {
-          x: 6
-          y: 6
-
-          BusyIndicator {
-            id: busyIndicator
-            x: 120
-            y: 250
-            visible: image === "" ? true : false
-
-            width: 281
-            height: 281
-            Material.accent: "black"
-          }
-
-          Rectangle {
-            color: "transparent"
-            width: 500
-            height: 650
-
-            visible: image === "" ? false : true
-
-            Image {
-              id: trendingShowImage
-              y: 2
-              source: image
-              width: 500
-              height: 650
-            }
-
-            Text {
-              id: trendingShowTitle
-              width: trendingShowImage.width
-              height: 100
-              anchors {
-                top: trendingShowImage.bottom
-              }
-              color: "white"
-              text: name
-              style: Text.Outline
-              styleColor: "black"
-              font.pixelSize: 40
-
-              maximumLineCount: 2
-              wrapMode: Text.Wrap
-            }
-
-            Text {
-              anchors {
-                top: trendingShowTitle.bottom
-              }
-              color: "black"
-              text: rating
-              style: Text.Outline
-              styleColor: "white"
-              font.pixelSize: 26
-            }
-          }
-        }
 
         MouseArea {
           anchors.fill: parent
@@ -121,7 +57,7 @@ Item {
                                       }
                                       const shows = result.map(item => ({
                                                                           "name": item.show.name,
-                                                                          "image": item.show.image ? item.show.image.original : "https://t3.ftcdn.net/jpg/03/34/83/22/360_F_334832255_IMxvzYRygjd20VlSaIAFZrQWjozQH6BQ.jpg",
+                                                                          "imageUrl": item.show.image ? item.show.image.original : "https://t3.ftcdn.net/jpg/03/34/83/22/360_F_334832255_IMxvzYRygjd20VlSaIAFZrQWjozQH6BQ.jpg",
                                                                           "rating": item.show.rating.average ? `${item.show.rating.average.toString()}/10` : "Sem nota",
                                                                           "_id": item.show.id.toString()
                                                                         }))

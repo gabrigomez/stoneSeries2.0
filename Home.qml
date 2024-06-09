@@ -2,6 +2,8 @@ import QtQuick
 import QtQuick.Controls.Material 2.12
 import "Api.js" as Api
 
+import "./components" as Components
+
 Rectangle {
   id: home
 
@@ -100,76 +102,13 @@ Rectangle {
         }
       }
 
-      delegate: Rectangle {
-        id: homeCards
-        color: "#08FF5B"
-        border.color: "black"
-        border.width: 2
-
-        topRightRadius: 5
-        topLeftRadius: 5
-        bottomRightRadius: 20
-        bottomLeftRadius: 20
-
-        width: 512
-        height: 760
-
-        Rectangle {
-          x: 6
-          y: 6
-
-          BusyIndicator {
-            id: busyIndicator
-            visible: trendingShowTitle.text === "" ? true : false
-            x: 120
-            y: 250
-
-            width: 281
-            height: 281
-            Material.accent: "black"
-          }
-
-          Rectangle {
-            color: "transparent"
-            width: 500
-            height: 650
-            visible: trendingShowTitle.text === "" ? false : true
-
-            Image {
-              id: trendingShowImage
-              y: 2
-              source: imageUrl
-              width: 500
-              height: 650
-            }
-
-            Text {
-              id: trendingShowTitle
-              anchors {
-                top: trendingShowImage.bottom
-              }
-              color: "white"
-              text: name
-              style: Text.Outline
-              styleColor: "black"
-              font.pixelSize: 40
-            }
-
-            Text {
-              anchors {
-                top: trendingShowTitle.bottom
-              }
-              color: "black"
-              text: rating + "/10"
-              style: Text.Outline
-              styleColor: "white"
-              font.pixelSize: 26
-            }
-          }
-        }
+      delegate: Components.ShowCard {
+        text: name
+        image: imageUrl
+        showRating: rating + "/10"
 
         Component.onCompleted: {
-          if (typeof show !== 'undefined' && trendingShowTitle.text === "") {
+          if (typeof show !== 'undefined' && name === "") {
             console.log('chamou a api')
             Api.fetchShowDetails(show, function (result) {
               showListView.set(index, {
