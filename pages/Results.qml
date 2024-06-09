@@ -23,6 +23,7 @@ Item {
           name: ""
           image: ""
           rating: ""
+          _id: ""
         }
       }
       delegate: Rectangle {
@@ -90,6 +91,7 @@ Item {
         MouseArea {
           anchors.fill: parent
           onClicked: () => {
+                       showId = _id
                        stackView.push("../pages/Show.qml")
                      }
         }
@@ -104,7 +106,8 @@ Item {
                                       const shows = result.map(item => ({
                                                                           "name": item.show.name,
                                                                           "image": item.show.image ? item.show.image.original : "",
-                                                                          "rating": item.show.rating.average ? `${item.show.rating.average.toString()}/10` : "Sem nota"
+                                                                          "rating": item.show.rating.average ? `${item.show.rating.average.toString()}/10` : "Sem nota",
+                                                                          "_id": item.show.id.toString()
                                                                         }))
                                       shows.forEach(
                                         show => resultsModel.append(show))
