@@ -9,7 +9,7 @@ Rectangle {
   width: parent.width
   height: parent.height
 
-  color: "yellowgreen"
+  color: "white"
 
   property var name
   property var image
@@ -26,7 +26,7 @@ Rectangle {
     color: "#08FF5B"
 
     border {
-      color: "white"
+      color: "black"
       width: 2
     }
 
