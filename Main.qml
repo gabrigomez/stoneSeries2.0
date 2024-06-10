@@ -17,6 +17,16 @@ ApplicationWindow {
   property var showId
   property var busy
 
+  FontLoader {
+    id: bodyFont
+    source: "fonts/Cafe.ttf"
+  }
+
+  FontLoader {
+    id: titleFont
+    source: "fonts/Lemon.ttf"
+  }
+
   header: Navbar {}
 
   StackView {

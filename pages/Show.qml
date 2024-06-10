@@ -71,6 +71,7 @@ Rectangle {
         color: "white"
         style: Text.Outline
         styleColor: "black"
+        font.family: bodyFont.font.family
         font.pixelSize: 44
 
         wrapMode: Text.WrapAtWordBoundaryOrAnywhere

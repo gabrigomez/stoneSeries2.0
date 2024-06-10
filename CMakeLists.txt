@@ -18,7 +18,8 @@ qt_add_qml_module(appStoneSeries2
     QML_FILES
         Main.qml
         QML_FILES Navbar.qml
-        RESOURCES fonts/TopShow.otf
+        RESOURCES fonts/Cafe.ttf
+        RESOURCES fonts/Lemon.ttf
         QML_FILES Home.qml
         QML_FILES Search.qml
         QML_FILES pages/Results.qml

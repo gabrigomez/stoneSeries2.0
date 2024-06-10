@@ -58,6 +58,7 @@ Rectangle {
         text: ""
         style: Text.Outline
         styleColor: "black"
+        font.family: bodyFont.font.family
         font.pixelSize: 40
 
         maximumLineCount: 2
@@ -71,11 +72,12 @@ Rectangle {
           bottom: showCardContainer.bottom
           right: showCardContainer.right
         }
-        color: "black"
+        color: "white"
         text: ""
         style: Text.Outline
-        styleColor: "white"
-        font.pixelSize: 36
+        styleColor: "black"
+        font.family: titleFont.font.family
+        font.pixelSize: 30
       }
     }
   }

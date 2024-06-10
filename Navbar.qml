@@ -9,11 +9,6 @@ Rectangle {
 
   border.color: "black"
 
-  FontLoader {
-    id: titleFont
-    source: "fonts/TopShow.otf"
-  }
-
   Search {
     id: searchInput
 
@@ -35,7 +30,7 @@ Rectangle {
     }
 
     font.family: titleFont.font.family
-    font.pixelSize: 30
+    font.pixelSize: 28
     style: Text.Outline
     styleColor: "black"
   }
