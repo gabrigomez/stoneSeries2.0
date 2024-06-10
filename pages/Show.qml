@@ -16,13 +16,29 @@ Rectangle {
   property var genres
   property var rating
   property var description
+  property var startDate
+  property var endDate
+
+  property var startYear: {
+    var dateParts = startDate?.split("-")
+    return dateParts[0]
+  }
+
+  property var endYear: {
+    if (endDate === null) {
+      return "Actual"
+    }
+
+    var dateParts = endDate?.split("-")
+    return dateParts[0]
+  }
 
   Rectangle {
     id: showDetailsCard
     width: 512
-    height: 920
-    anchors.horizontalCenter: showDetails.horizontalCenter
+    height: 850
 
+    x: 500
     color: "#08FF5B"
 
     border {
@@ -45,8 +61,13 @@ Rectangle {
     }
 
     Rectangle {
+      id: showMainInfoCard
+      width: 500
+      height: 840
+
       x: 6
       y: 4
+      color: "transparent"
       visible: !busy
 
       Image {
@@ -98,9 +119,8 @@ Rectangle {
       Text {
         id: showRating
         anchors {
-          top: showGenresRow.bottom
-          topMargin: 10
-          bottomMargin: 10
+          bottom: showMainInfoCard.bottom
+          right: showMainInfoCard.right
         }
 
         text: showDetails?.rating ? `${showDetails?.rating.toString(
@@ -109,15 +129,102 @@ Rectangle {
 
         style: Text.Outline
         styleColor: "black"
-        font.pixelSize: 16
+        font.family: titleFont.font.family
+        font.pixelSize: 30
+      }
+
+      Row {
+        anchors {
+          top: showGenresRow.bottom
+          topMargin: 10
+          bottomMargin: 10
+        }
+
+        spacing: 4
+        Text {
+          id: showStartYear
+
+          text: startYear
+          color: "white"
+
+          style: Text.Outline
+          styleColor: "black"
+          font.pixelSize: 24
+        }
+
+        Text {
+          text: "-"
+          color: "white"
+
+          style: Text.Outline
+          styleColor: "black"
+          font.pixelSize: 24
+        }
+
+        Text {
+          id: showEndYear
+
+          text: endYear
+          color: "white"
+
+          style: Text.Outline
+          styleColor: "black"
+          font.pixelSize: 24
+        }
+      }
+    }
+  }
+
+  Rectangle {
+    id: showDescriptionCard
+    width: 500
+    height: 600
+
+    anchors {
+      left: showDetailsCard.right
+      leftMargin: 40
+    }
+    y: 80
+
+    color: "#08FF5B"
+    border {
+      color: "black"
+      width: 2
+    }
+
+    topRightRadius: 5
+    topLeftRadius: 5
+    bottomRightRadius: 20
+    bottomLeftRadius: 20
+
+    Text {
+      id: showDetailsSummary
+
+      Text {
+        id: detailsTitle
+        anchors {
+          top: showDescriptionCard.top
+          left: showDetailsSummary.left
+          topMargin: 10
+          leftMargin: 10
+        }
+
+        color: "white"
+        text: "• SINOPSE "
+        font.pixelSize: 50
+        style: Text.Outline
+        styleColor: "black"
       }
 
       Text {
-        id: showDetailsSummary
+        id: description
+        width: 480
+
         anchors {
-          top: showRating.bottom
+          top: detailsTitle.bottom
+          left: showDetailsSummary.left
           topMargin: 10
-          bottomMargin: 10
+          leftMargin: 10
         }
         text: showDetails?.description ? showDetails.description : "Sem descrição"
         color: "black"
@@ -125,10 +232,9 @@ Rectangle {
         wrapMode: Text.Wrap
         font.pixelSize: 16
         clip: true
-        maximumLineCount: 7
-
         horizontalAlignment: Text.AlignJustify
-        width: showImage.width
+
+        //maximumLineCount: 10
       }
     }
   }
@@ -142,6 +248,8 @@ Rectangle {
       showDetails.rating = result.rating.average
       showDetails.genres = result.genres
       showDetails.description = result.summary
+      showDetails.startDate = result?.premiered
+      showDetails.endDate = result?.ended
     })
   }
 }
