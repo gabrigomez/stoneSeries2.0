@@ -124,7 +124,7 @@ Rectangle {
         }
 
         text: showDetails?.rating ? `${showDetails?.rating.toString(
-                                      )}/10` : "Sem avaliação"
+                                      )}/10` : "SEM NOTA"
         color: "white"
 
         style: Text.Outline
