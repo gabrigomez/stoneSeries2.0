@@ -15,9 +15,11 @@ Rectangle {
   }
 
   Search {
+    id: searchInput
+
     anchors {
-      right: navBar.right
-      rightMargin: 10
+      right: parent.right
+      rightMargin: 4
       verticalCenter: parent.verticalCenter
     }
   }
