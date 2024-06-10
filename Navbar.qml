@@ -19,13 +19,24 @@ Rectangle {
     }
   }
 
+  Image {
+    source: "assets/Logo.png"
+    width: 28
+    height: 28
+    anchors {
+      right: title.left
+      rightMargin: 4
+    }
+    y: 16
+  }
+
   Text {
     id: title
     text: "STONE SERIES 2.0"
     color: "white"
     anchors {
       left: navBar.left
-      leftMargin: 10
+      leftMargin: 38
       verticalCenter: parent.verticalCenter
     }
 

@@ -16,7 +16,19 @@ Rectangle {
     color: "#08FF5B"
     border.color: "black"
 
+    Image {
+      source: "assets/GoldStar.png"
+      height: 30
+      width: 30
+      anchors {
+        left: homeTrendingTitle.right
+        leftMargin: 4
+      }
+      y: 6
+    }
+
     Text {
+      id: homeTrendingTitle
       anchors.centerIn: parent
 
       text: "Em alta"
