@@ -44,6 +44,7 @@ Rectangle {
   }
 
   RoundButton {
+    id: optionsMenuButton
     height: 40
     width: 40
     action: optionsMenuAction
@@ -75,6 +76,18 @@ Rectangle {
         onTriggered: aboutDialog.open()
       }
     }
+  }
+
+  Text {
+    id: userNameInfo
+    anchors {
+      left: optionsMenuButton.right
+      leftMargin: 10
+      verticalCenter: parent.verticalCenter
+    }
+    text: "Olá, " + settingsConfig.userName + "!"
+    font.family: bodyFont.font.family
+    font.pixelSize: 20
   }
 
   Dialog {
