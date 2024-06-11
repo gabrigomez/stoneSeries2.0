@@ -4,6 +4,9 @@
 int main(int argc, char *argv[])
 {
     QGuiApplication app(argc, argv);
+    app.setOrganizationName("Gomez Company");
+    app.setOrganizationDomain("gabrigomez.netlify.app");
+    app.setApplicationName("Stone Series 2.0");
 
     QQmlApplicationEngine engine;
     const QUrl url(QStringLiteral("qrc:/StoneSeries2/Main.qml"));

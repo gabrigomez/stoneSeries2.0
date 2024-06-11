@@ -1,5 +1,6 @@
 import QtQuick
 import QtQuick.Controls
+import Qt.labs.settings
 
 ApplicationWindow {
   id: root
@@ -33,5 +34,10 @@ ApplicationWindow {
     id: stackView
     anchors.fill: parent
     initialItem: Home {}
+  }
+
+  Settings {
+    id: settingsConfig
+    property string userName: ""
   }
 }
