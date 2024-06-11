@@ -84,27 +84,26 @@ Rectangle {
     title: qsTr("About")
     x: (root.width - width) / 2
     y: root.height / 6
-    width: Math.min(root.width, root.height) / 3 * 2
+    width: 400
     contentHeight: aboutColumn.height
 
     Column {
       id: aboutColumn
       spacing: 20
 
-      Label {
+      Text {
         width: aboutDialog.availableWidth
-        text: qsTr(
-                "The Qt Quick Controls module delivers the next generation user interface controls based on Qt Quick.")
+        text: qsTr("STONE SERIES 2.0")
         wrapMode: Label.Wrap
-        font.pixelSize: 12
+        font.pixelSize: 20
       }
 
-      Label {
+      Text {
         width: aboutDialog.availableWidth
-        text: qsTr("In comparison to Qt Quick Controls 1, Qt Quick Controls "
-                   + "are an order of magnitude simpler, lighter, and faster.")
+        text: qsTr(
+                "Projeto desenvolvido como parte do deseafio técnico para vaga de Software Engineer na Stone.")
         wrapMode: Label.Wrap
-        font.pixelSize: 12
+        font.pixelSize: 20
       }
     }
   }
