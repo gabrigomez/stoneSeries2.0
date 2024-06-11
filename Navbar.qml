@@ -12,8 +12,14 @@ Rectangle {
 
   Action {
     id: optionsMenuAction
-    icon.name: "menu"
-    onTriggered: optionsMenu.open()
+    onTriggered: {
+      if (stackView.depth > 1) {
+        stackView.pop()
+        listView.currentIndex = -1
+      } else {
+        optionsMenu.open()
+      }
+    }
   }
 
   Search {
@@ -49,7 +55,7 @@ Rectangle {
     }
 
     Image {
-      source: "assets/Settings.png"
+      source: stackView.depth > 1 ? "assets/BackIcon.png" : "assets/Settings.png"
       width: 30
       height: 30
       anchors.centerIn: parent

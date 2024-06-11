@@ -31,6 +31,7 @@ qt_add_qml_module(appStoneSeries2
         RESOURCES assets/searchIcon.png
         RESOURCES assets/GoldStar.png
         RESOURCES assets/Logo.png
+        RESOURCES assets/BackIcon.png
         RESOURCES assets/Settings.png
 )
 
