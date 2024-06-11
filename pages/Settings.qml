@@ -1,6 +1,7 @@
 import QtQuick
 import QtQuick.Layouts
 import QtQuick.Controls
+import QtQuick.Effects
 
 Rectangle {
   id: settingsCard
@@ -22,16 +23,67 @@ Rectangle {
   Rectangle {
     id: settingsInfo
     anchors.centerIn: parent
-    width: 300
-    height: 300
+    width: 500
+    height: 500
 
     color: 'lightgray'
     radius: 20
 
+    MultiEffect {
+      //to cut the userAvatar
+      source: userAvatar
+      anchors.fill: userAvatar
+      maskEnabled: true
+      maskSource: mask
+    }
+
+    Image {
+      id: userAvatar
+      source: settingsConfig.userAvatar
+      anchors {
+        top: parent.top
+        topMargin: 10
+        horizontalCenter: parent.horizontalCenter
+      }
+      width: 200
+      height: 200
+      visible: false
+    }
+
+    Item {
+      id: mask
+      width: userAvatar.width
+      height: userAvatar.height
+      layer.enabled: true
+      visible: false
+
+      Rectangle {
+        width: userAvatar.width
+        height: userAvatar.height
+        radius: width / 2
+        color: "black"
+      }
+    }
+
+    TextField {
+      id: settingsImageInput
+      width: 160
+      height: 40
+
+      anchors {
+        top: userAvatar.bottom
+        topMargin: 20
+        horizontalCenter: parent.horizontalCenter
+      }
+
+      placeholderText: "Coloque a URL da imagem"
+      focus: true
+    }
+
     Text {
       id: userName
       anchors {
-        top: parent.top
+        top: settingsImageInput.bottom
         topMargin: 10
         horizontalCenter: parent.horizontalCenter
       }
@@ -77,6 +129,7 @@ Rectangle {
       text: "Salvar"
       onClicked: () => {
                    settingsConfig.userName = settingsInput.text
+                   settingsConfig.userAvatar = settingsImageInput.text
                  }
     }
 

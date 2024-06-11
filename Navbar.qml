@@ -1,6 +1,7 @@
 import QtQuick
 import QtQuick.Controls
 import QtQuick.Layouts
+import QtQuick.Effects
 
 Rectangle {
   id: navBar
@@ -45,8 +46,8 @@ Rectangle {
 
   RoundButton {
     id: optionsMenuButton
-    height: 52
-    width: 52
+    height: 55
+    width: 55
     action: optionsMenuAction
 
     anchors {
@@ -54,12 +55,36 @@ Rectangle {
       leftMargin: 10
       verticalCenter: parent.verticalCenter
     }
+    MultiEffect {
+      //to cut the userAvatar
+      source: userNavbarAvatar
+      anchors.fill: userNavbarAvatar
+      maskEnabled: true
+      maskSource: mask
+    }
 
     Image {
-      source: stackView.depth > 1 ? "assets/BackIcon.png" : "assets/Settings.png"
+      id: userNavbarAvatar
+      source: stackView.depth > 1 ? "assets/BackIcon.png" : settingsConfig.userAvatar
       width: 50
       height: 50
       anchors.centerIn: parent
+      visible: false
+    }
+
+    Item {
+      id: mask
+      width: userNavbarAvatar.width
+      height: userNavbarAvatar.height
+      layer.enabled: true
+      visible: false
+
+      Rectangle {
+        width: userNavbarAvatar.width
+        height: userNavbarAvatar.height
+        radius: width / 2
+        color: "black"
+      }
     }
 
     Menu {

@@ -39,5 +39,6 @@ ApplicationWindow {
   Settings {
     id: settingsConfig
     property string userName: ""
+    property string userAvatar: ""
   }
 }
