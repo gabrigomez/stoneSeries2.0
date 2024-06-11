@@ -45,8 +45,8 @@ Rectangle {
 
   RoundButton {
     id: optionsMenuButton
-    height: 40
-    width: 40
+    height: 52
+    width: 52
     action: optionsMenuAction
 
     anchors {
@@ -57,8 +57,8 @@ Rectangle {
 
     Image {
       source: stackView.depth > 1 ? "assets/BackIcon.png" : "assets/Settings.png"
-      width: 30
-      height: 30
+      width: 50
+      height: 50
       anchors.centerIn: parent
     }
 

@@ -56,7 +56,7 @@ Rectangle {
       focus: true
 
       onTextChanged: {
-        if (settingsInput.text.length > 10) {
+        if (settingsInput.text.length > 15) {
           warningText.visible = true
           saveButton.enabled = false
         } else {
@@ -87,7 +87,7 @@ Rectangle {
         topMargin: 10
         horizontalCenter: parent.horizontalCenter
       }
-      text: "O username não pode ter mais de 10 caracteres."
+      text: "O username não pode ter mais de 15 caracteres."
       color: "red"
       visible: false
     }
