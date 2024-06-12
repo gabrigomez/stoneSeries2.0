@@ -100,9 +100,26 @@ Rectangle {
         maximumLineCount: 2
       }
 
+      Image {
+        id: genresIcon
+        source: "../assets/GenresIcon.png"
+        width: 24
+        height: 24
+
+        anchors {
+          left: parent.left
+          top: showName.bottom
+        }
+      }
+
       Row {
         id: showGenresRow
-        anchors.top: showName.bottom
+        anchors {
+          bottom: genresIcon.bottom
+          left: genresIcon.right
+          leftMargin: 4
+        }
+
         spacing: 2
 
         Repeater {
@@ -111,7 +128,11 @@ Rectangle {
           Text {
             text: modelData + (index < showGenresRepeater.count - 1 ? ", " : "")
             color: "black"
-            font.pixelSize: 24
+            font.family: bodyFont.font.family
+            font.pixelSize: 22
+
+            style: Text.Outline
+            styleColor: "lightgray"
             wrapMode: Text.Wrap
           }
         }
@@ -131,14 +152,27 @@ Rectangle {
         style: Text.Outline
         styleColor: "black"
         font.family: titleFont.font.family
-        font.pixelSize: 30
+        font.pixelSize: 22
+      }
+
+      Image {
+        id: calendarIcon
+        source: "../assets/CalendarIcon.png"
+        width: 24
+        height: 24
+
+        anchors {
+          left: parent.left
+          top: showGenresRow.bottom
+          topMargin: 20
+        }
       }
 
       Row {
         anchors {
-          top: showGenresRow.bottom
-          topMargin: 10
-          bottomMargin: 10
+          bottom: calendarIcon.bottom
+          left: calendarIcon.right
+          leftMargin: 4
         }
 
         spacing: 4
@@ -150,7 +184,7 @@ Rectangle {
 
           style: Text.Outline
           styleColor: "black"
-          font.pixelSize: 24
+          font.pixelSize: 22
         }
 
         Text {
@@ -159,7 +193,7 @@ Rectangle {
 
           style: Text.Outline
           styleColor: "black"
-          font.pixelSize: 24
+          font.pixelSize: 22
         }
 
         Text {
