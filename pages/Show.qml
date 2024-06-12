@@ -39,6 +39,7 @@ Rectangle {
     height: 850
 
     x: 500
+    y: 10
     color: "#08FF5B"
 
     border {
@@ -184,7 +185,7 @@ Rectangle {
       left: showDetailsCard.right
       leftMargin: 40
     }
-    y: 80
+    y: 20
 
     color: "#08FF5B"
     border {
