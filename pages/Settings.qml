@@ -2,12 +2,23 @@ import QtQuick
 import QtQuick.Layouts
 import QtQuick.Controls
 import QtQuick.Effects
+import QtQuick.Dialogs
 
 Rectangle {
   id: settingsCard
   width: root.width
   height: root.height
   color: "transparent"
+
+  FileDialog {
+    id: fileDialog
+    nameFilters: ["Image Files (*.jpg *.png *.jpeg)"]
+    onAccepted: settingsConfig.userAvatar = selectedFile
+    onRejected: {
+      errorMessage.text = "Ocorreu um erro, tente novamente"
+      errorMessage.visible = true
+    }
+  }
 
   Text {
     anchors {
@@ -91,25 +102,10 @@ Rectangle {
       }
     }
 
-    TextField {
-      id: settingsImageInput
-      width: 160
-      height: 40
-
-      anchors {
-        top: userAvatar.bottom
-        topMargin: 20
-        horizontalCenter: parent.horizontalCenter
-      }
-
-      placeholderText: "Coloque a URL da imagem"
-      focus: true
-    }
-
     Text {
       id: userName
       anchors {
-        top: settingsImageInput.bottom
+        top: userAvatar.bottom
         topMargin: 10
         horizontalCenter: parent.horizontalCenter
       }
@@ -144,28 +140,54 @@ Rectangle {
       }
     }
 
-    TextField {
-      id: settingsInput
-      width: 160
-      height: 40
-
+    Button {
+      id: openImageLoader
       anchors {
         top: userName.bottom
         topMargin: 20
         horizontalCenter: parent.horizontalCenter
       }
 
+      text: "Carregar avatar"
+      onClicked: () => {
+                   fileDialog.open()
+                 }
+    }
+
+    Label {
+      anchors {
+        bottom: editUserNameInput.top
+        bottomMargin: 2
+        left: editUserNameInput.left
+      }
+      text: "Edite o username"
+      font.pixelSize: 12
+    }
+
+    TextField {
+      id: editUserNameInput
+      width: 160
+      height: 40
+
+      anchors {
+        top: openImageLoader.bottom
+        topMargin: 60
+        horizontalCenter: parent.horizontalCenter
+      }
+
       placeholderText: "Edite seu username"
+      text: settingsConfig.userName
       focus: true
 
       onTextChanged: {
-        if (settingsInput.text.length > 15) {
-          warningText.visible = true
+        if (editUserNameInput.text.length > 15) {
+          errorMessage.visible = true
+          errorMessage = "O username não pode ter mais de 15 caracteres."
           saveButton.enabled = false
-        } else {
-          warningText.visible = false
-          saveButton.enabled = true
         }
+
+        errorMessage.visible = false
+        saveButton.enabled = true
       }
     }
 
@@ -173,19 +195,23 @@ Rectangle {
       id: saveButton
       anchors {
         bottom: parent.bottom
-        bottomMargin: 10
+        bottomMargin: 20
         horizontalCenter: parent.horizontalCenter
       }
 
       text: "Salvar"
       onClicked: () => {
-                   settingsConfig.userName = settingsInput.text
-                   settingsConfig.userAvatar = settingsImageInput.text
+                   if (editUserNameInput.text === "") {
+                     errorMessage.visible = true
+                     errorMessage.text = "O username não pode ser vazio"
+                     return
+                   }
+                   settingsConfig.userName = editUserNameInput.text
                  }
     }
 
     Text {
-      id: warningText
+      id: errorMessage
       anchors {
         top: settingsInfo.bottom
         topMargin: 10
