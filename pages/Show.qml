@@ -178,7 +178,7 @@ Rectangle {
   Rectangle {
     id: showDescriptionCard
     width: 500
-    height: 600
+    height: 100 + description.height
 
     anchors {
       left: showDetailsCard.right
@@ -219,6 +219,7 @@ Rectangle {
       Text {
         id: description
         width: 480
+        height: contentHeight
 
         anchors {
           top: detailsTitle.bottom
@@ -233,8 +234,6 @@ Rectangle {
         font.pixelSize: 16
         clip: true
         horizontalAlignment: Text.AlignJustify
-
-        //maximumLineCount: 10
       }
     }
   }
