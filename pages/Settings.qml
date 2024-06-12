@@ -31,6 +31,7 @@ Rectangle {
 
     MultiEffect {
       //to cut the userAvatar
+      id: userAvatarMask
       source: userAvatar
       anchors.fill: userAvatar
       maskEnabled: true
@@ -48,6 +49,31 @@ Rectangle {
       width: 200
       height: 200
       visible: false
+
+      //transition when change avatar
+      Behavior on source {
+        SequentialAnimation {
+          PropertyAnimation {
+            target: userAvatarMask
+            property: "opacity"
+            from: 1
+            to: 0
+            duration: 500
+          }
+          PropertyAnimation {
+            target: userAvatar
+            property: "source"
+            duration: 0
+          }
+          PropertyAnimation {
+            target: userAvatarMask
+            property: "opacity"
+            from: 0
+            to: 1
+            duration: 500
+          }
+        }
+      }
     }
 
     Item {
@@ -91,6 +117,31 @@ Rectangle {
       text: settingsConfig.userName
       font.family: bodyFont.font.family
       font.pixelSize: 30
+
+      // transition when change username
+      Behavior on text {
+        SequentialAnimation {
+          PropertyAnimation {
+            target: userName
+            property: "opacity"
+            from: 1
+            to: 0
+            duration: 500
+          }
+          PropertyAnimation {
+            target: userName
+            property: "text"
+            duration: 0
+          }
+          PropertyAnimation {
+            target: userName
+            property: "opacity"
+            from: 0
+            to: 1
+            duration: 500
+          }
+        }
+      }
     }
 
     TextField {
