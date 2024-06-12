@@ -40,5 +40,6 @@ ApplicationWindow {
     id: settingsConfig
     property string userName: ""
     property string userAvatar: ""
+    property var favShows: []
   }
 }

@@ -15,8 +15,12 @@ Rectangle {
     id: optionsMenuAction
     onTriggered: {
       if (stackView.depth > 1) {
-        stackView.pop()
-        listView.currentIndex = -1
+        //returns directly to home in noResultsPage
+        if (stackView.currentItem.objectName === "noResultsPage") {
+          stackView.pop(null)
+        } else {
+          stackView.pop()
+        }
       } else {
         optionsMenu.open()
       }

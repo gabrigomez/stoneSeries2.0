@@ -3,6 +3,7 @@ import QtQuick.Controls
 
 Rectangle {
   id: searchedShowCards
+  objectName: "noResultsPage"
   width: root.width
   height: 820
 
@@ -38,7 +39,7 @@ Rectangle {
     MouseArea {
       anchors.fill: parent
       onClicked: {
-        stackView.push("../Home.qml")
+        stackView.pop(null)
       }
 
       hoverEnabled: true
