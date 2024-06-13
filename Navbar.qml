@@ -52,6 +52,7 @@ Rectangle {
     id: optionsMenuButton
     height: 55
     width: 55
+    action: optionsMenuAction
 
     background: Rectangle {
       anchors.fill: parent
@@ -125,12 +126,11 @@ Rectangle {
                        "https://github.com/gabrigomez/stoneSeries2.0")
       }
     }
+
     MouseArea {
       anchors.fill: parent
       cursorShape: Qt.PointingHandCursor
-      onClicked: {
-        optionsMenu.open()
-      }
+      onClicked: optionsMenuAction.trigger()
     }
   }
 
