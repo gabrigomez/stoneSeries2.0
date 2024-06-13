@@ -75,7 +75,7 @@ Rectangle {
         id: showImage
         source: showDetails?.image ? showDetails.image : 'https://t3.ftcdn.net/jpg/03/34/83/22/360_F_334832255_IMxvzYRygjd20VlSaIAFZrQWjozQH6BQ.jpg'
         width: 500
-        height: 600
+        height: 660
       }
 
       Text {
@@ -164,7 +164,7 @@ Rectangle {
         anchors {
           left: parent.left
           top: showGenresRow.bottom
-          topMargin: 20
+          topMargin: 4
         }
       }
 
