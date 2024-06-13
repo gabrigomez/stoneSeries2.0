@@ -95,6 +95,12 @@ Rectangle {
       id: optionsMenu
       x: 10
       transformOrigin: Menu.BottomLeft
+
+      Action {
+        text: qsTr("Meus favoritos")
+        onTriggered: stackView.push("pages/FavShows.qml")
+      }
+
       Action {
         text: qsTr("Settings")
         onTriggered: stackView.push("pages/Settings.qml")

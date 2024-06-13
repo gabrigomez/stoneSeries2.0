@@ -26,6 +26,7 @@ qt_add_qml_module(appStoneSeries2
         QML_FILES pages/Show.qml
         QML_FILES pages/NotFound.qml
         QML_FILES pages/Settings.qml
+        QML_FILES pages/FavShows.qml
         QML_FILES Api.js        
         QML_FILES components/ShowCard.qml
         RESOURCES assets/searchIcon.png
