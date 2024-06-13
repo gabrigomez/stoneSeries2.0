@@ -33,14 +33,13 @@ Rectangle {
       height: 281
       Material.accent: "black"
     }
-
     Rectangle {
       id: showCardContainer
       width: 500
       height: homeCards.height - 10
       color: "transparent"
-      visible: trendingShowTitle.text === "" ? false : true
 
+      visible: trendingShowTitle.text === "" ? false : true
       Image {
         id: trendingShowImage
         y: 2

@@ -21,12 +21,6 @@ Item {
       spacing: 40
       model: ListModel {
         id: favShowsModel
-        ListElement {
-          name: ""
-          imageUrl: ""
-          rating: ""
-          _id: ""
-        }
       }
       delegate: Components.ShowCard {
         id: favShowCard
@@ -54,14 +48,12 @@ Item {
       Text {
         anchors.centerIn: parent
         text: "Nenhuma série favoritada :("
-        font.pixelSize: 30
+        font.pixelSize: 40
       }
     }
   }
 
   Component.onCompleted: {
-    console.log(settingsConfig.favShowsList)
-
     if (settingsConfig.favShowsList.length === 0) {
       noFavListShow.visible = true
     }
