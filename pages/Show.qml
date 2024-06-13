@@ -280,6 +280,7 @@ Rectangle {
         top: showDescriptionCard.bottom
         topMargin: 10
       }
+      property string bgColor: "#08FF5B"
 
       QtObject {
         id: favListManager
@@ -315,7 +316,7 @@ Rectangle {
 
       background: Rectangle {
         id: favShowButtonColor
-        color: favShowButton.pressed ? "darkgray" : favShowButton.hovered ? "#08FF5B" : "white"
+        color: favShowButton.hovered ? favShowButton.bgColor : "white"
         border.color: "black"
         radius: 5
       }
@@ -349,7 +350,7 @@ Rectangle {
       favShowButton.text = "Adicionar dos favoritos"
     } else {
       favShowButton.text = "Remover dos favoritos"
-      //favShowButtonColor.color = "red"
+      favShowButton.bgColor = "red"
     }
   }
 }
