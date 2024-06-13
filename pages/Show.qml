@@ -171,6 +171,7 @@ Rectangle {
       Row {
         anchors {
           bottom: calendarIcon.bottom
+          bottomMargin: 2
           left: calendarIcon.right
           leftMargin: 4
         }
@@ -184,7 +185,7 @@ Rectangle {
 
           style: Text.Outline
           styleColor: "black"
-          font.pixelSize: 22
+          font.pixelSize: 16
         }
 
         Text {
@@ -193,7 +194,7 @@ Rectangle {
 
           style: Text.Outline
           styleColor: "black"
-          font.pixelSize: 22
+          font.pixelSize: 16
         }
 
         Text {
@@ -204,7 +205,7 @@ Rectangle {
 
           style: Text.Outline
           styleColor: "black"
-          font.pixelSize: 24
+          font.pixelSize: 16
         }
       }
     }
