@@ -102,13 +102,14 @@ Rectangle {
       }
 
       Action {
-        text: qsTr("Settings")
+        text: qsTr("Configurações")
         onTriggered: stackView.push("pages/Settings.qml")
       }
 
       Action {
-        text: qsTr("About")
-        onTriggered: aboutDialog.open()
+        text: qsTr("Sobre")
+        onTriggered: Qt.openUrlExternally(
+                       "https://github.com/gabrigomez/stoneSeries2.0")
       }
     }
   }
@@ -127,37 +128,6 @@ Rectangle {
 
     style: Text.Outline
     styleColor: "black"
-  }
-
-  Dialog {
-    id: aboutDialog
-    modal: true
-    focus: true
-    title: qsTr("About")
-    x: (root.width - width) / 2
-    y: root.height / 6
-    width: 400
-    contentHeight: aboutColumn.height
-
-    Column {
-      id: aboutColumn
-      spacing: 20
-
-      Text {
-        width: aboutDialog.availableWidth
-        text: qsTr("STONE SERIES 2.0")
-        wrapMode: Label.Wrap
-        font.pixelSize: 20
-      }
-
-      Text {
-        width: aboutDialog.availableWidth
-        text: qsTr(
-                "Projeto desenvolvido como parte do deseafio técnico para vaga de Software Engineer na Stone.")
-        wrapMode: Label.Wrap
-        font.pixelSize: 20
-      }
-    }
   }
 
   Text {
