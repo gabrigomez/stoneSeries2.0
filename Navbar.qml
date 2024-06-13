@@ -52,7 +52,20 @@ Rectangle {
     id: optionsMenuButton
     height: 55
     width: 55
-    action: optionsMenuAction
+
+    background: Rectangle {
+      anchors.fill: parent
+      color: optionsMenuButton.hovered ? "black" : "white"
+      border.color: "silver"
+      radius: 40
+
+      Behavior on color {
+        PropertyAnimation {
+          duration: 200
+          easing.type: Easing.InOutQuad
+        }
+      }
+    }
 
     anchors {
       left: parent.left
@@ -93,8 +106,8 @@ Rectangle {
 
     Menu {
       id: optionsMenu
-      x: 10
-      transformOrigin: Menu.BottomLeft
+      x: 4
+      y: 60
 
       Action {
         text: qsTr("Meus favoritos")
@@ -110,6 +123,13 @@ Rectangle {
         text: qsTr("Sobre")
         onTriggered: Qt.openUrlExternally(
                        "https://github.com/gabrigomez/stoneSeries2.0")
+      }
+    }
+    MouseArea {
+      anchors.fill: parent
+      cursorShape: Qt.PointingHandCursor
+      onClicked: {
+        optionsMenu.open()
       }
     }
   }
