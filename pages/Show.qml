@@ -6,8 +6,8 @@ import "../Api.js" as Api
 
 Rectangle {
   id: showDetails
-  width: parent.width
-  height: parent.height
+  width: parent?.width
+  height: parent?.height
 
   color: "white"
 
@@ -20,17 +20,23 @@ Rectangle {
   property var endDate
 
   property var startYear: {
-    var dateParts = startDate?.split("-")
-    return dateParts[0]
+    if (startDate) {
+      var dateParts = startDate.split("-")
+      if (dateParts.length > 0) {
+        return dateParts[0]
+      }
+    }
+    return ""
   }
 
   property var endYear: {
-    if (endDate === null) {
-      return "Actual"
+    if (endDate) {
+      var dateParts = endDate.split("-")
+      if (dateParts.length > 0) {
+        return dateParts[0]
+      }
     }
-
-    var dateParts = endDate?.split("-")
-    return dateParts[0]
+    return ""
   }
 
   Rectangle {
@@ -180,7 +186,7 @@ Rectangle {
         Text {
           id: showStartYear
 
-          text: startYear
+          text: startYear ? startYear : ""
           color: "white"
 
           style: Text.Outline
@@ -200,7 +206,7 @@ Rectangle {
         Text {
           id: showEndYear
 
-          text: endYear
+          text: endYear ? endYear : ""
           color: "white"
 
           style: Text.Outline
@@ -235,15 +241,15 @@ Rectangle {
 
     Text {
       id: showDetailsSummary
+      anchors {
+        top: showDescriptionCard.top
+        left: showDescriptionCard.left
+        topMargin: 10
+        leftMargin: 10
+      }
 
       Text {
         id: detailsTitle
-        anchors {
-          top: showDescriptionCard.top
-          left: showDetailsSummary.left
-          topMargin: 10
-          leftMargin: 10
-        }
 
         color: "white"
         text: "• SINOPSE "
@@ -261,7 +267,7 @@ Rectangle {
           top: detailsTitle.bottom
           left: showDetailsSummary.left
           topMargin: 10
-          leftMargin: 10
+          leftMargin: 2
         }
         text: showDetails?.description ? showDetails.description : "Sem descrição"
         color: "black"

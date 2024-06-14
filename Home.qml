@@ -59,61 +59,61 @@ Rectangle {
         ListElement {
           name: ""
           imageUrl: ""
-          rating: ''
+          rating: ""
           show: 526
         }
         ListElement {
           name: ""
           imageUrl: ""
-          rating: ''
+          rating: ""
           show: 169
         }
         ListElement {
           name: ""
           imageUrl: ""
-          rating: ''
+          rating: ""
           show: 66
         }
         ListElement {
           name: ""
           imageUrl: ""
-          rating: ''
+          rating: ""
           show: 73
         }
         ListElement {
           name: ""
           imageUrl: ""
-          rating: 8.5
+          rating: ""
           show: 2993
         }
         ListElement {
           name: ""
           imageUrl: ""
-          rating: ''
+          rating: ""
           show: 41007
         }
         ListElement {
           name: ""
           imageUrl: ""
-          rating: ''
+          rating: ""
           show: 82
         }
         ListElement {
           name: ""
           imageUrl: ""
-          rating: ''
+          rating: ""
           show: 46562
         }
         ListElement {
           name: ""
           imageUrl: ""
-          rating: ''
+          rating: ""
           show: 44778
         }
         ListElement {
           name: ""
           imageUrl: ""
-          rating: ''
+          rating: ""
           show: 15299
         }
       }
