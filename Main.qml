@@ -2,6 +2,8 @@ import QtQuick
 import QtQuick.Controls
 import QtCore
 
+import "./pages" as Pages
+
 ApplicationWindow {
   id: root
   width: 1700
@@ -33,7 +35,7 @@ ApplicationWindow {
   StackView {
     id: stackView
     anchors.fill: parent
-    initialItem: Home {}
+    initialItem: Pages.Home {}
   }
 
   Settings {
