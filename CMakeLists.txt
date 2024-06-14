@@ -17,18 +17,8 @@ qt_add_qml_module(appStoneSeries2
     VERSION 1.0
     QML_FILES
         Main.qml
-        QML_FILES Navbar.qml
         RESOURCES fonts/Cafe.ttf
         RESOURCES fonts/Lemon.ttf
-        QML_FILES Search.qml
-        QML_FILES pages/Home.qml
-        QML_FILES pages/Results.qml
-        QML_FILES pages/Show.qml
-        QML_FILES pages/NotFound.qml
-        QML_FILES pages/Settings.qml
-        QML_FILES pages/FavShows.qml
-        QML_FILES Api.js        
-        QML_FILES components/ShowCard.qml
         RESOURCES assets/searchIcon.png
         RESOURCES assets/GoldStar.png
         RESOURCES assets/Logo.png
@@ -37,6 +27,16 @@ qt_add_qml_module(appStoneSeries2
         RESOURCES assets/CalendarIcon.png
         RESOURCES assets/Settings.png
         RESOURCES assets/NotFound.png
+        QML_FILES Navbar.qml        
+        QML_FILES Search.qml
+        QML_FILES pages/Home.qml
+        QML_FILES pages/Results.qml
+        QML_FILES pages/Show.qml
+        QML_FILES pages/NotFound.qml
+        QML_FILES pages/Settings.qml
+        QML_FILES pages/FavShows.qml
+        QML_FILES Api.js
+        QML_FILES components/ShowCard.qml        
         QML_FILES components/atoms/TrendingIcon.qml
         QML_FILES components/molecules/TrendingCard.qml
         QML_FILES components/atoms/TrendingTitle.qml
