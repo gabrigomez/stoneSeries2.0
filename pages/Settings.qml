@@ -23,12 +23,12 @@ Rectangle {
   Text {
     anchors {
       bottom: settingsInfo.top
-      bottomMargin: 10
+      bottomMargin: 16
       horizontalCenter: parent.horizontalCenter
     }
-    text: "Suas Informações"
+    text: "• Suas Informações •"
     font.family: bodyFont.font.family
-    font.pixelSize: 24
+    font.pixelSize: 44
   }
 
   Rectangle {
@@ -39,6 +39,9 @@ Rectangle {
 
     color: 'lightgray'
     radius: 20
+    border {
+      color: "#27AE60"
+    }
 
     MultiEffect {
       //to cut the userAvatar
@@ -142,6 +145,7 @@ Rectangle {
 
     Button {
       id: openImageLoader
+      width: 140
       anchors {
         top: userName.bottom
         topMargin: 20
@@ -152,6 +156,26 @@ Rectangle {
       onClicked: () => {
                    fileDialog.open()
                  }
+
+      background: Rectangle {
+        id: openImageLoaderColor
+        color: "white"
+        border.color: openImageLoader.hovered ? "#27AE60" : "white"
+        radius: 5
+
+        Behavior on color {
+          PropertyAnimation {
+            duration: 200
+            easing.type: Easing.InOutQuad
+          }
+        }
+        Behavior on border.color {
+          PropertyAnimation {
+            duration: 200
+            easing.type: Easing.InOutQuad
+          }
+        }
+      }
     }
 
     Label {
@@ -193,6 +217,7 @@ Rectangle {
 
     Button {
       id: saveButton
+      width: 100
       anchors {
         bottom: parent.bottom
         bottomMargin: 20
@@ -208,6 +233,26 @@ Rectangle {
                    }
                    settingsConfig.userName = editUserNameInput.text
                  }
+
+      background: Rectangle {
+        id: saveButtonColor
+        color: "white"
+        border.color: saveButton.hovered ? "#27AE60" : "white"
+        radius: 5
+
+        Behavior on color {
+          PropertyAnimation {
+            duration: 200
+            easing.type: Easing.InOutQuad
+          }
+        }
+        Behavior on border.color {
+          PropertyAnimation {
+            duration: 200
+            easing.type: Easing.InOutQuad
+          }
+        }
+      }
     }
 
     Text {
