@@ -36,6 +36,7 @@ qt_add_qml_module(appStoneSeries2
         RESOURCES assets/GenresIcon.png
         RESOURCES assets/CalendarIcon.png
         RESOURCES assets/Settings.png
+        RESOURCES assets/NotFound.png
 )
 
 # Qt for iOS sets MACOSX_BUNDLE_GUI_IDENTIFIER automatically since Qt 6.1.
