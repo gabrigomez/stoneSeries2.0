@@ -127,12 +127,12 @@ Rectangle {
           if (typeof show !== 'undefined' && name === "") {
             console.log('chamou a api')
             Api.fetchShowDetails(show, function (result) {
-              showListView.set(index, {
-                                 "show": show,
-                                 "name": result.name,
-                                 "imageUrl": result.image.original,
-                                 "rating": result.rating.average.toString()
-                               })
+              showListView?.set(index, {
+                                  "show": show,
+                                  "name": result.name,
+                                  "imageUrl": result.image.original,
+                                  "rating": result.rating.average.toString()
+                                })
             })
           }
         }
