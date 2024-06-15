@@ -7,11 +7,17 @@ Rectangle {
   height: 40
   color: "transparent"
 
+  anchors {
+    right: parent.right
+    rightMargin: 4
+    verticalCenter: parent.verticalCenter
+  }
+
   property string searchText: ""
 
   function performSearch() {
     root.searchText = searchInputText.text
-    stackView.push("pages/Results.qml")
+    stackView.push("../../pages/Results.qml")
   }
 
   TextField {
@@ -34,7 +40,7 @@ Rectangle {
 
   Image {
     id: searchIcon
-    source: "assets/searchIcon.png"
+    source: "../../assets/searchIcon.png"
     width: 25
     height: 25
 

@@ -3,6 +3,7 @@ import QtQuick.Controls
 import QtCore
 
 import "./pages" as Pages
+import "./components/organisms" as Organisms
 
 ApplicationWindow {
   id: root
@@ -30,7 +31,7 @@ ApplicationWindow {
     source: "fonts/Lemon.ttf"
   }
 
-  header: Navbar {}
+  header: Organisms.Navbar {}
 
   StackView {
     id: stackView
