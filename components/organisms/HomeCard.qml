@@ -3,9 +3,9 @@ import QtQuick.Controls.Material 2.12
 
 import "../../Api.js" as Api
 import "../molecules" as Molecules
+import "../organisms" as Organisms
 
-import "../../components" as Components
-
+//import "../../components" as Components
 Rectangle {
   height: 700
   width: root.width
@@ -82,7 +82,7 @@ Rectangle {
       }
     }
 
-    delegate: Components.ShowCard {
+    delegate: Organisms.ShowCard {
       text: name
       image: imageUrl
       showRating: rating + "/10"

@@ -28,7 +28,7 @@ qt_add_qml_module(appStoneSeries2
         RESOURCES assets/Settings.png
         RESOURCES assets/NotFound.png
         QML_FILES Api.js
-        QML_FILES components/ShowCard.qml        
+        QML_FILES components/organisms/ShowCard.qml
         QML_FILES components/atoms/TrendingIcon.qml
         QML_FILES components/molecules/TrendingCard.qml
         QML_FILES components/molecules/Search.qml
