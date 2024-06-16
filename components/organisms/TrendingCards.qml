@@ -5,7 +5,6 @@ import "../../Api.js" as Api
 import "../molecules" as Molecules
 import "../organisms" as Organisms
 
-//import "../../components" as Components
 Rectangle {
   height: 700
   width: root.width

@@ -8,7 +8,7 @@ import "../organisms" as Organisms
 Rectangle {
   id: homePage
 
-  Molecules.TrendingCard {}
+  Molecules.TrendingHeader {}
 
-  Organisms.HomeCard {}
+  Organisms.TrendingCards {}
 }

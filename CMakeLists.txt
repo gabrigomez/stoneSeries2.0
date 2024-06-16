@@ -30,10 +30,10 @@ qt_add_qml_module(appStoneSeries2
         QML_FILES Api.js
         QML_FILES components/organisms/ShowCard.qml
         QML_FILES components/atoms/TrendingIcon.qml
-        QML_FILES components/molecules/TrendingCard.qml
+        QML_FILES components/molecules/TrendingHeader.qml
         QML_FILES components/molecules/Search.qml
         QML_FILES components/atoms/TrendingTitle.qml
-        QML_FILES components/organisms/HomeCard.qml
+        QML_FILES components/organisms/TrendingCards.qml
         QML_FILES components/atoms/LogoIcon.qml
         QML_FILES components/atoms/UserNameInfo.qml
         QML_FILES components/atoms/AppTitle.qml
