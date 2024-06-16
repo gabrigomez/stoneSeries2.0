@@ -3,7 +3,7 @@ import QtQuick.Controls
 import QtQuick.Controls.Material 2.12
 import QtQuick.Layouts
 
-import "../../components" as Components
+import "../organisms" as Organisms
 
 Item {
   Rectangle {
@@ -22,7 +22,7 @@ Item {
       model: ListModel {
         id: favShowsModel
       }
-      delegate: Components.ShowCard {
+      delegate: Organisms.ShowCard {
         id: favShowCard
         text: name
         image: imageUrl

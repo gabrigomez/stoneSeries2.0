@@ -16,7 +16,7 @@ Rectangle {
   }
 
   Image {
-    source: "../assets/NotFound.png"
+    source: "../../assets/NotFound.png"
     height: 120
     width: 120
     anchors {

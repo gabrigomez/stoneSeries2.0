@@ -4,7 +4,7 @@ import QtQuick.Controls.Material 2.12
 import QtQuick.Layouts
 import "../../Api.js" as Api
 
-import "../../components" as Components
+import "../organisms" as Organisms
 
 Item {
   Rectangle {
@@ -29,7 +29,7 @@ Item {
           _id: ""
         }
       }
-      delegate: Components.ShowCard {
+      delegate: Organisms.ShowCard {
         id: homeCards
         text: name
         image: imageUrl
@@ -41,7 +41,7 @@ Item {
           anchors.fill: parent
           onClicked: () => {
                        showId = _id
-                       stackView.push("../pages/Show.qml")
+                       stackView.push("./Show.qml")
                      }
         }
       }
@@ -53,7 +53,7 @@ Item {
     Api.fetchShows(searchText).then(result => {
                                       resultsModel.clear()
                                       if (result.length === 0) {
-                                        stackView.push("../pages/NotFound.qml")
+                                        stackView.push("./NotFound.qml")
                                       }
                                       const shows = result.map(item => ({
                                                                           "name": item.show.name,

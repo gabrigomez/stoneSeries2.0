@@ -1,6 +1,8 @@
 import QtQuick
 import QtQuick.Controls.Material 2.12
 
+import "../atoms" as Atoms
+
 Rectangle {
   id: homeCards
   color: "#08FF5B"
@@ -33,6 +35,7 @@ Rectangle {
       height: 281
       Material.accent: "black"
     }
+
     Rectangle {
       id: showCardContainer
       width: 500
@@ -40,43 +43,17 @@ Rectangle {
       color: "transparent"
 
       visible: trendingShowTitle.text === "" ? false : true
-      Image {
+
+      Atoms.ShowImage {
         id: trendingShowImage
-        y: 2
-        source: homeCards.image
-        width: 500
-        height: 650
       }
 
-      Text {
+      Atoms.ShowTitle {
         id: trendingShowTitle
-        anchors {
-          top: trendingShowImage.bottom
-        }
-        color: "white"
-        text: ""
-        style: Text.Outline
-        styleColor: "black"
-        font.family: bodyFont.font.family
-        font.pixelSize: 40
-
-        maximumLineCount: 2
-        width: trendingShowImage.width
-        wrapMode: Text.Wrap
       }
 
-      Text {
+      Atoms.ShowRating {
         id: trendingShowRating
-        anchors {
-          bottom: showCardContainer.bottom
-          right: showCardContainer.right
-        }
-        color: "white"
-        text: ""
-        style: Text.Outline
-        styleColor: "black"
-        font.family: titleFont.font.family
-        font.pixelSize: 30
       }
     }
   }
