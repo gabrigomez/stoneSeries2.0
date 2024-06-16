@@ -105,7 +105,7 @@ Rectangle {
         anchors.fill: parent
         onClicked: () => {
                      showId = show
-                     stackView.push("../../pages/Show.qml")
+                     stackView.push("../pages/Show.qml")
                    }
       }
     }

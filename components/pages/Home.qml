@@ -1,9 +1,9 @@
 import QtQuick
 import QtQuick.Controls.Material 2.12
-import "../Api.js" as Api
+import "../../Api.js" as Api
 
-import "../components/molecules" as Molecules
-import "../components/organisms" as Organisms
+import "../molecules" as Molecules
+import "../organisms" as Organisms
 
 Rectangle {
   id: homePage

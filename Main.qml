@@ -2,7 +2,7 @@ import QtQuick
 import QtQuick.Controls
 import QtCore
 
-import "./pages" as Pages
+import "./components/pages" as Pages
 import "./components/organisms" as Organisms
 
 ApplicationWindow {

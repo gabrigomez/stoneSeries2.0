@@ -2,7 +2,7 @@ import QtQuick
 import QtQuick.Controls
 import QtQuick.Controls.Material 2.12
 
-import "../Api.js" as Api
+import "../../Api.js" as Api
 
 Rectangle {
   id: showDetails
@@ -108,7 +108,7 @@ Rectangle {
 
       Image {
         id: genresIcon
-        source: "../assets/GenresIcon.png"
+        source: "../../assets/GenresIcon.png"
         width: 24
         height: 24
 
@@ -163,7 +163,7 @@ Rectangle {
 
       Image {
         id: calendarIcon
-        source: "../assets/CalendarIcon.png"
+        source: "../../assets/CalendarIcon.png"
         width: 24
         height: 24
 

@@ -17,7 +17,7 @@ Rectangle {
 
   function performSearch() {
     root.searchText = searchInputText.text
-    stackView.push("../../pages/Results.qml")
+    stackView.push("../pages/Results.qml")
   }
 
   TextField {

@@ -2,9 +2,9 @@ import QtQuick
 import QtQuick.Controls
 import QtQuick.Controls.Material 2.12
 import QtQuick.Layouts
-import "../Api.js" as Api
+import "../../Api.js" as Api
 
-import "../components" as Components
+import "../../components" as Components
 
 Item {
   Rectangle {

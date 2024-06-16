@@ -3,7 +3,7 @@ import QtQuick.Controls
 import QtQuick.Controls.Material 2.12
 import QtQuick.Layouts
 
-import "../components" as Components
+import "../../components" as Components
 
 Item {
   Rectangle {

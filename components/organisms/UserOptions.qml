@@ -84,12 +84,12 @@ RoundButton {
 
     Action {
       text: qsTr("Meus favoritos")
-      onTriggered: stackView.push("../../pages/FavShows.qml")
+      onTriggered: stackView.push("../pages/FavShows.qml")
     }
 
     Action {
       text: qsTr("Configurações")
-      onTriggered: stackView.push("../../pages/Settings.qml")
+      onTriggered: stackView.push("../pages/Settings.qml")
     }
 
     Action {
