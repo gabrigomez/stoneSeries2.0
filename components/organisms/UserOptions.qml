@@ -3,10 +3,19 @@ import QtQuick.Controls
 import QtQuick.Layouts
 import QtQuick.Effects
 
+import "../atoms" as Atoms
+import "../molecules" as Molecules
+
 RoundButton {
   id: optionsMenuButton
   height: 55
   width: 55
+  anchors {
+    left: parent.left
+    leftMargin: 10
+    verticalCenter: parent.verticalCenter
+  }
+
   action: optionsMenuAction
 
   Action {
@@ -25,25 +34,7 @@ RoundButton {
     }
   }
 
-  background: Rectangle {
-    anchors.fill: parent
-    color: optionsMenuButton.hovered ? "black" : "white"
-    border.color: "silver"
-    radius: 40
-
-    Behavior on color {
-      PropertyAnimation {
-        duration: 200
-        easing.type: Easing.InOutQuad
-      }
-    }
-  }
-
-  anchors {
-    left: parent.left
-    leftMargin: 10
-    verticalCenter: parent.verticalCenter
-  }
+  background: Atoms.UserOptionsBackground {}
 
   MultiEffect {
     //to cut the userAvatar
@@ -53,50 +44,16 @@ RoundButton {
     maskSource: mask
   }
 
-  Image {
+  Atoms.AvatarImage {
     id: userNavbarAvatar
-    source: stackView.depth > 1 ? "../../assets/BackIcon.png" : settingsConfig.userAvatar
-    width: 50
-    height: 50
-    anchors.centerIn: parent
-    visible: false
   }
 
-  Item {
+  Atoms.Mask {
     id: mask
-    width: userNavbarAvatar.width
-    height: userNavbarAvatar.height
-    layer.enabled: true
-    visible: false
-
-    Rectangle {
-      width: userNavbarAvatar.width
-      height: userNavbarAvatar.height
-      radius: width / 2
-      color: "black"
-    }
   }
 
-  Menu {
+  Molecules.UserOptionsActions {
     id: optionsMenu
-    x: 4
-    y: 60
-
-    Action {
-      text: qsTr("Meus favoritos")
-      onTriggered: stackView.push("../pages/FavShows.qml")
-    }
-
-    Action {
-      text: qsTr("Configurações")
-      onTriggered: stackView.push("../pages/Settings.qml")
-    }
-
-    Action {
-      text: qsTr("Sobre")
-      onTriggered: Qt.openUrlExternally(
-                     "https://github.com/gabrigomez/stoneSeries2.0")
-    }
   }
 
   MouseArea {
