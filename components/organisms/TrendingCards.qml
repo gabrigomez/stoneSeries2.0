@@ -7,7 +7,7 @@ import "../organisms" as Organisms
 
 Rectangle {
   height: 700
-  width: root.width
+  width: root.width - 20
   x: 10
   y: 70
 
