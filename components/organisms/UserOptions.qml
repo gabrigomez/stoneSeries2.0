@@ -50,6 +50,8 @@ RoundButton {
 
   Atoms.Mask {
     id: mask
+    width: userNavbarAvatar.width
+    height: userNavbarAvatar.height
   }
 
   Molecules.UserOptionsActions {

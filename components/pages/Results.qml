@@ -49,7 +49,6 @@ Item {
   }
 
   Component.onCompleted: {
-    //console.log('chamou resultados')
     Api.fetchShows(searchText).then(result => {
                                       resultsModel.clear()
                                       if (result.length === 0) {
