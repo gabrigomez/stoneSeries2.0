@@ -25,7 +25,7 @@ Row {
 
     style: Text.Outline
     styleColor: "black"
-    font.pixelSize: 16
+    font.pixelSize: 12
   }
 
   Text {

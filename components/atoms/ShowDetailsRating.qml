@@ -14,5 +14,5 @@ Text {
   style: Text.Outline
   styleColor: "black"
   font.family: titleFont.font.family
-  font.pixelSize: 22
+  font.pixelSize: 28
 }
