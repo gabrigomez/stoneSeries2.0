@@ -53,7 +53,6 @@ Rectangle {
   }
 
   Component.onCompleted: {
-    console.log('chamou a api no detalhe')
     Api.fetchShowDetails(showId, function (result) {
       showDetails.name = result.name
       showDetails.image = result.image?.original

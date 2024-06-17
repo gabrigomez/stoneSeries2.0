@@ -88,7 +88,6 @@ Rectangle {
 
       Component.onCompleted: {
         if (typeof show !== 'undefined' && name === "") {
-          console.log('chamou a api')
           Api.fetchShowDetails(show, function (result) {
             showListView?.set(index, {
                                 "show": show,
