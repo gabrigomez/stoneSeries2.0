@@ -8,7 +8,7 @@ import "./components/organisms" as Organisms
 ApplicationWindow {
   id: root
   width: 1700
-  minimumWidth: 1500
+  minimumWidth: 1600
   height: 930
   minimumHeight: 930
 

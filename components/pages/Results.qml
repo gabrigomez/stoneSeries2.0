@@ -9,7 +9,7 @@ import "../organisms" as Organisms
 Item {
   Rectangle {
     id: searchedShowCards
-    width: root.width - 20
+    width: root.width - 40
     height: 820
     x: 10
     y: 10
