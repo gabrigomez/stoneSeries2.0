@@ -11,7 +11,7 @@ Text {
   }
 
   font.family: titleFont.font.family
-  font.pixelSize: 28
+  font.pixelSize: 36
   style: Text.Outline
   styleColor: "black"
 }

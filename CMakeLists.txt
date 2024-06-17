@@ -18,7 +18,7 @@ qt_add_qml_module(appStoneSeries2
     QML_FILES
         Main.qml
         RESOURCES fonts/Cafe.ttf
-        RESOURCES fonts/Lemon.ttf
+        RESOURCES fonts/Riffic.ttf
         RESOURCES assets/searchIcon.png
         RESOURCES assets/GoldStar.png
         RESOURCES assets/Logo.png
