@@ -44,7 +44,7 @@ qt_add_qml_module(appStoneSeries2
         QML_FILES components/pages/NotFound.qml
         QML_FILES components/pages/Results.qml
         QML_FILES components/pages/Settings.qml
-        QML_FILES components/pages/Show.qml
+        QML_FILES components/pages/ShowDetails.qml
         QML_FILES components/atoms/ShowImage.qml
         QML_FILES components/atoms/ShowTitle.qml
         QML_FILES components/atoms/ShowRating.qml

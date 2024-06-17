@@ -41,7 +41,7 @@ Item {
           anchors.fill: parent
           onClicked: () => {
                        showId = _id
-                       stackView.push("./Show.qml")
+                       stackView.push("./ShowDetails.qml")
                      }
         }
       }
