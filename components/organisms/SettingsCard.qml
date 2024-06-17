@@ -51,7 +51,7 @@ Rectangle {
     id: editUserNameInput
   }
 
-  Atoms.SaveSettinsButton {
+  Atoms.SaveSettingsButton {
     id: saveButton
   }
 

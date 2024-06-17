@@ -62,8 +62,22 @@ qt_add_qml_module(appStoneSeries2
         QML_FILES components/atoms/SettingsImageLoaderButton.qml
         QML_FILES components/atoms/EditUserNameLabel.qml
         QML_FILES components/atoms/EditUserNameInput.qml
-        QML_FILES components/atoms/SaveSettinsButton.qml
+        QML_FILES components/atoms/SaveSettingsButton.qml
         QML_FILES components/atoms/ErrorMessage.qml
+        QML_FILES components/organisms/ShowDetailsDescriptionCard.qml
+        QML_FILES components/organisms/ShowDetailsInfo.qml
+        QML_FILES components/atoms/ShowDetailsImage.qml
+        QML_FILES components/atoms/ShowDetailsTitle.qml
+        QML_FILES components/atoms/GenresIcon.qml
+        QML_FILES components/molecules/GenresInfo.qml
+        QML_FILES components/atoms/ShowDetailsRating.qml
+        QML_FILES components/atoms/CalendarIcon.qml
+        QML_FILES components/molecules/ShowDetailsYears.qml
+        QML_FILES components/atoms/FavShowButton.qml
+        QML_FILES components/molecules/ShowDetailsDescription.qml
+        QML_FILES components/atoms/SinopseTitle.qml
+        QML_FILES components/atoms/SinopseDescription.qml
+
 )
 
 # Qt for iOS sets MACOSX_BUNDLE_GUI_IDENTIFIER automatically since Qt 6.1.
