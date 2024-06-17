@@ -4,6 +4,7 @@ Text {
   id: trendingShowTitle
   anchors {
     top: trendingShowImage.bottom
+    topMargin: 10
   }
   color: "white"
   text: ""
