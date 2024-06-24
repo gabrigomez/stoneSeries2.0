@@ -2,11 +2,24 @@ import QtQuick
 import QtQuick.Controls
 import QtQuick.Controls.Material 2.12
 import QtQuick.Layouts
-import "../../Api.js" as Api
 
+import "../../Api.js" as Api
 import "../organisms" as Organisms
 
 Item {
+  BusyIndicator {
+    id: busyIndicator
+    visible: resultsModel.count === 0 ? true : false
+
+    anchors {
+      centerIn: parent
+    }
+
+    width: 281
+    height: 281
+    Material.accent: "#08FF5B"
+  }
+
   Rectangle {
     id: searchedShowCards
     width: root.width - 40
@@ -14,6 +27,7 @@ Item {
     x: 10
     y: 10
 
+    visible: resultsModel.count > 0 ? true : false
     color: "transparent"
 
     ListView {
@@ -22,12 +36,6 @@ Item {
       spacing: 40
       model: ListModel {
         id: resultsModel
-        ListElement {
-          name: ""
-          imageUrl: ""
-          rating: ""
-          _id: ""
-        }
       }
       delegate: Organisms.ShowCard {
         id: homeCards
