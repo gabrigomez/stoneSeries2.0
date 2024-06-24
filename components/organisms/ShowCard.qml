@@ -27,7 +27,8 @@ Rectangle {
 
     BusyIndicator {
       id: busyIndicator
-      visible: trendingShowTitle.text === "" ? true : false
+      visible: trendingShowImage.status === 1 ? false : true
+
       x: 120
       y: 250
 
