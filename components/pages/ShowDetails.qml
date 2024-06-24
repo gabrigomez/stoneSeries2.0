@@ -46,8 +46,26 @@ Rectangle {
     id: showDetailsCard
   }
 
+  BusyIndicator {
+    id: busyIndicator
+    visible: showDetails?.description ? false : true
+
+    anchors {
+      top: showDetails.top
+      left: showDetailsCard.right
+      topMargin: 60
+      leftMargin: 150
+    }
+
+    width: 281
+    height: 281
+    Material.accent: "#08FF5B"
+  }
+
   Organisms.ShowDetailsDescriptionCard {
     id: showDescriptionCard
+    visible: showDetails?.description ? true : false
+
     favButtonText: showDetails.favButtonText
     favButtonBgColor: showDetails.favButtonBg
   }
