@@ -14,4 +14,12 @@ Text {
   font.pixelSize: 36
   style: Text.Outline
   styleColor: "black"
+
+  MouseArea {
+    anchors.fill: parent
+    onClicked: {
+      stackView.pop(null)
+    }
+    cursorShape: Qt.PointingHandCursor
+  }
 }
