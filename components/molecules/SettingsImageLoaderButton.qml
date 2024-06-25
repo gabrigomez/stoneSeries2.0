@@ -1,25 +1,28 @@
 import QtQuick
 import QtQuick.Controls
 
+import "../atoms" as Atoms
+
 Button {
   id: openImageLoader
-  width: 140
+  width: 40
+  height: 40
   anchors {
-    top: userName.bottom
-    topMargin: 20
-    horizontalCenter: parent.horizontalCenter
+    top: userAvatarCard.top
+    right: userAvatarCard.right
+    rightMargin: 16
+    topMargin: 8
   }
 
-  text: "Carregar avatar"
   onClicked: () => {
                fileDialog.open()
              }
 
   background: Rectangle {
     id: openImageLoaderColor
-    color: "white"
+    color: openImageLoader.hovered ? "#27AE60" : "white"
     border.color: openImageLoader.hovered ? "#27AE60" : "silver"
-    radius: 5
+    radius: 20
 
     Behavior on color {
       PropertyAnimation {
@@ -34,4 +37,6 @@ Button {
       }
     }
   }
+
+  Atoms.SettingsImageLoaderIcon {}
 }

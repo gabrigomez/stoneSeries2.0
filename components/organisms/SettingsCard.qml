@@ -25,7 +25,7 @@ Rectangle {
     id: userName
   }
 
-  Atoms.SettingsImageLoaderButton {
+  Molecules.SettingsImageLoaderButton {
     id: openImageLoader
   }
 

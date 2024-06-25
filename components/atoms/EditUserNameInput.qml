@@ -7,7 +7,7 @@ TextField {
   height: 40
 
   anchors {
-    top: openImageLoader.bottom
+    top: userName.bottom
     topMargin: 60
     horizontalCenter: parent.horizontalCenter
   }

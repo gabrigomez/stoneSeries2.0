@@ -27,6 +27,7 @@ qt_add_qml_module(appStoneSeries2
         RESOURCES assets/CalendarIcon.png
         RESOURCES assets/Settings.png
         RESOURCES assets/NotFound.png
+        RESOURCES assets/UploadImage.png
         QML_FILES Api.js
         QML_FILES components/organisms/ShowCard.qml
         QML_FILES components/atoms/TrendingIcon.qml
@@ -59,7 +60,6 @@ qt_add_qml_module(appStoneSeries2
         QML_FILES components/organisms/SettingsCard.qml
         QML_FILES components/atoms/SettingsAvatar.qml
         QML_FILES components/atoms/SettingsUserName.qml
-        QML_FILES components/atoms/SettingsImageLoaderButton.qml
         QML_FILES components/atoms/EditUserNameLabel.qml
         QML_FILES components/atoms/EditUserNameInput.qml
         QML_FILES components/atoms/SaveSettingsButton.qml
@@ -78,6 +78,8 @@ qt_add_qml_module(appStoneSeries2
         QML_FILES components/atoms/SinopseTitle.qml
         QML_FILES components/atoms/SinopseDescription.qml
         QML_FILES components/molecules/UserAvatarCard.qml
+        QML_FILES components/molecules/SettingsImageLoaderButton.qml
+        QML_FILES components/atoms/SettingsImageLoaderIcon.qml
 
 )
 
