@@ -28,6 +28,7 @@ qt_add_qml_module(appStoneSeries2
         RESOURCES assets/Settings.png
         RESOURCES assets/NotFound.png
         RESOURCES assets/UploadImage.png
+        RESOURCES assets/Theme.png
         QML_FILES Api.js
         QML_FILES components/organisms/ShowCard.qml
         QML_FILES components/atoms/TrendingIcon.qml
@@ -80,6 +81,7 @@ qt_add_qml_module(appStoneSeries2
         QML_FILES components/molecules/UserAvatarCard.qml
         QML_FILES components/molecules/SettingsImageLoaderButton.qml
         QML_FILES components/atoms/SettingsImageLoaderIcon.qml
+        QML_FILES components/molecules/ThemeButton.qml
 
 )
 

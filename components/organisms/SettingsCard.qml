@@ -17,16 +17,29 @@ Rectangle {
   radius: 20
   border.color: "#27AE60"
 
+  ColorDialog {
+    id: colorDialog
+
+    onAccepted: {
+      settingsConfig.themeColor = colorDialog.selectedColor
+      console.log(settingsConfig.themeColor)
+    }
+  }
+
   Molecules.UserAvatarCard {
     id: userAvatarCard
+  }
+
+  Molecules.SettingsImageLoaderButton {
+    id: openImageLoader
   }
 
   Atoms.SettingsUserName {
     id: userName
   }
 
-  Molecules.SettingsImageLoaderButton {
-    id: openImageLoader
+  Molecules.ThemeButton {
+    id: themeButton
   }
 
   Atoms.EditUserNameLabel {}

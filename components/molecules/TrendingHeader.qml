@@ -7,7 +7,7 @@ Rectangle {
   width: root.width
   y: 6
 
-  color: "#08FF5B"
+  color: settingsConfig.themeColor
   border.color: "black"
 
   Atoms.TrendingIcon {

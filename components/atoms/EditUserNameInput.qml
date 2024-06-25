@@ -7,7 +7,7 @@ TextField {
   height: 40
 
   anchors {
-    top: userName.bottom
+    top: themeButton.bottom
     topMargin: 60
     horizontalCenter: parent.horizontalCenter
   }
