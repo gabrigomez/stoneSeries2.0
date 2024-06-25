@@ -3,7 +3,7 @@ import QtQuick
 Text {
   id: userName
   anchors {
-    top: userAvatar.bottom
+    top: userAvatarCard.bottom
     topMargin: 10
     horizontalCenter: parent.horizontalCenter
   }

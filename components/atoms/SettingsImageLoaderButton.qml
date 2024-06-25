@@ -18,7 +18,7 @@ Button {
   background: Rectangle {
     id: openImageLoaderColor
     color: "white"
-    border.color: openImageLoader.hovered ? "#27AE60" : "white"
+    border.color: openImageLoader.hovered ? "#27AE60" : "silver"
     radius: 5
 
     Behavior on color {

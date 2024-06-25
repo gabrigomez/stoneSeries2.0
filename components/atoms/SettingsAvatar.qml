@@ -4,9 +4,7 @@ Image {
   id: userAvatar
   source: settingsConfig.userAvatar
   anchors {
-    top: parent.top
-    topMargin: 10
-    horizontalCenter: parent.horizontalCenter
+    centerIn: parent
   }
   width: 200
   height: 200

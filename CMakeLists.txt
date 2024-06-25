@@ -77,6 +77,7 @@ qt_add_qml_module(appStoneSeries2
         QML_FILES components/molecules/ShowDetailsDescription.qml
         QML_FILES components/atoms/SinopseTitle.qml
         QML_FILES components/atoms/SinopseDescription.qml
+        QML_FILES components/molecules/UserAvatarCard.qml
 
 )
 

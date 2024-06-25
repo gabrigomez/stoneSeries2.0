@@ -23,7 +23,7 @@ Button {
   background: Rectangle {
     id: saveButtonColor
     color: "white"
-    border.color: saveButton.hovered ? "#27AE60" : "white"
+    border.color: saveButton.hovered ? "#27AE60" : "silver"
     radius: 5
 
     Behavior on color {
