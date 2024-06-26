@@ -19,6 +19,7 @@ A primeira versão pode ser conferida [aqui](https://github.com/gabrigomez/stone
 
 - Possibilidade de favoritar as séries preferidas
 - Customização das infos do usuário, como foto e username
+- Temas na barra de navegação e demais componentes
 - Construção da aplicação utilizando [Atomic Design](https://medium.com/pretux/atomic-design-o-que-%C3%A9-como-surgiu-e-sua-import%C3%A2ncia-para-a-cria%C3%A7%C3%A3o-do-design-system-e3ac7b5aca2c)
 - Melhorias nas rotas e chamadas na API
 
@@ -36,7 +37,7 @@ Uma vez tendo o ambiente corretamente configurado, basta fazer o `git clone` do 
 ![My Remote Image](https://github.com/gabrigomez/stone_series/assets/69373145/c641c3c1-d419-4510-a230-0c93046995a2)
 <br><br>
 
-![My Remote Image](https://github.com/gabrigomez/stone_series/assets/69373145/279fcaf7-cb29-483a-9341-6866e4fd8788)
+![My Remote Image](https://github.com/gabrigomez/stoneSeries2.0/assets/69373145/daf53563-5d8e-4985-93ce-1746a76640da)
 <br><br>
 
 ## Referências :books:
