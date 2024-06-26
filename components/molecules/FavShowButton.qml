@@ -4,6 +4,9 @@ import QtQuick.Controls
 Button {
   id: favShowButton
   text: ""
+  width: implicitContentWidth + 60
+  height: 36
+
   anchors {
     top: showDescriptionCard.bottom
     topMargin: 10
@@ -50,10 +53,26 @@ Button {
     radius: 5
   }
 
+  Image {
+    source: favShowButton.text === "Adicionar aos favoritos" ? "../../assets/GoldStar.png" : "../../assets/TrashIcon.png"
+    height: 20
+    width: 20
+
+    anchors {
+      left: favShowButton.left
+      leftMargin: 6
+      top: favShowButton.top
+      topMargin: 7
+    }
+  }
+
   contentItem: Text {
+    id: favShowTextButton
     text: favShowButton.text
     color: "black"
-    font.pixelSize: 20
-    anchors.centerIn: parent
+    font.pixelSize: 16
+
+    horizontalAlignment: Text.AlignHCenter
+    verticalAlignment: Text.AlignVCenter
   }
 }

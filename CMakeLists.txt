@@ -29,6 +29,7 @@ qt_add_qml_module(appStoneSeries2
         RESOURCES assets/NotFound.png
         RESOURCES assets/UploadImage.png
         RESOURCES assets/Theme.png
+        RESOURCES assets/TrashIcon.png
         QML_FILES Api.js
         QML_FILES components/organisms/ShowCard.qml
         QML_FILES components/atoms/TrendingIcon.qml
@@ -74,7 +75,6 @@ qt_add_qml_module(appStoneSeries2
         QML_FILES components/atoms/ShowDetailsRating.qml
         QML_FILES components/atoms/CalendarIcon.qml
         QML_FILES components/molecules/ShowDetailsYears.qml
-        QML_FILES components/atoms/FavShowButton.qml
         QML_FILES components/molecules/ShowDetailsDescription.qml
         QML_FILES components/atoms/SinopseTitle.qml
         QML_FILES components/atoms/SinopseDescription.qml
@@ -82,6 +82,7 @@ qt_add_qml_module(appStoneSeries2
         QML_FILES components/molecules/SettingsImageLoaderButton.qml
         QML_FILES components/atoms/SettingsImageLoaderIcon.qml
         QML_FILES components/molecules/ThemeButton.qml
+        QML_FILES components/molecules/FavShowButton.qml
 
 )
 

@@ -86,7 +86,7 @@ Rectangle {
     var index = favList.findIndex(show => show._id === showId.toString())
 
     if (index === -1) {
-      showDetails.favButtonText = "Adicionar dos favoritos"
+      showDetails.favButtonText = "Adicionar aos favoritos"
       showDetails.favButtonBg = settingsConfig.themeColor
     } else {
       showDetails.favButtonText = "Remover dos favoritos"
