@@ -59,7 +59,7 @@ Rectangle {
 
     width: 281
     height: 281
-    Material.accent: "#08FF5B"
+    Material.accent: settingsConfig.themeColor
   }
 
   Organisms.ShowDetailsDescriptionCard {
@@ -87,7 +87,7 @@ Rectangle {
 
     if (index === -1) {
       showDetails.favButtonText = "Adicionar dos favoritos"
-      showDetails.favButtonBg = "#08FF5B"
+      showDetails.favButtonBg = settingsConfig.themeColor
     } else {
       showDetails.favButtonText = "Remover dos favoritos"
       showDetails.favButtonBg = "red"

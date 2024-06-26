@@ -5,7 +5,7 @@ import "../atoms" as Atoms
 
 Rectangle {
   id: homeCards
-  color: "#08FF5B"
+  color: settingsConfig.themeColor
   border.color: "black"
   border.width: 2
 

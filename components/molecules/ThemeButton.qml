@@ -14,8 +14,8 @@ Button {
 
   background: Rectangle {
     id: themeButtonBackground
-    color: themeButton.hovered ? "#27AE60" : "white"
-    border.color: themeButton.hovered ? "#27AE60" : "silver"
+    color: themeButton.hovered ? settingsConfig.themeColor : "white"
+    border.color: themeButton.hovered ? settingsConfig.themeColor : "silver"
     radius: 22
 
     Behavior on color {

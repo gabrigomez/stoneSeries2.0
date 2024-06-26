@@ -15,7 +15,7 @@ Rectangle {
 
   color: 'transparent'
   radius: 20
-  border.color: "#27AE60"
+  border.color: settingsConfig.themeColor
 
   ColorDialog {
     id: colorDialog

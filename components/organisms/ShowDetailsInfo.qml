@@ -11,7 +11,7 @@ Rectangle {
 
   x: 500
   y: 10
-  color: "#08FF5B"
+  color: settingsConfig.themeColor
 
   border {
     color: "black"
