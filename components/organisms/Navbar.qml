@@ -2,6 +2,7 @@ import QtQuick
 import QtQuick.Controls
 import QtQuick.Layouts
 import QtQuick.Effects
+import QtQuick.Dialogs
 
 import "../atoms" as Atoms
 import "../organisms" as Organisms
@@ -11,11 +12,35 @@ Rectangle {
   id: navBar
   height: 60
   width: parent.width
-  color: "#27AE60"
+  color: settingsConfig.navBarColor
 
   border.color: "black"
 
-  Molecules.Search {}
+  ColorDialog {
+    id: navBarColorDialog
+
+    onAccepted: {
+      settingsConfig.navBarColor = navBarColorDialog.selectedColor
+    }
+  }
+
+  Molecules.ThemeButton {
+    id: themeButton
+    target: "navBar"
+
+    anchors {
+      right: search.left
+      rightMargin: 14
+      verticalCenter: parent.verticalCenter
+    }
+
+    width: 34
+    height: 34
+  }
+
+  Molecules.Search {
+    id: search
+  }
 
   Atoms.LogoIcon {}
 

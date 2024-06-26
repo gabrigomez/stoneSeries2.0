@@ -43,6 +43,7 @@ ApplicationWindow {
     property string userName: ""
     property string userAvatar: ""
     property string themeColor: "#27AE60"
+    property string navBarColor: "#27AE60"
     property var favShowsList: []
   }
 }

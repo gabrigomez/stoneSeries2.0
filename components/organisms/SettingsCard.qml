@@ -40,6 +40,12 @@ Rectangle {
 
   Molecules.ThemeButton {
     id: themeButton
+
+    anchors {
+      top: userName.bottom
+      topMargin: 14
+      horizontalCenter: parent.horizontalCenter
+    }
   }
 
   Atoms.EditUserNameLabel {}

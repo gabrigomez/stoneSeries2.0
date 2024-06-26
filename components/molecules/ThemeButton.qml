@@ -3,11 +3,8 @@ import QtQuick.Controls
 
 Button {
   id: themeButton
-  anchors {
-    top: userName.bottom
-    topMargin: 14
-    horizontalCenter: parent.horizontalCenter
-  }
+
+  property string target: ""
 
   width: 44
   height: 44
@@ -33,7 +30,11 @@ Button {
   }
 
   onClicked: {
-    colorDialog.open()
+    if (themeButton.target === "navBar") {
+      navBarColorDialog.open()
+    } else {
+      colorDialog.open()
+    }
   }
 
   Image {
