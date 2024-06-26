@@ -15,12 +15,12 @@ Row {
     model: showDetails.genres ? showDetails.genres : []
     Text {
       text: modelData + (index < showGenresRepeater.count - 1 ? ", " : "")
-      color: "black"
       font.family: bodyFont.font.family
       font.pixelSize: 22
 
+      color: "white"
       style: Text.Outline
-      styleColor: "lightgray"
+      styleColor: "black"
       wrapMode: Text.Wrap
     }
   }

@@ -11,11 +11,14 @@ Text {
     topMargin: 10
     leftMargin: 2
   }
-  text: showDetails?.description ? showDetails.description : "Sem descrição"
-  color: "black"
 
-  wrapMode: Text.Wrap
+  text: showDetails?.description ? showDetails.description : "Sem descrição"
+  color: "white"
+  style: Text.Outline
+  styleColor: "black"
+
   font.pixelSize: 16
-  clip: true
   horizontalAlignment: Text.AlignJustify
+  wrapMode: Text.Wrap
+  clip: true
 }
