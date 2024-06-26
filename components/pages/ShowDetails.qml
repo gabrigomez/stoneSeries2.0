@@ -87,7 +87,7 @@ Rectangle {
 
     if (index === -1) {
       showDetails.favButtonText = "Adicionar aos favoritos"
-      showDetails.favButtonBg = settingsConfig.themeColor
+      showDetails.favButtonBg = "#08FF5B"
     } else {
       showDetails.favButtonText = "Remover dos favoritos"
       showDetails.favButtonBg = "red"
