@@ -22,9 +22,9 @@ Rectangle {
   property string favButtonText
   property string favButtonBg
 
-  property var startYear: {
-    if (startDate) {
-      var dateParts = startDate.split("-")
+  function getYear(date) {
+    if (date) {
+      var dateParts = date.split("-")
       if (dateParts.length > 0) {
         return dateParts[0]
       }
@@ -32,15 +32,8 @@ Rectangle {
     return ""
   }
 
-  property var endYear: {
-    if (endDate) {
-      var dateParts = endDate.split("-")
-      if (dateParts.length > 0) {
-        return dateParts[0]
-      }
-    }
-    return ""
-  }
+  property var startYear: getYear(startDate)
+  property var endYear: getYear(endDate)
 
   Organisms.ShowDetailsInfo {
     id: showDetailsCard
