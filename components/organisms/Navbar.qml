@@ -10,7 +10,7 @@ import "../molecules" as Molecules
 
 Rectangle {
   id: navBar
-  height: 60
+  height: 80
   width: parent.width
   color: settingsConfig.navBarColor
 
