@@ -30,7 +30,7 @@ Rectangle {
 
     anchors {
       right: search.left
-      rightMargin: 14
+      rightMargin: 30
       verticalCenter: parent.verticalCenter
     }
 

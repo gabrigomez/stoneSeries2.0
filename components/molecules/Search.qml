@@ -3,7 +3,7 @@ import QtQuick.Controls
 
 Rectangle {
   id: search
-  width: 200
+  width: 220
   height: 40
   color: "transparent"
 
@@ -22,7 +22,7 @@ Rectangle {
 
   TextField {
     id: searchInputText
-    width: 160
+    width: 170
     height: 40
 
     placeholderText: "Digite sua pesquisa"
