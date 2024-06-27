@@ -34,7 +34,7 @@ Rectangle {
 
       width: 281
       height: 281
-      Material.accent: "black"
+      Material.accent: settingsConfig.themeColor === "#000000" ? "white" : "black"
     }
 
     Rectangle {
