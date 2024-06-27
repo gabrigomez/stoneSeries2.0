@@ -41,8 +41,8 @@ Rectangle {
   Image {
     id: searchIcon
     source: "../../assets/searchIcon.png"
-    width: 25
-    height: 25
+    width: 30
+    height: 30
 
     anchors {
       right: search.right
