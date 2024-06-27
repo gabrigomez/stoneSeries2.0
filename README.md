@@ -31,14 +31,18 @@ Uma vez tendo o ambiente corretamente configurado, basta fazer o `git clone` do 
 
 ## Previews :eyes:	
 
-![My Remote Image](https://github.com/gabrigomez/stone_series/assets/69373145/71c1de8c-a7ff-4145-8bce-f25939598bbd)
+![My Remote Image](https://github.com/gabrigomez/stoneSeries2.0/assets/69373145/33a805fe-84f1-4e19-bb65-2971ee9954da)
 <br><br>
 
-![My Remote Image](https://github.com/gabrigomez/stone_series/assets/69373145/c641c3c1-d419-4510-a230-0c93046995a2)
+![My Remote Image](https://github.com/gabrigomez/stoneSeries2.0/assets/69373145/c90bdd0d-b58c-4278-8c8f-b76ce4c54d48)
 <br><br>
 
-![My Remote Image](https://github.com/gabrigomez/stoneSeries2.0/assets/69373145/daf53563-5d8e-4985-93ce-1746a76640da)
+![My Remote Image](https://github.com/gabrigomez/stoneSeries2.0/assets/69373145/58940844-f7b7-4a02-a823-00f687806d5d)
 <br><br>
+
+![My Remote Image](https://github.com/gabrigomez/stoneSeries2.0/assets/69373145/ee3deec3-f40e-4882-837b-30755edc38f7)
+<br><br>
+
 
 ## Referências :books:
 
