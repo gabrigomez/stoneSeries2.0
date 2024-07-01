@@ -83,6 +83,7 @@ qt_add_qml_module(appStoneSeries2
         QML_FILES components/atoms/SettingsImageLoaderIcon.qml
         QML_FILES components/molecules/ThemeButton.qml
         QML_FILES components/molecules/FavShowButton.qml
+        SOURCES controllers/searchcontroller.h controllers/searchcontroller.cpp
 
 )
 

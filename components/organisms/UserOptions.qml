@@ -31,6 +31,7 @@ RoundButton {
       } else {
         optionsMenu.open()
       }
+      searchController.clear()
     }
   }
 

@@ -2,6 +2,8 @@ import QtQuick
 import QtQuick.Controls
 import QtCore
 
+import Stone 1.0
+
 import "./components/pages" as Pages
 import "./components/organisms" as Organisms
 
@@ -16,7 +18,6 @@ ApplicationWindow {
   title: qsTr("Stone Series 2.0")
 
   property var showDetailsResult
-  property var searchText
   property var showId
   property var busy
 
@@ -31,6 +32,10 @@ ApplicationWindow {
   }
 
   header: Organisms.Navbar {}
+
+  SearchController {
+    id: searchController
+  }
 
   StackView {
     id: stackView

@@ -13,10 +13,8 @@ Rectangle {
     verticalCenter: parent.verticalCenter
   }
 
-  property string searchText: ""
-
   function performSearch() {
-    root.searchText = searchInputText.text
+    searchController.search = searchInputText.text
     stackView.push("../pages/Results.qml")
   }
 
@@ -29,7 +27,6 @@ Rectangle {
     focus: true
 
     onAccepted: {
-      searchText = searchInputText.text
       search.performSearch()
     }
 
@@ -53,7 +50,6 @@ Rectangle {
     MouseArea {
       anchors.fill: parent
       onClicked: {
-        searchText = searchInputText.text
         search.performSearch()
       }
     }
