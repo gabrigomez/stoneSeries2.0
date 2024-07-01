@@ -17,7 +17,6 @@ ApplicationWindow {
   visible: true
   title: qsTr("Stone Series 2.0")
 
-  property var showDetailsResult
   property var showId
   property var busy
 
