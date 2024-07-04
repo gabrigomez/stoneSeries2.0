@@ -1,8 +1,7 @@
 import QtQuick
 import QtQuick.Controls
 import QtCore
-
-import Stone 1.0
+import Stone 2.0
 
 import "./components/pages" as Pages
 import "./components/organisms" as Organisms
@@ -34,6 +33,10 @@ ApplicationWindow {
 
   SearchController {
     id: searchController
+  }
+
+  ApiController {
+    id: apiController
   }
 
   StackView {

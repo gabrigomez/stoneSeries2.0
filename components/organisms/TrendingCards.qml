@@ -13,6 +13,15 @@ Rectangle {
 
   color: "transparent"
 
+  function findIndexByShowId(model, showId) {
+    for (var i = 0; i < model.count; i++) {
+      if (model.get(i).show === showId) {
+        return i
+      }
+    }
+    return -1
+  }
+
   ListView {
     anchors.fill: parent
     orientation: Qt.Horizontal
@@ -86,16 +95,21 @@ Rectangle {
       image: imageUrl
       showRating: rating + "/10"
 
+      // Component.onCompleted: {
+      //   if (typeof show !== 'undefined' && name === "") {
+      //     Api.fetchShowDetails(show, function (result) {
+      //       showListView?.set(index, {
+      //                           "show": show,
+      //                           "name": result.name,
+      //                           "imageUrl": result.image.original,
+      //                           "rating": result.rating.average.toString()
+      //                         })
+      //     })
+      //   }
+      // }
       Component.onCompleted: {
         if (typeof show !== 'undefined' && name === "") {
-          Api.fetchShowDetails(show, function (result) {
-            showListView?.set(index, {
-                                "show": show,
-                                "name": result.name,
-                                "imageUrl": result.image.original,
-                                "rating": result.rating.average.toString()
-                              })
-          })
+          apiController.fetchShowDetails(show)
         }
       }
 
@@ -105,6 +119,26 @@ Rectangle {
                      showId = show
                      stackView.push("../pages/ShowDetails.qml")
                    }
+      }
+    }
+
+    Connections {
+      target: apiController
+      function onShowDetailsFetched(details) {
+        var index = findIndexByShowId(showListView, details.id)
+        // console.log("Index:", index)
+        // if (index >= 0) {
+        showListView.set(index, {
+                           "show": details.id,
+                           "name": details.name,
+                           "imageUrl": details.image.original,
+                           "rating": details.rating.average.toString()
+                         })
+        // }
+      }
+
+      function onErrorOccurred(errorString) {
+        console.error("Error:", errorString)
       }
     }
   }

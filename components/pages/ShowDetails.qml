@@ -64,6 +64,7 @@ Rectangle {
   }
 
   Component.onCompleted: {
+
     Api.fetchShowDetails(showId, function (result) {
       showDetails.name = result.name
       showDetails.image = result.image?.original
@@ -75,6 +76,7 @@ Rectangle {
       showDetails.endDate = result?.ended
     })
 
+    //apiController.fetchShowDetails(showId) //TODO: implement with c++ classes
     var favList = settingsConfig.favShowsList
     var index = favList.findIndex(show => show._id === showId.toString())
 
@@ -86,4 +88,24 @@ Rectangle {
       showDetails.favButtonBg = "red"
     }
   }
+
+  // Connections {              //TODO: implement with c++ classes
+  //   target: apiController
+  //   function onShowDetailsFetched(details) {
+
+  //     showDetails.name = details.name
+  //     showDetails.image = details.image?.original
+
+  //     showDetails.rating = details.rating.average
+  //     showDetails.genres = details.genres
+  //     showDetails.description = details.summary
+  //     showDetails.startDate = details?.premiered
+  //     showDetails.endDate = details?.ended
+  //     // }
+  //   }
+
+  //   function onErrorOccurred(errorString) {
+  //     console.error("Error:", errorString)
+  //   }
+  // }
 }
