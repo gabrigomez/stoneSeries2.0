@@ -25,7 +25,7 @@ Rectangle {
 
   BusyIndicator {
     id: busyIndicator
-    visible: busy
+    visible: showImage.status === 1 ? false : true
     anchors.centerIn: parent
     width: 281
     height: 281
@@ -40,7 +40,7 @@ Rectangle {
     x: 6
     y: 4
     color: "transparent"
-    visible: !busy
+    visible: showImage.status === 1 ? true : false
 
     Atoms.ShowDetailsImage {
       id: showImage

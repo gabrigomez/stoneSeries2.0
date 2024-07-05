@@ -28,8 +28,19 @@ void ApiController::onShowDetailsReply() {
     if(reply->error() == QNetworkReply::NoError) {
         QJsonDocument doc = QJsonDocument::fromJson(reply->readAll());
         //qDebug() << "Shows fetched:" << doc;
+        QJsonObject jsonObj = doc.object();
 
-        emit showDetailsFetched(doc.object());
+        // define standart image to shows with no image
+        if (jsonObj["image"].isNull()) {
+            QJsonObject newJsonObj = jsonObj;
+            newJsonObj["image"] = QJsonObject{
+                {"medium", "https://t3.ftcdn.net/jpg/03/34/83/22/360_F_334832255_IMxvzYRygjd20VlSaIAFZrQWjozQH6BQ.jpg"},
+                {"original", "https://t3.ftcdn.net/jpg/03/34/83/22/360_F_334832255_IMxvzYRygjd20VlSaIAFZrQWjozQH6BQ.jpg"}
+            };
+            jsonObj = newJsonObj;
+        }
+
+        emit showDetailsFetched(jsonObj);
     } else {
         emit errorOccurred(reply->errorString());
     }

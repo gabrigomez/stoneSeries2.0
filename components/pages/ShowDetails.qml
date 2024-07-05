@@ -64,19 +64,7 @@ Rectangle {
   }
 
   Component.onCompleted: {
-
-    Api.fetchShowDetails(showId, function (result) {
-      showDetails.name = result.name
-      showDetails.image = result.image?.original
-          ?? 'https://t3.ftcdn.net/jpg/03/34/83/22/360_F_334832255_IMxvzYRygjd20VlSaIAFZrQWjozQH6BQ.jpg'
-      showDetails.rating = result.rating.average
-      showDetails.genres = result.genres
-      showDetails.description = result.summary
-      showDetails.startDate = result?.premiered
-      showDetails.endDate = result?.ended
-    })
-
-    //apiController.fetchShowDetails(showId) //TODO: implement with c++ classes
+    apiController.fetchShowDetails(showId)
     var favList = settingsConfig.favShowsList
     var index = favList.findIndex(show => show._id === showId.toString())
 
@@ -89,23 +77,22 @@ Rectangle {
     }
   }
 
-  // Connections {              //TODO: implement with c++ classes
-  //   target: apiController
-  //   function onShowDetailsFetched(details) {
+  Connections {
+    target: apiController
+    function onShowDetailsFetched(details) {
 
-  //     showDetails.name = details.name
-  //     showDetails.image = details.image?.original
+      showDetails.name = details.name
+      showDetails.image = details.image?.original
 
-  //     showDetails.rating = details.rating.average
-  //     showDetails.genres = details.genres
-  //     showDetails.description = details.summary
-  //     showDetails.startDate = details?.premiered
-  //     showDetails.endDate = details?.ended
-  //     // }
-  //   }
+      showDetails.rating = details.rating.average
+      showDetails.genres = details.genres
+      showDetails.description = details.summary
+      showDetails.startDate = details?.premiered
+      showDetails.endDate = details?.ended
+    }
 
-  //   function onErrorOccurred(errorString) {
-  //     console.error("Error:", errorString)
-  //   }
-  // }
+    function onErrorOccurred(errorString) {
+      console.error("Error:", errorString)
+    }
+  }
 }
