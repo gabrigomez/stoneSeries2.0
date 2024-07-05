@@ -1,7 +1,4 @@
 import QtQuick
-import QtQuick.Controls
-import QtQuick.Controls.Material 2.12
-import QtQuick.Layouts
 
 import "../organisms" as Organisms
 import "../molecules" as Molecules

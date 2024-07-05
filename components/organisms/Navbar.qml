@@ -1,7 +1,5 @@
 import QtQuick
 import QtQuick.Controls
-import QtQuick.Layouts
-import QtQuick.Effects
 import QtQuick.Dialogs
 
 import "../atoms" as Atoms
