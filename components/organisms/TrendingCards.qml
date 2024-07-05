@@ -95,18 +95,6 @@ Rectangle {
       image: imageUrl
       showRating: rating + "/10"
 
-      // Component.onCompleted: {
-      //   if (typeof show !== 'undefined' && name === "") {
-      //     Api.fetchShowDetails(show, function (result) {
-      //       showListView?.set(index, {
-      //                           "show": show,
-      //                           "name": result.name,
-      //                           "imageUrl": result.image.original,
-      //                           "rating": result.rating.average.toString()
-      //                         })
-      //     })
-      //   }
-      // }
       Component.onCompleted: {
         if (typeof show !== 'undefined' && name === "") {
           apiController.fetchShowDetails(show)
@@ -126,17 +114,17 @@ Rectangle {
       target: apiController
       function onShowDetailsFetched(details) {
         var index = findIndexByShowId(showListView, details.id)
-        // console.log("Index:", index)
-        // if (index >= 0) {
-        showListView.set(index, {
-                           "show": details.id,
-                           "name": details.name,
-                           "imageUrl": details.image.original,
-                           "rating": details.rating.average.toString()
-                         })
-        // }
+        if (index >= 0) {
+          showListView.set(index, {
+                             "show": details.id,
+                             "name": details.name,
+                             "imageUrl": details.image.original,
+                             "rating": details.rating.average
+                                       !== null ? details.rating.average.toString(
+                                                    ) : ""
+                           })
+        }
       }
-
       function onErrorOccurred(errorString) {
         console.error("Error:", errorString)
       }
