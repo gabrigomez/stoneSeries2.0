@@ -54,6 +54,13 @@ void ApiController::onShowDetailsReply() {
             jsonObj = newJsonObj;
         }
 
+        // define standart premiered date to shows with no data on it
+        if(jsonObj["summary"].isNull()) {
+            QJsonObject newJsonObj = jsonObj;
+            newJsonObj["summary"] = "No description";
+            jsonObj = newJsonObj;
+        }
+
         emit showDetailsFetched(jsonObj);
     } else {
         emit errorOccurred(reply->errorString());
