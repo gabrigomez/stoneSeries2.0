@@ -1,7 +1,6 @@
 import QtQuick
 import QtQuick.Controls.Material 2.12
 
-import "../../Api.js" as Api
 import "../organisms" as Organisms
 
 Item {
