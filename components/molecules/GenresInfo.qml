@@ -12,7 +12,7 @@ Row {
 
   Repeater {
     id: showGenresRepeater
-    model: showDetails.genres ? showDetails.genres : []
+    model: showDetails.genres === null ? ["No Info"] : showDetails.genres
     Text {
       text: modelData + (index < showGenresRepeater.count - 1 ? ", " : "")
       font.family: bodyFont.font.family

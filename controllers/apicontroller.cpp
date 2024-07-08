@@ -40,6 +40,20 @@ void ApiController::onShowDetailsReply() {
             jsonObj = newJsonObj;
         }
 
+        // define standart ended date to shows with no data on it
+        if(jsonObj["ended"].isNull()) {
+            QJsonObject newJsonObj = jsonObj;
+            newJsonObj["ended"] = "Now";
+            jsonObj = newJsonObj;
+        }
+
+        // define standart premiered date to shows with no data on it
+        if(jsonObj["ended"].isNull()) {
+            QJsonObject newJsonObj = jsonObj;
+            newJsonObj["premiered"] = "-";
+            jsonObj = newJsonObj;
+        }
+
         emit showDetailsFetched(jsonObj);
     } else {
         emit errorOccurred(reply->errorString());

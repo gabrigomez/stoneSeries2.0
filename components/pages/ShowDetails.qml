@@ -27,7 +27,6 @@ Rectangle {
         return dateParts[0]
       }
     }
-    return ""
   }
 
   property var startYear: getYear(startDate)
@@ -78,12 +77,11 @@ Rectangle {
   Connections {
     target: apiController
     function onShowDetailsFetched(details) {
-
       showDetails.name = details.name
       showDetails.image = details.image?.original
-
       showDetails.rating = details.rating.average
-      showDetails.genres = details.genres
+
+      showDetails.genres = details?.genres.length === 0 ? null : details.genres
       showDetails.description = details.summary
       showDetails.startDate = details?.premiered
       showDetails.endDate = details?.ended
