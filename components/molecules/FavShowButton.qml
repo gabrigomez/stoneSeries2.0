@@ -41,7 +41,6 @@ Button {
   }
 
   onClicked: {
-    console.log('clicou aqui')
     favListManager.manageShow(showDetails, showId)
   }
 
