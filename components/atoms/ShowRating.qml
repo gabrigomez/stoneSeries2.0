@@ -5,6 +5,7 @@ Text {
   anchors {
     bottom: showCardContainer.bottom
     right: showCardContainer.right
+    //rightMargin: 5
   }
   color: "white"
   text: ""

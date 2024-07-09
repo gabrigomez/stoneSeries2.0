@@ -61,6 +61,16 @@ void ApiController::onShowDetailsReply() {
             jsonObj = newJsonObj;
         }
 
+        // define standart rating to shows with no data on it
+        if(jsonObj["rating"].toObject()["average"].isNull()) {
+            QJsonObject newJsonObj = jsonObj;
+            newJsonObj["rating"] = QJsonObject{
+                {"average", "SEM NOTA"},
+            };;
+            jsonObj = newJsonObj;
+        }
+
+
         emit showDetailsFetched(jsonObj);
     } else {
         emit errorOccurred(reply->errorString());
@@ -88,9 +98,17 @@ void ApiController::onShowsReply() {
                 jsonObj["show"] = showObj;
                 jsonArray[i] = jsonObj;
             }
+
+            // define standart rating to shows with no rating
+            if (showObj["rating"].toObject()["average"].isNull()) {
+                showObj["rating"] = QJsonObject{
+                    {"average", "SEM NOTA"},
+                };
+                jsonObj["show"] = showObj;
+                jsonArray[i] = jsonObj;
+            }
         }
 
-        qDebug() << "Shows fetched:" << jsonArray;
         emit showsFetched(jsonArray);
     } else {
         emit errorOccurred(reply->errorString());

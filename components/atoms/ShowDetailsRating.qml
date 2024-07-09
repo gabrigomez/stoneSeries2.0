@@ -7,8 +7,7 @@ Text {
     right: showMainInfoCard.right
   }
 
-  text: showDetails?.rating ? `${showDetails?.rating.toString(
-                                )}/10` : "SEM NOTA"
+  text: showDetails?.rating ? showDetails.rating : ""
   color: "white"
 
   style: Text.Outline

@@ -21,8 +21,7 @@ Button {
       const newShow = {
         "name": showDetails.name,
         "imageUrl": showDetails?.image ? showDetails.image : 'https://t3.ftcdn.net/jpg/03/34/83/22/360_F_334832255_IMxvzYRygjd20VlSaIAFZrQWjozQH6BQ.jpg',
-        "rating": showDetails?.rating ? `${showDetails?.rating.toString(
-                                          )}/10` : "SEM NOTA",
+        "rating": showDetails.rating,
         "_id": showId.toString()
       }
       var favList = settingsConfig.favShowsList

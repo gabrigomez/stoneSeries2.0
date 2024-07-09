@@ -67,7 +67,8 @@ Item {
       const results = shows.map(item => ({
                                            "name": item.show.name,
                                            "imageUrl": item.show.image.original,
-                                           "rating": item.show.rating.average ? `${item.show.rating.average.toString()}/10` : "SEM NOTA",
+                                           "rating": item.show.rating.average.toString(
+                                                       ),
                                            "_id": item.show.id.toString()
                                          }))
 
