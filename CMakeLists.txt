@@ -31,6 +31,7 @@ qt_add_qml_module(appStoneSeries2
         RESOURCES assets/Theme.png
         RESOURCES assets/TrashIcon.png
         RESOURCES assets/Rating.png
+        RESOURCES assets/TrendIcon.png
         QML_FILES components/organisms/ShowCard.qml
         QML_FILES components/atoms/TrendingIcon.qml
         QML_FILES components/molecules/TrendingHeader.qml
