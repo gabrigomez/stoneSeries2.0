@@ -71,11 +71,30 @@ void ApiController::onShowDetailsReply() {
 void ApiController::onShowsReply() {
     QNetworkReply *reply = qobject_cast<QNetworkReply*>(sender());
 
-    if(reply->error()== QNetworkReply::NoError) {
+    if (reply->error() == QNetworkReply::NoError) {
         QJsonDocument doc = QJsonDocument::fromJson(reply->readAll());
-        emit showsFetched(doc.array());
+        QJsonArray jsonArray = doc.array();
+
+        for (int i = 0; i < jsonArray.size(); ++i) {
+            QJsonObject jsonObj = jsonArray[i].toObject();
+            QJsonObject showObj = jsonObj["show"].toObject();
+
+            // define standart image to shows with no image
+            if (!showObj.contains("image") || showObj["image"].isNull()) {
+                showObj["image"] = QJsonObject{
+                    {"medium", "https://t3.ftcdn.net/jpg/03/34/83/22/360_F_334832255_IMxvzYRygjd20VlSaIAFZrQWjozQH6BQ.jpg"},
+                    {"original", "https://t3.ftcdn.net/jpg/03/34/83/22/360_F_334832255_IMxvzYRygjd20VlSaIAFZrQWjozQH6BQ.jpg"}
+                };
+                jsonObj["show"] = showObj;
+                jsonArray[i] = jsonObj;
+            }
+        }
+
+        qDebug() << "Shows fetched:" << jsonArray;
+        emit showsFetched(jsonArray);
     } else {
         emit errorOccurred(reply->errorString());
     }
     reply->deleteLater();
 }
+

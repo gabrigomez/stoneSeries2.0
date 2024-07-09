@@ -66,7 +66,7 @@ Item {
       }
       const results = shows.map(item => ({
                                            "name": item.show.name,
-                                           "imageUrl": item.show.image ? item.show.image.original : "https://t3.ftcdn.net/jpg/03/34/83/22/360_F_334832255_IMxvzYRygjd20VlSaIAFZrQWjozQH6BQ.jpg",
+                                           "imageUrl": item.show.image.original,
                                            "rating": item.show.rating.average ? `${item.show.rating.average.toString()}/10` : "SEM NOTA",
                                            "_id": item.show.id.toString()
                                          }))
