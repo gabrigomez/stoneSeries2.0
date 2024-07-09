@@ -58,6 +58,17 @@ Rectangle {
       id: showGenresRow
     }
 
+    Atoms.RatingIcon {
+      id: ratingShowImage
+
+      anchors {
+        right: showRating.left
+        rightMargin: 4
+        bottom: showRating.bottom
+        bottomMargin: showDetails.rating === "SEM NOTA" ? 4 : 8
+      }
+    }
+
     Atoms.ShowDetailsRating {
       id: showRating
     }

@@ -53,6 +53,17 @@ Rectangle {
         id: trendingShowTitle
       }
 
+      Atoms.RatingIcon {
+        id: ratingShowImage
+
+        anchors {
+          right: trendingShowRating.left
+          rightMargin: 6
+          bottom: trendingShowRating.bottom
+          bottomMargin: 6
+        }
+      }
+
       Atoms.ShowRating {
         id: trendingShowRating
       }

@@ -5,6 +5,7 @@ Text {
   anchors {
     bottom: showMainInfoCard.bottom
     right: showMainInfoCard.right
+    rightMargin: 5
   }
 
   text: showDetails?.rating ? showDetails.rating : ""
@@ -13,5 +14,5 @@ Text {
   style: Text.Outline
   styleColor: "black"
   font.family: titleFont.font.family
-  font.pixelSize: 28
+  font.pixelSize: showDetails.rating === "SEM NOTA" ? 24 : 38
 }

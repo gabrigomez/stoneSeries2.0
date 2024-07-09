@@ -92,7 +92,7 @@ Rectangle {
     delegate: Organisms.ShowCard {
       text: name
       image: imageUrl
-      showRating: rating + "/10"
+      showRating: rating
 
       Component.onCompleted: {
         if (typeof show !== 'undefined' && name === "") {
@@ -118,9 +118,7 @@ Rectangle {
                              "show": details.id,
                              "name": details.name,
                              "imageUrl": details.image.original,
-                             "rating": details.rating.average
-                                       !== null ? details.rating.average.toString(
-                                                    ) : ""
+                             "rating": details.rating.average.toString()
                            })
         }
       }
