@@ -87,6 +87,7 @@ qt_add_qml_module(appStoneSeries2
         QML_FILES components/atoms/RatingIcon.qml
         SOURCES controllers/searchcontroller.h controllers/searchcontroller.cpp
         SOURCES controllers/apicontroller.h controllers/apicontroller.cpp
+        QML_FILES components/molecules/FavCount.qml
 )
 
 # Qt for iOS sets MACOSX_BUNDLE_GUI_IDENTIFIER automatically since Qt 6.1.

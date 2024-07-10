@@ -46,7 +46,11 @@ Rectangle {
     id: optionsMenuButton
   }
 
-  Atoms.UserNameInfo {}
+  Atoms.UserNameInfo {
+    id: userNameInfo
+  }
+
+  Molecules.FavCount {}
 
   Atoms.AppTitle {
     id: title

@@ -5,8 +5,10 @@ Text {
   anchors {
     left: optionsMenuButton.right
     leftMargin: 10
-    verticalCenter: parent.verticalCenter
+    //verticalCenter: parent.verticalCenter
   }
+  y: 14
+
   text: "Olá, " + settingsConfig.userName + "!"
   color: "white"
   font.family: bodyFont.font.family

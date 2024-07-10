@@ -4,8 +4,11 @@ import "../organisms" as Organisms
 import "../molecules" as Molecules
 
 Item {
+  objectName: "favShowPage"
+
   Rectangle {
     id: favShowCards
+
     width: root.width
     height: 820
     x: 10
