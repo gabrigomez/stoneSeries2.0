@@ -41,6 +41,14 @@ Rectangle {
     y: 4
     color: "transparent"
     visible: showImage.status === 1 ? true : false
+    opacity: showImage.status === 1 ? true : false
+
+    Behavior on opacity {
+      PropertyAnimation {
+        duration: 500
+        easing.type: Easing.InOutQuad
+      }
+    }
 
     Atoms.ShowDetailsImage {
       id: showImage

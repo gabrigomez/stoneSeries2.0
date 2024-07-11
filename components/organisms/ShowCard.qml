@@ -44,6 +44,14 @@ Rectangle {
       color: "transparent"
 
       visible: trendingShowTitle.text === "" ? false : true
+      opacity: trendingShowTitle.text === "" ? false : true
+
+      Behavior on opacity {
+        PropertyAnimation {
+          duration: 800
+          easing.type: Easing.InOutQuad
+        }
+      }
 
       Atoms.ShowImage {
         id: trendingShowImage
