@@ -27,12 +27,20 @@ Button {
 
   background: Rectangle {
     color: favCount.hovered ? "white" : "#ececec"
+    border.color: favCount.hovered ? "silver" : "white"
     anchors.fill: parent
     radius: 20
 
     Behavior on color {
       PropertyAnimation {
         duration: 200
+        easing.type: Easing.InOutQuad
+      }
+    }
+
+    Behavior on border.color {
+      PropertyAnimation {
+        duration: 100
         easing.type: Easing.InOutQuad
       }
     }
