@@ -9,6 +9,7 @@ Text {
   }
 
   text: "Status: " + showDetails.status
-  font.pixelSize: 18
   color: "black"
+  font.pixelSize: 18
+  font.family: bodyFont.font.family
 }

@@ -30,8 +30,19 @@ Rectangle {
     }
   }
 
+  function getStatusIcon(status) {
+    if (status === "Ended") {
+      return "../../assets/Ended.png"
+    } else if (status === "Running") {
+      return "../../assets/OnAir.png"
+    } else {
+      return "../../assets/Doubt.png"
+    }
+  }
+
   property var startYear: getYear(startDate)
   property var endYear: getYear(endDate)
+  property var statusIcon: getStatusIcon(status)
 
   Organisms.ShowDetailsInfo {
     id: showDetailsCard

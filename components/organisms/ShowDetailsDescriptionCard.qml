@@ -38,7 +38,7 @@ Rectangle {
   }
 
   Image {
-    source: "../../assets/Doubt.png"
+    source: showDetails.statusIcon
     height: 40
     width: 40
 
