@@ -37,6 +37,19 @@ Rectangle {
     id: showDetailsStatus
   }
 
+  Image {
+    source: "../../assets/Doubt.png"
+    height: 40
+    width: 40
+
+    anchors {
+      left: showDetailsStatus.right
+      leftMargin: 4
+      bottom: showDetailsStatus.bottom
+      bottomMargin: -8
+    }
+  }
+
   Molecules.FavShowButton {
     id: favShowButton
   }

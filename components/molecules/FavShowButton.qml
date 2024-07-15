@@ -9,7 +9,7 @@ Button {
 
   anchors {
     top: showDetailsStatus.bottom
-    topMargin: 10
+    topMargin: 30
   }
 
   property string bgColor: "#08FF5B"

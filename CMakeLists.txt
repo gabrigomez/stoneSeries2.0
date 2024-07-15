@@ -20,6 +20,7 @@ qt_add_qml_module(appStoneSeries2
         RESOURCES fonts/Cafe.ttf
         RESOURCES fonts/Riffic.ttf
         RESOURCES assets/searchIcon.png
+        RESOURCES assets/OnAir.png
         RESOURCES assets/GoldStar.png
         RESOURCES assets/Logo.png
         RESOURCES assets/BackIcon.png
@@ -32,6 +33,8 @@ qt_add_qml_module(appStoneSeries2
         RESOURCES assets/TrashIcon.png
         RESOURCES assets/Rating.png
         RESOURCES assets/TrendIcon.png
+        RESOURCES assets/Ended.png
+        RESOURCES assets/Doubt.png
         QML_FILES components/organisms/ShowCard.qml
         QML_FILES components/atoms/TrendingIcon.qml
         QML_FILES components/molecules/TrendingHeader.qml

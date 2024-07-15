@@ -5,7 +5,7 @@ Text {
 
   anchors {
     top: showDescriptionCard.bottom
-    topMargin: 14
+    topMargin: 24
   }
 
   text: "Status: " + showDetails.status
