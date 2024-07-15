@@ -8,7 +8,7 @@ Button {
   height: 36
 
   anchors {
-    top: showDescriptionCard.bottom
+    top: showDetailsStatus.bottom
     topMargin: 10
   }
 

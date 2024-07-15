@@ -32,6 +32,11 @@ Rectangle {
   Molecules.ShowDetailsDescription {
     id: showDetailsSummary
   }
+
+  Atoms.ShowDetailsStatus {
+    id: showDetailsStatus
+  }
+
   Molecules.FavShowButton {
     id: favShowButton
   }

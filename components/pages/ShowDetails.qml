@@ -16,6 +16,7 @@ Rectangle {
   property var description
   property var startDate
   property var endDate
+  property var status
 
   property string favButtonText
   property string favButtonBg
@@ -85,6 +86,7 @@ Rectangle {
       showDetails.description = details.summary
       showDetails.startDate = details?.premiered
       showDetails.endDate = details?.ended
+      showDetails.status = details?.status
     }
 
     function onErrorOccurred(errorString) {
