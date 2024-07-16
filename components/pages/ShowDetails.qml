@@ -17,6 +17,7 @@ Rectangle {
   property var startDate
   property var endDate
   property var status
+  property var imdbLink
 
   property string favButtonText
   property string favButtonBg

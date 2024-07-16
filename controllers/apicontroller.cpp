@@ -70,6 +70,22 @@ void ApiController::onShowDetailsReply() {
             jsonObj = newJsonObj;
         }
 
+        // define imdb link
+        if(jsonObj["externals"].toObject()["imdb"].isString()) {
+            QJsonObject newJsonObj = jsonObj;
+            QString imdb = newJsonObj["externals"].toObject()["imdb"].toString();
+            QString url = "https://www.imdb.com/title/" + imdb;
+            newJsonObj["imdbLink"] = url;
+
+            jsonObj = newJsonObj;
+        } else {                                   // just redirect to imdb homepage
+            QJsonObject newJsonObj = jsonObj;
+            QString url = "https://www.imdb.com/";
+            newJsonObj["imdbLink"] = url;
+
+            jsonObj = newJsonObj;
+        }
+
 
         emit showDetailsFetched(jsonObj);
     } else {
