@@ -38,6 +38,7 @@ Rectangle {
   }
 
   Image {
+    id: statusIcon
     source: showDetails.statusIcon
     height: 40
     width: 40
@@ -52,5 +53,9 @@ Rectangle {
 
   Molecules.FavShowButton {
     id: favShowButton
+  }
+
+  Molecules.ImdbButton {
+    id: imdbButton
   }
 }

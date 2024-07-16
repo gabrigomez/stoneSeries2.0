@@ -93,6 +93,7 @@ Rectangle {
       showDetails.name = details.name
       showDetails.image = details.image?.original
       showDetails.rating = details.rating.average.toString()
+      showDetails.imdbLink = details.imdbLink
 
       showDetails.genres = details?.genres.length === 0 ? null : details.genres
       showDetails.description = details.summary
