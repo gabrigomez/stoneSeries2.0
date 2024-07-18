@@ -7,10 +7,10 @@ Button {
   height: 28
 
   anchors {
-    left: statusIcon.right
-    leftMargin: 10
-    top: statusIcon.top
-    topMargin: 6
+    top: favShowButton.top
+    topMargin: 4
+    left: favShowButton.right
+    leftMargin: 14
   }
 
   background: Rectangle {
