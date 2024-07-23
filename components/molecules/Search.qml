@@ -35,23 +35,5 @@ Rectangle {
                           }
   }
 
-  Image {
-    id: searchIcon
-    source: "../../assets/searchIcon.png"
-    width: 30
-    height: 30
-
-    anchors {
-      right: search.right
-      rightMargin: 10
-      verticalCenter: parent.verticalCenter
-    }
-
-    MouseArea {
-      anchors.fill: parent
-      onClicked: {
-        search.performSearch()
-      }
-    }
-  }
+  SearchIcon {}
 }
