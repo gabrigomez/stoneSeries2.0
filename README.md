@@ -20,6 +20,7 @@ A primeira versão pode ser conferida [aqui](https://github.com/gabrigomez/stone
 - Possibilidade de favoritar as séries preferidas
 - Customização das infos do usuário, como foto e username
 - Temas na barra de navegação e demais componentes
+- Link para consulta das séries no IMDB
 - Construção da aplicação utilizando [Atomic Design](https://medium.com/pretux/atomic-design-o-que-%C3%A9-como-surgiu-e-sua-import%C3%A2ncia-para-a-cria%C3%A7%C3%A3o-do-design-system-e3ac7b5aca2c)
 - Melhorias nas rotas e chamadas na API
 
@@ -31,16 +32,16 @@ Uma vez tendo o ambiente corretamente configurado, basta fazer o `git clone` do 
 
 ## Previews :eyes:	
 
-![My Remote Image](https://github.com/gabrigomez/stoneSeries2.0/assets/69373145/33a805fe-84f1-4e19-bb65-2971ee9954da)
+![My Remote Image](https://github.com/user-attachments/assets/14add309-3b47-4f21-8ed9-cc659cec5220)
 <br><br>
 
-![My Remote Image](https://github.com/gabrigomez/stoneSeries2.0/assets/69373145/c90bdd0d-b58c-4278-8c8f-b76ce4c54d48)
+![My Remote Image](https://github.com/user-attachments/assets/f9a08349-f416-416d-8b7b-91af72989ac6)
 <br><br>
 
-![My Remote Image](https://github.com/gabrigomez/stoneSeries2.0/assets/69373145/58940844-f7b7-4a02-a823-00f687806d5d)
+![My Remote Image](https://github.com/user-attachments/assets/1176b278-2859-4bcf-8e09-ba67e6ddac05)
 <br><br>
 
-![My Remote Image](https://github.com/gabrigomez/stoneSeries2.0/assets/69373145/ee3deec3-f40e-4882-837b-30755edc38f7)
+![My Remote Image](https://github.com/user-attachments/assets/64a3fbbe-9250-4943-8b9c-4667dfc67543)
 <br><br>
 
 
