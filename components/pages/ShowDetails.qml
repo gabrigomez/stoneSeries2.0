@@ -75,6 +75,7 @@ Rectangle {
 
   Component.onCompleted: {
     apiController.fetchShowDetails(showId)
+    apiController.fetchCast(showId)
     var favList = settingsConfig.favShowsList
     var index = favList.findIndex(show => show._id === showId.toString())
 
