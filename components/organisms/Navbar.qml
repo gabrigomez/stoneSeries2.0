@@ -22,6 +22,22 @@ Rectangle {
     }
   }
 
+  Organisms.UserOptions {
+    id: optionsMenuButton
+  }
+
+  Atoms.UserNameInfo {
+    id: userNameInfo
+  }
+
+  Molecules.FavCount {}
+
+  Atoms.LogoIcon {}
+
+  Atoms.AppTitle {
+    id: title
+  }
+
   Molecules.ThemeButton {
     id: themeButton
     target: "navBar"
@@ -38,21 +54,5 @@ Rectangle {
 
   Molecules.Search {
     id: search
-  }
-
-  Atoms.LogoIcon {}
-
-  Organisms.UserOptions {
-    id: optionsMenuButton
-  }
-
-  Atoms.UserNameInfo {
-    id: userNameInfo
-  }
-
-  Molecules.FavCount {}
-
-  Atoms.AppTitle {
-    id: title
   }
 }
