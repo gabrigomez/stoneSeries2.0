@@ -58,4 +58,14 @@ Rectangle {
   Molecules.ImdbButton {
     id: imdbButton
   }
+
+  CastCard {
+    id: castCard
+
+    anchors {
+      top: favShowButton.bottom
+      topMargin: 20
+      left: favShowButton.left
+    }
+  }
 }
