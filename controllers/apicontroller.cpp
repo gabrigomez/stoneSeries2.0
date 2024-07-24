@@ -40,9 +40,9 @@ void ApiController::onCastReply() {
             QJsonObject showObj = jsonObj["cast"].toObject();
         }
 
-        qDebug() << jsonArray;
+        // qDebug() << jsonArray;
 
-        emit showsFetched(jsonArray);
+        emit castFetched(jsonArray);
     } else {
         emit errorOccurred(reply->errorString());
     }
