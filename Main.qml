@@ -19,7 +19,6 @@ ApplicationWindow {
   //TODO: change celebrity_id
   property var showId
   property var celebrity_id
-  property var busy
 
   FontLoader {
     id: bodyFont
