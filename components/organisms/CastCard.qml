@@ -39,15 +39,14 @@ Item {
         image: imageUrl
         celebrityId: id
 
-        //TODO: click to show celebrity shows
-
-        // MouseArea {
-        //   anchors.fill: parent
-        //   onClicked: () => {
-        //                showId = show
-        //                stackView.push("../pages/ShowDetails.qml")
-        //              }
-        // }
+        MouseArea {
+          anchors.fill: parent
+          cursorShape: Qt.PointingHandCursor
+          onClicked: () => {
+                       showId = show
+                       stackView.push("../pages/CelebrityDetails.qml")
+                     }
+        }
       }
     }
 
