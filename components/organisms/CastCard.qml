@@ -1,57 +1,76 @@
 import QtQuick
+import QtQuick.Controls.Material 2.12
 
 import "../molecules" as Molecules
 
-Rectangle {
-  height: 400
-  width: 500
+Item {
+  BusyIndicator {
+    id: busyIndicator
+    visible: castMainCard.isCastLoad ? false : true
+    x: 150
+    y: 50
 
-  color: "transparent"
-  clip: true
-
-  ListView {
-    anchors.fill: parent
-    orientation: Qt.Horizontal
-    spacing: 25
-    model: ListModel {
-      id: castModel
-    }
-
-    delegate: Molecules.CelebrityCard {
-      text: name
-      image: imageUrl
-
-      //TODO: click to show celebrity shows
-
-      // MouseArea {
-      //   anchors.fill: parent
-      //   onClicked: () => {
-      //                showId = show
-      //                stackView.push("../pages/ShowDetails.qml")
-      //              }
-      // }
-    }
+    width: 200
+    height: 200
+    Material.accent: settingsConfig.themeColor
   }
 
-  Component.onCompleted: {
-    apiController.fetchCast(showId)
-  }
+  Rectangle {
+    id: castMainCard
+    height: 400
+    width: 500
 
-  Connections {
-    target: apiController
+    color: "transparent"
+    clip: true
+    visible: castMainCard.isCastLoad ? true : false
 
-    function onCastFetched(cast) {
-      castModel?.clear()
-      const results = cast.map(item => ({
-                                          "name": item.person.name,
-                                          "imageUrl": item.person.image.medium
-                                        }))
+    property bool isCastLoad: false
 
-      results.map(cast => castModel.append(cast))
+    ListView {
+      anchors.fill: parent
+      orientation: Qt.Horizontal
+      spacing: 25
+      model: ListModel {
+        id: castModel
+      }
+
+      delegate: Molecules.CelebrityCard {
+        text: name
+        image: imageUrl
+
+        //TODO: click to show celebrity shows
+
+        // MouseArea {
+        //   anchors.fill: parent
+        //   onClicked: () => {
+        //                showId = show
+        //                stackView.push("../pages/ShowDetails.qml")
+        //              }
+        // }
+      }
     }
 
-    function onErrorOccurred(errorString) {
-      console.error("Error:", errorString)
+    Component.onCompleted: {
+      apiController.fetchCast(showId)
+    }
+
+    Connections {
+      target: apiController
+
+      function onCastFetched(cast) {
+        castModel?.clear()
+        const results = cast.map(item => ({
+                                            "name": item.person.name,
+                                            "imageUrl": item.person.image.medium
+                                          }))
+
+        results.map(cast => castModel.append(cast))
+        castMainCard.isCastLoad = true
+      }
+
+      function onErrorOccurred(errorString) {
+        console.error("Error:", errorString)
+      }
     }
   }
 }
