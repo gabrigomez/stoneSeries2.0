@@ -43,7 +43,7 @@ Item {
           anchors.fill: parent
           cursorShape: Qt.PointingHandCursor
           onClicked: () => {
-                       showId = show
+                       celebrity_id = id
                        stackView.push("../pages/CelebrityDetails.qml")
                      }
         }

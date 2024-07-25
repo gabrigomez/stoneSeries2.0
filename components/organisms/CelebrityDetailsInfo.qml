@@ -38,4 +38,8 @@ Rectangle {
       }
     }
   }
+
+  Component.onCompleted: {
+    apiController.fetchCelebrityDetails(celebrity_id)
+  }
 }

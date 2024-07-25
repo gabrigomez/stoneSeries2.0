@@ -16,7 +16,9 @@ ApplicationWindow {
   visible: true
   title: qsTr("Stone Series 2.0")
 
+  //TODO: change celebrity_id
   property var showId
+  property var celebrity_id
   property var busy
 
   FontLoader {

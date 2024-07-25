@@ -28,6 +28,12 @@ void ApiController::fetchCast(int id) {
     connect(reply, &QNetworkReply::finished, this, &ApiController::onCastReply);
 }
 
+void ApiController::fetchCelebrityDetails(int id) {
+    QNetworkRequest request(QUrl("https://api.tvmaze.com/people/" + QString::number(id)));
+    QNetworkReply *reply = networkManager->get(request);
+    connect(reply, &QNetworkReply::finished, this, &ApiController::onCelebrityDetailsReply);
+}
+
 void ApiController::onCastReply() {
     QNetworkReply *reply = qobject_cast<QNetworkReply*>(sender());
 
@@ -43,6 +49,30 @@ void ApiController::onCastReply() {
         // qDebug() << jsonArray;
 
         emit castFetched(jsonArray);
+    } else {
+        emit errorOccurred(reply->errorString());
+    }
+    reply->deleteLater();
+}
+
+void ApiController::onCelebrityDetailsReply() {
+    QNetworkReply *reply = qobject_cast<QNetworkReply*>(sender());
+
+    if(reply->error() == QNetworkReply::NoError) {
+        QJsonDocument doc = QJsonDocument::fromJson(reply->readAll());
+        QJsonObject jsonObj = doc.object();
+
+        // define standart image to celebrity with no image
+        if (jsonObj["image"].isNull()) {
+            QJsonObject newJsonObj = jsonObj;
+            newJsonObj["image"] = QJsonObject{
+                {"medium", "https://t3.ftcdn.net/jpg/03/34/83/22/360_F_334832255_IMxvzYRygjd20VlSaIAFZrQWjozQH6BQ.jpg"},
+                {"original", "https://t3.ftcdn.net/jpg/03/34/83/22/360_F_334832255_IMxvzYRygjd20VlSaIAFZrQWjozQH6BQ.jpg"}
+            };
+            jsonObj = newJsonObj;
+        }
+
+        emit castCelebrityDetailsFetched(jsonObj);
     } else {
         emit errorOccurred(reply->errorString());
     }
