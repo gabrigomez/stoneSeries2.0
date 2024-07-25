@@ -14,6 +14,8 @@ Rectangle {
   property alias text: celebrityName.text
   property alias image: celebrityImage.source
 
+  property var celebrityId
+
   Image {
     id: celebrityImage
     source: celebrityCard.image
