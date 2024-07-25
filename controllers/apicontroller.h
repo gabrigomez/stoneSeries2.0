@@ -20,7 +20,7 @@ signals:
     void showDetailsFetched(const QJsonObject &details);
     void showsFetched(const QJsonArray &shows);
     void castFetched(const QJsonArray &cast);
-    void castCelebrityDetailsFetched(const QJsonObject &details);
+    void celebrityDetailsFetched(const QJsonObject &details);
     void errorOccurred(const QString &error);
 
 private slots:

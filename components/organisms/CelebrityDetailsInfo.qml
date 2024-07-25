@@ -7,7 +7,7 @@ Rectangle {
 
   anchors.horizontalCenter: parent.horizontalCenter
   y: 10
-  visible: true
+  visible: celebrityImage.status === 1 ? true : false
 
   color: settingsConfig.themeColor
   border {
@@ -29,17 +29,43 @@ Rectangle {
     y: 4
     color: "transparent"
 
-    // visible: showImage.status === 1 ? true : false
-    // opacity: showImage.status === 1 ? true : false
+    visible: celebrityImage.status === 1 ? true : false
+    opacity: celebrityImage.status === 1 ? true : false
+
     Behavior on opacity {
       PropertyAnimation {
         duration: 500
         easing.type: Easing.InOutQuad
       }
     }
-  }
 
-  Component.onCompleted: {
-    apiController.fetchCelebrityDetails(celebrity_id)
+    Image {
+      id: celebrityImage
+      source: celebrityDetails.image ? celebrityDetails.image : ""
+      width: 500
+      height: 660
+    }
+
+    Text {
+      id: celebrityName
+      width: celebrityImage.width
+      height: 100
+      anchors {
+        top: celebrityImage.bottom
+        topMargin: 10
+        horizontalCenter: parent.horizontalCenter
+      }
+
+      text: celebrityDetails?.name ? celebrityDetails.name : ""
+
+      color: "white"
+      style: Text.Outline
+      styleColor: "black"
+      font.family: bodyFont.font.family
+      font.pixelSize: 50
+
+      wrapMode: Text.WrapAtWordBoundaryOrAnywhere
+      maximumLineCount: 2
+    }
   }
 }

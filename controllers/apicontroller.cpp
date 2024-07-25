@@ -72,7 +72,7 @@ void ApiController::onCelebrityDetailsReply() {
             jsonObj = newJsonObj;
         }
 
-        emit castCelebrityDetailsFetched(jsonObj);
+        emit celebrityDetailsFetched(jsonObj);
     } else {
         emit errorOccurred(reply->errorString());
     }

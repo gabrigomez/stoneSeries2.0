@@ -4,7 +4,7 @@ import QtQuick.Controls.Material 2.12
 import "../organisms" as Organisms
 
 Rectangle {
-  id: showDetails
+  id: celebrityDetails
   width: parent?.width
   height: parent?.height
   color: "white"
@@ -14,7 +14,7 @@ Rectangle {
 
   BusyIndicator {
     id: busyIndicator
-    visible: false
+    visible: celebrityImage.status === 1 ? false : true
     anchors.centerIn: parent
 
     width: 281
@@ -23,4 +23,20 @@ Rectangle {
   }
 
   Organisms.CelebrityDetailsInfo {}
+
+  Component.onCompleted: {
+    apiController.fetchCelebrityDetails(celebrity_id)
+  }
+
+  Connections {
+    target: apiController
+    function onCelebrityDetailsFetched(details) {
+      celebrityDetails.name = details.name
+      celebrityDetails.image = details.image?.original
+    }
+
+    function onErrorOccurred(errorString) {
+      console.error("Error:", errorString)
+    }
+  }
 }
