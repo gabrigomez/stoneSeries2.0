@@ -66,6 +66,7 @@ Rectangle {
       maximumLineCount: 2
     }
 
+    //TODO: Birthday molecule
     Image {
       id: birthdayIcon
       source: "../../assets/Birthday.png"
@@ -84,7 +85,7 @@ Rectangle {
 
       anchors {
         top: birthdayIcon.top
-        topMargin: 6
+        topMargin: 8
         left: birthdayIcon.right
         leftMargin: 5
       }
@@ -96,7 +97,46 @@ Rectangle {
       style: Text.Outline
       styleColor: "black"
       font.family: bodyFont.font.family
-      font.pixelSize: 20
+      font.pixelSize: 16
+
+      wrapMode: Text.WrapAtWordBoundaryOrAnywhere
+      maximumLineCount: 2
+    }
+
+    //TODO: Deathday molecule
+    Image {
+      id: deathdayIcon
+      source: "../../assets/Deathday.png"
+      width: 30
+      height: 30
+      visible: celebrityDetails.deathday ? true : false
+
+      anchors {
+        top: birthdayIcon.bottom
+        topMargin: 10
+        left: birthdayIcon.left
+      }
+    }
+
+    Text {
+      id: celebrityDeathday
+      visible: celebrityDetails.deathday ? true : false
+
+      anchors {
+        top: deathdayIcon.top
+        topMargin: 4
+        left: deathdayIcon.right
+        leftMargin: 5
+      }
+
+      text: celebrityDetails?.deathday ? celebrityDetails.deathday : ""
+      x: 5
+
+      color: "white"
+      style: Text.Outline
+      styleColor: "black"
+      font.family: bodyFont.font.family
+      font.pixelSize: 16
 
       wrapMode: Text.WrapAtWordBoundaryOrAnywhere
       maximumLineCount: 2
