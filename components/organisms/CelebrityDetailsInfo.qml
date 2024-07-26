@@ -48,21 +48,55 @@ Rectangle {
 
     Text {
       id: celebrityName
-      width: celebrityImage.width
-      height: 100
       anchors {
         top: celebrityImage.bottom
         topMargin: 10
-        horizontalCenter: parent.horizontalCenter
       }
 
       text: celebrityDetails?.name ? celebrityDetails.name : ""
+      x: 5
 
       color: "white"
       style: Text.Outline
       styleColor: "black"
       font.family: bodyFont.font.family
       font.pixelSize: 50
+
+      wrapMode: Text.WrapAtWordBoundaryOrAnywhere
+      maximumLineCount: 2
+    }
+
+    Image {
+      id: birthdayIcon
+      source: "../../assets/Birthday.png"
+      width: 30
+      height: 30
+
+      anchors {
+        top: celebrityName.bottom
+        topMargin: 10
+        left: celebrityName.left
+      }
+    }
+
+    Text {
+      id: celebrityBirthday
+
+      anchors {
+        top: birthdayIcon.top
+        topMargin: 6
+        left: birthdayIcon.right
+        leftMargin: 5
+      }
+
+      text: celebrityDetails?.birthday ? celebrityDetails.birthday : ""
+      x: 5
+
+      color: "white"
+      style: Text.Outline
+      styleColor: "black"
+      font.family: bodyFont.font.family
+      font.pixelSize: 20
 
       wrapMode: Text.WrapAtWordBoundaryOrAnywhere
       maximumLineCount: 2

@@ -11,6 +11,7 @@ Rectangle {
 
   property var name
   property var image
+  property var birthday
 
   BusyIndicator {
     id: busyIndicator
@@ -33,6 +34,7 @@ Rectangle {
     function onCelebrityDetailsFetched(details) {
       celebrityDetails.name = details.name
       celebrityDetails.image = details.image?.original
+      celebrityDetails.birthday = details.birthday
     }
 
     function onErrorOccurred(errorString) {

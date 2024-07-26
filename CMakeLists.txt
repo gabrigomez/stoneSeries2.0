@@ -36,6 +36,7 @@ qt_add_qml_module(appStoneSeries2
         RESOURCES assets/Ended.png
         RESOURCES assets/Doubt.png
         RESOURCES assets/ImdbLogo.png
+        RESOURCES assets/Birthday.png
         QML_FILES components/organisms/ShowCard.qml
         QML_FILES components/atoms/TrendingIcon.qml
         QML_FILES components/molecules/TrendingHeader.qml
