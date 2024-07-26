@@ -66,6 +66,43 @@ Rectangle {
       maximumLineCount: 2
     }
 
+    //TODO: Country molecule
+    Image {
+      id: countryIcon
+      source: "../../assets/BornAt.png"
+      width: 30
+      height: 30
+
+      anchors {
+        top: celebrityName.bottom
+        topMargin: 10
+        left: celebrityName.left
+      }
+    }
+
+    Text {
+      id: celebrityCountry
+
+      anchors {
+        top: countryIcon.top
+        topMargin: 8
+        left: countryIcon.right
+        leftMargin: 5
+      }
+
+      text: celebrityDetails?.country ? celebrityDetails.country : ""
+      x: 5
+
+      color: "white"
+      style: Text.Outline
+      styleColor: "black"
+      font.family: bodyFont.font.family
+      font.pixelSize: 16
+
+      wrapMode: Text.WrapAtWordBoundaryOrAnywhere
+      maximumLineCount: 2
+    }
+
     //TODO: Birthday molecule
     Image {
       id: birthdayIcon
@@ -76,7 +113,8 @@ Rectangle {
       anchors {
         top: celebrityName.bottom
         topMargin: 10
-        left: celebrityName.left
+        left: celebrityCountry.right
+        leftMargin: 16
       }
     }
 
@@ -112,9 +150,10 @@ Rectangle {
       visible: celebrityDetails.deathday ? true : false
 
       anchors {
-        top: birthdayIcon.bottom
+        top: celebrityName.bottom
         topMargin: 10
-        left: birthdayIcon.left
+        left: celebrityBirthday.right
+        leftMargin: 14
       }
     }
 

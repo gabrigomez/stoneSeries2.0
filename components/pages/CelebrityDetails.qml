@@ -13,6 +13,7 @@ Rectangle {
   property var image
   property var birthday
   property var deathday
+  property var country
 
   BusyIndicator {
     id: busyIndicator
@@ -37,6 +38,7 @@ Rectangle {
       celebrityDetails.image = details.image?.original
       celebrityDetails.birthday = details.birthday
       celebrityDetails.deathday = details.deathday
+      celebrityDetails.country = details.country?.name
     }
 
     function onErrorOccurred(errorString) {
