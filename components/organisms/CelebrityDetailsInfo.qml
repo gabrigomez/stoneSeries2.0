@@ -5,7 +5,7 @@ import "../molecules" as Molecules
 Rectangle {
   id: celebrityDetailsInfo
   width: 512
-  height: 850
+  height: 800
 
   anchors.horizontalCenter: parent.horizontalCenter
   y: 10
@@ -25,7 +25,7 @@ Rectangle {
   Rectangle {
     id: celebrityDetailsInfoCard
     width: 500
-    height: 840
+    height: 750
 
     x: 6
     y: 4
