@@ -2,7 +2,6 @@ import QtQuick
 
 Rectangle {
   width: birthdayIcon.width + celebrityBirthday.contentWidth + 20
-
   anchors {
     top: celebrityName.bottom
     topMargin: 10
