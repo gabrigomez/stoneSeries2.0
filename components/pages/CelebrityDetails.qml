@@ -15,16 +15,6 @@ Rectangle {
   property var deathday
   property var country
 
-  BusyIndicator {
-    id: busyIndicator
-    visible: celebrityImage.status === 1 ? false : true
-    anchors.centerIn: parent
-
-    width: 281
-    height: 281
-    Material.accent: settingsConfig.themeColor
-  }
-
   Organisms.CelebrityDetailsInfo {}
 
   Component.onCompleted: {
