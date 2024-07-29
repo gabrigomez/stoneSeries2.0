@@ -72,42 +72,8 @@ Rectangle {
       id: celebrityCountryContainer
     }
 
-    //TODO: Birthday molecule
-    Image {
-      id: birthdayIcon
-      source: "../../assets/Birthday.png"
-      width: 30
-      height: 30
-
-      anchors {
-        top: celebrityName.bottom
-        topMargin: 10
-        left: celebrityCountryContainer.right
-        leftMargin: 16
-      }
-    }
-
-    Text {
-      id: celebrityBirthday
-
-      anchors {
-        top: birthdayIcon.top
-        topMargin: 8
-        left: birthdayIcon.right
-        leftMargin: 5
-      }
-
-      text: celebrityDetails?.birthday ? celebrityDetails.birthday : ""
-      x: 5
-
-      color: "white"
-      style: Text.Outline
-      styleColor: "black"
-      font.family: bodyFont.font.family
-      font.pixelSize: 16
-
-      wrapMode: Text.WrapAtWordBoundaryOrAnywhere
-      maximumLineCount: 2
+    Molecules.CelebrityBirthday {
+      id: celebrityBirthdayContainer
     }
 
     //TODO: Deathday molecule
@@ -121,7 +87,7 @@ Rectangle {
       anchors {
         top: celebrityName.bottom
         topMargin: 10
-        left: celebrityBirthday.right
+        left: celebrityBirthdayContainer.right
         leftMargin: 14
       }
     }
