@@ -1,5 +1,7 @@
 import QtQuick
 
+import "../molecules" as Molecules
+
 Rectangle {
   id: celebrityDetailsInfo
   width: 512
@@ -66,41 +68,8 @@ Rectangle {
       maximumLineCount: 2
     }
 
-    //TODO: Country molecule
-    Image {
-      id: countryIcon
-      source: "../../assets/BornAt.png"
-      width: 30
-      height: 30
-
-      anchors {
-        top: celebrityName.bottom
-        topMargin: 10
-        left: celebrityName.left
-      }
-    }
-
-    Text {
-      id: celebrityCountry
-
-      anchors {
-        top: countryIcon.top
-        topMargin: 8
-        left: countryIcon.right
-        leftMargin: 5
-      }
-
-      text: celebrityDetails?.country ? celebrityDetails.country : ""
-      x: 5
-
-      color: "white"
-      style: Text.Outline
-      styleColor: "black"
-      font.family: bodyFont.font.family
-      font.pixelSize: 16
-
-      wrapMode: Text.WrapAtWordBoundaryOrAnywhere
-      maximumLineCount: 2
+    Molecules.CelebrityCountry {
+      id: celebrityCountryContainer
     }
 
     //TODO: Birthday molecule
@@ -113,7 +82,7 @@ Rectangle {
       anchors {
         top: celebrityName.bottom
         topMargin: 10
-        left: celebrityCountry.right
+        left: celebrityCountryContainer.right
         leftMargin: 16
       }
     }
