@@ -3,8 +3,7 @@ import QtQuick
 Rectangle {
   width: deathdayIcon.width + celebrityDeathday.contentWidth + 20
   anchors {
-    top: celebrityName.bottom
-    topMargin: 10
+    bottom: parent.bottom
     left: celebrityBirthdayContainer.right
     leftMargin: 10
   }

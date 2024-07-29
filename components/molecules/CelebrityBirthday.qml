@@ -2,13 +2,12 @@ import QtQuick
 
 Rectangle {
   width: birthdayIcon.width + celebrityBirthday.contentWidth + 20
+
   anchors {
-    top: celebrityName.bottom
-    topMargin: 10
+    bottom: parent.bottom
     left: celebrityCountryContainer.right
     leftMargin: 16
   }
-
   Image {
     id: birthdayIcon
     source: "../../assets/Birthday.png"

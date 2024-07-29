@@ -3,8 +3,7 @@ import QtQuick
 Rectangle {
   width: countryIcon.width + celebrityCountry.contentWidth + 20
   anchors {
-    top: celebrityName.bottom
-    topMargin: 10
+    bottom: parent.bottom
     left: celebrityName.left
   }
 
