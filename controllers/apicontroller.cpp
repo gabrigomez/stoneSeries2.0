@@ -34,6 +34,42 @@ void ApiController::fetchCelebrityDetails(int id) {
     connect(reply, &QNetworkReply::finished, this, &ApiController::onCelebrityDetailsReply);
 }
 
+void ApiController::fetchCelebrityShows(int id) {
+    QNetworkRequest request(QUrl(QString("https://api.tvmaze.com/people/%1/castcredits?embed=show").arg(id)));
+    QNetworkReply *reply = networkManager->get(request);
+    connect(reply, &QNetworkReply::finished, this, &ApiController::onCelebrityShowsReply);
+}
+
+void ApiController::onCelebrityShowsReply() {
+    QNetworkReply *reply = qobject_cast<QNetworkReply*>(sender());
+
+    if(reply->error()== QNetworkReply::NoError) {
+        QJsonDocument doc = QJsonDocument::fromJson(reply->readAll());
+        QJsonArray jsonArray = doc.array();
+
+        QJsonArray celebrityShows;
+
+        for (int i = 0; i < jsonArray.size(); ++i) {
+            QJsonObject jsonObj = jsonArray[i].toObject();
+            QJsonObject embeddedShowObj = jsonObj["_embedded"].toObject()["show"].toObject();
+
+            QJsonObject showObject;
+            showObject["id"] = embeddedShowObj["id"];
+            showObject["name"] = embeddedShowObj["name"];
+            showObject["image"] = embeddedShowObj["image"].toObject()["medium"];
+
+            celebrityShows.append(showObject);
+        }
+
+        //qDebug() << celebrityShows;
+
+        emit celebrityShowsFetched(celebrityShows);
+    } else {
+        emit errorOccurred(reply->errorString());
+    }
+    reply->deleteLater();
+}
+
 void ApiController::onCastReply() {
     QNetworkReply *reply = qobject_cast<QNetworkReply*>(sender());
 

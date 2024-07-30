@@ -19,6 +19,7 @@ Rectangle {
 
   Component.onCompleted: {
     apiController.fetchCelebrityDetails(celebrity_id)
+    apiController.fetchCelebrityShows(celebrity_id)
   }
 
   Connections {
