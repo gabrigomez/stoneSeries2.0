@@ -6,7 +6,7 @@ import "../molecules" as Molecules
 Item {
   BusyIndicator {
     id: busyIndicator
-    visible: castMainCard.isCastLoad ? false : true
+    visible: castMainCard.isCastLoaded ? false : true
     x: 150
     y: 50
 
@@ -22,9 +22,9 @@ Item {
 
     color: "transparent"
     clip: true
-    visible: castMainCard.isCastLoad ? true : false
+    visible: castMainCard.isCastLoaded ? true : false
 
-    property bool isCastLoad: false
+    property bool isCastLoaded: false
 
     ListView {
       anchors.fill: parent
@@ -66,7 +66,7 @@ Item {
                                           }))
 
         results.map(cast => castModel.append(cast))
-        castMainCard.isCastLoad = true
+        castMainCard.isCastLoaded = true
       }
 
       function onErrorOccurred(errorString) {
