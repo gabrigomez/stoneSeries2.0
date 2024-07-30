@@ -6,7 +6,7 @@ import "../molecules" as Molecules
 Item {
   id: celebrityDetailsInfoContainer
   width: root.width
-  height: 900
+  height: 700
 
   BusyIndicator {
     id: busyIndicator
@@ -16,6 +16,13 @@ Item {
     width: 281
     height: 281
     Material.accent: settingsConfig.themeColor
+  }
+
+  CelebrityShowsList {
+    id: celebrityShowListContainer
+    y: 10
+    x: 350
+    visible: celebrityDetailsInfo.visible
   }
 
   Rectangle {
