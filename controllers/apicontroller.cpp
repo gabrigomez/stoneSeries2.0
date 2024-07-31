@@ -5,7 +5,6 @@
 #include <QJsonArray>
 #include <QDebug>
 
-
 ApiController::ApiController(QObject *parent) : QObject(parent) {
     networkManager = new QNetworkAccessManager(this);
 }
@@ -56,7 +55,13 @@ void ApiController::onCelebrityShowsReply() {
             QJsonObject showObject;
             showObject["id"] = embeddedShowObj["id"];
             showObject["name"] = embeddedShowObj["name"];
-            showObject["image"] = embeddedShowObj["image"].toObject()["medium"];
+
+            // define standart image to shows with no image
+            if (embeddedShowObj["image"].isObject() && embeddedShowObj["image"].toObject()["medium"].isString()) {
+                showObject["image"] = embeddedShowObj["image"].toObject()["medium"];
+            } else {
+                showObject["image"] = "https://t3.ftcdn.net/jpg/03/34/83/22/360_F_334832255_IMxvzYRygjd20VlSaIAFZrQWjozQH6BQ.jpg";
+            }
 
             celebrityShows.append(showObject);
         }
@@ -147,7 +152,7 @@ void ApiController::onShowDetailsReply() {
             jsonObj = newJsonObj;
         }
 
-        // define standart premiered date to shows with no data on it
+        // define standart description to shows with no data on it
         if(jsonObj["summary"].isNull()) {
             QJsonObject newJsonObj = jsonObj;
             newJsonObj["summary"] = "No description";
