@@ -43,16 +43,16 @@ Item {
 
       delegate: Molecules.CelebrityShow {
         title: name
-        imageUrl: image
+        imageUrl: celebrityImageUrl
         celebrityShowId: id
 
         MouseArea {
           anchors.fill: parent
           cursorShape: Qt.PointingHandCursor
-          // onClicked: () => {
-          //              celebrity_id = id
-          //              stackView.push("../pages/CelebrityDetails.qml")
-          //            }
+          onClicked: () => {
+                       showId = celebrityShowId
+                       stackView.push("../pages/ShowDetails.qml")
+                     }
         }
       }
     }
@@ -68,7 +68,7 @@ Item {
         celebrityShowListModel?.clear()
         const results = details.map(item => ({
                                                "name": item.name,
-                                               "image": item.image,
+                                               "celebrityImageUrl": item.image,
                                                "id": item.id
                                              }))
 
