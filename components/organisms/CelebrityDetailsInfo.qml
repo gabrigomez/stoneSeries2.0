@@ -77,6 +77,7 @@ Item {
           top: celebrityImage.bottom
           topMargin: 10
         }
+        width: 500
 
         text: celebrityDetails?.name ? celebrityDetails.name : ""
         x: 5
@@ -85,7 +86,7 @@ Item {
         style: Text.Outline
         styleColor: "black"
         font.family: bodyFont.font.family
-        font.pixelSize: 50
+        font.pixelSize: 38
 
         wrapMode: Text.WrapAtWordBoundaryOrAnywhere
         maximumLineCount: 2
