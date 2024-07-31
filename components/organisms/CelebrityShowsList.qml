@@ -4,10 +4,28 @@ import QtQuick.Controls.Material 2.12
 import "../molecules" as Molecules
 
 Item {
+  Text {
+    id: celebrityShowListTitle
+    anchors {
+      bottom: celebrityShowListMainCard.top
+      bottomMargin: 10
+      left: celebrityShowListMainCard.left
+      leftMargin: 10
+    }
+
+    color: settingsConfig.themeColor
+    text: "Shows"
+    style: Text.Outline
+    styleColor: "white"
+
+    font.family: bodyFont.font.family
+    font.pixelSize: 44
+  }
+
   Rectangle {
     id: celebrityShowListMainCard
-    height: 800
-    width: 600
+    height: 720
+    width: 610
 
     color: "transparent"
     clip: true

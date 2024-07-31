@@ -20,7 +20,7 @@ Item {
 
   CelebrityShowsList {
     id: celebrityShowListContainer
-    y: 10
+    y: 80
     x: 350
     visible: celebrityDetailsInfo.visible
   }

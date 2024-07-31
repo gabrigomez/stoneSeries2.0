@@ -1,10 +1,9 @@
 import QtQuick
 
 Rectangle {
-  id: celebrityShow
   height: 260
-  width: 600
-  color: settingsConfig.themeColor
+  width: 604
+  color: "black"
 
   topRightRadius: 5
   topLeftRadius: 5
@@ -13,47 +12,65 @@ Rectangle {
 
   property alias title: celebrityShowName.text
   property alias imageUrl: celebrityShowImage.source
-
   property var celebrityShowId
 
   Rectangle {
-    id: celebrityImageContainer
-    width: 160
-    height: 250
-    color: "black"
+    id: celebrityShow
+    height: 256
+    width: 600
+    x: 2
+    y: 2
 
-    anchors {
-      verticalCenter: parent.verticalCenter
-      left: parent.left
-      leftMargin: 4
-    }
+    color: settingsConfig.themeColor
 
-    Image {
-      id: celebrityShowImage
-      source: celebrityCard.image
-      width: 150
-      height: 240
+    topRightRadius: 5
+    topLeftRadius: 5
+    bottomRightRadius: 10
+    bottomLeftRadius: 10
+
+    Rectangle {
+      id: celebrityImageContainer
+      width: 160
+      height: 250
+      color: "white"
 
       anchors {
-        centerIn: parent
+        verticalCenter: parent.verticalCenter
+        left: parent.left
+        leftMargin: 4
+      }
+
+      Image {
+        id: celebrityShowImage
+        source: celebrityCard.image
+        width: 156
+        height: 246
+
+        anchors {
+          centerIn: parent
+        }
       }
     }
-  }
 
-  Text {
-    id: celebrityShowName
-    anchors {
-      left: celebrityImageContainer.right
-      leftMargin: 12
-      verticalCenter: parent.verticalCenter
+    Text {
+      id: celebrityShowName
+      anchors {
+        left: celebrityImageContainer.right
+        leftMargin: 12
+        verticalCenter: parent.verticalCenter
+      }
+      width: 330
+
+      color: "white"
+      text: ""
+      style: Text.Outline
+      styleColor: "black"
+
+      font.family: bodyFont.font.family
+      font.pixelSize: 34
+
+      wrapMode: Text.WrapAtWordBoundaryOrAnywhere
+      maximumLineCount: 2
     }
-
-    color: "white"
-    text: ""
-    style: Text.Outline
-    styleColor: "black"
-
-    font.family: bodyFont.font.family
-    font.pixelSize: 34
   }
 }
