@@ -4,6 +4,7 @@
 #include <QJsonObject>
 #include <QJsonArray>
 #include <QDebug>
+#include <QDate>
 
 ApiController::ApiController(QObject *parent) : QObject(parent) {
     networkManager = new QNetworkAccessManager(this);
@@ -113,11 +114,21 @@ void ApiController::onCelebrityDetailsReply() {
             jsonObj = newJsonObj;
         }
 
-        // define standart info to celebrity with no birthday date
+        // define standart info to celebrity with no birthday date and calculate the age
         if (jsonObj["birthday"].isNull()) {
             QJsonObject newJsonObj = jsonObj;
             newJsonObj["birthday"] = "No info";
             jsonObj = newJsonObj;
+        } else {
+            QString birthdayStr = jsonObj["birthday"].toString();
+            QDate birthday = QDate::fromString(birthdayStr, "yyyy-MM-dd");
+
+            if (birthday.isValid()) {
+                int age = birthday.daysTo(QDate::currentDate()) / 365;
+                jsonObj["age"] = age;
+            } else {
+                jsonObj["age"] = "No info";
+            }
         }
 
         // define standart info to celebrity with no country info
@@ -128,8 +139,6 @@ void ApiController::onCelebrityDetailsReply() {
             };
             jsonObj = newJsonObj;
         }
-
-        qDebug() << jsonObj;
 
         emit celebrityDetailsFetched(jsonObj);
     } else {
