@@ -92,6 +92,22 @@ Item {
         maximumLineCount: 2
       }
 
+      Text {
+        id: celebrityAge
+        anchors {
+          top: celebrityName.bottom
+          topMargin: 4
+        }
+        text: celebrityDetails?.age ? celebrityDetails.age + " years" : ""
+        x: 5
+
+        color: "white"
+        style: Text.Outline
+        styleColor: "black"
+        font.family: bodyFont.font.family
+        font.pixelSize: 18
+      }
+
       Molecules.CelebrityCountry {
         id: celebrityCountryContainer
       }

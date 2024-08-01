@@ -11,6 +11,7 @@ Rectangle {
 
   property var name
   property var image
+  property var age
   property var birthday
   property var deathday
   property var country
@@ -26,6 +27,7 @@ Rectangle {
     function onCelebrityDetailsFetched(details) {
       celebrityDetails.name = details.name
       celebrityDetails.image = details.image?.original
+      celebrityDetails.age = details.age
       celebrityDetails.birthday = details.birthday
       celebrityDetails.deathday = details.deathday
       celebrityDetails.country = details.country.name
