@@ -83,13 +83,6 @@ void ApiController::onCastReply() {
         QJsonDocument doc = QJsonDocument::fromJson(reply->readAll());
         QJsonArray jsonArray = doc.array();
 
-        for (int i = 0; i < jsonArray.size(); ++i) {
-            QJsonObject jsonObj = jsonArray[i].toObject();
-            QJsonObject showObj = jsonObj["cast"].toObject();
-        }
-
-        // qDebug() << jsonArray;
-
         emit castFetched(jsonArray);
     } else {
         emit errorOccurred(reply->errorString());

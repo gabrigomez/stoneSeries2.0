@@ -61,7 +61,7 @@ Item {
         castModel?.clear()
         const results = cast.map(item => ({
                                             "name": item.person.name,
-                                            "imageUrl": item.person.image.medium,
+                                            "imageUrl": item.person.image?.medium,
                                             "id": item.person.id
                                           }))
 
