@@ -113,6 +113,24 @@ void ApiController::onCelebrityDetailsReply() {
             jsonObj = newJsonObj;
         }
 
+        // define standart info to celebrity with no birthday date
+        if (jsonObj["birthday"].isNull()) {
+            QJsonObject newJsonObj = jsonObj;
+            newJsonObj["birthday"] = "No info";
+            jsonObj = newJsonObj;
+        }
+
+        // define standart info to celebrity with no country info
+        if (jsonObj["country"].isNull()) {
+            QJsonObject newJsonObj = jsonObj;
+            newJsonObj["country"] = QJsonObject{
+                {"name", "No info"},
+            };
+            jsonObj = newJsonObj;
+        }
+
+        qDebug() << jsonObj;
+
         emit celebrityDetailsFetched(jsonObj);
     } else {
         emit errorOccurred(reply->errorString());
