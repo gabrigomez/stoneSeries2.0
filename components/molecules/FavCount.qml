@@ -10,7 +10,7 @@ Button {
     top: userNameInfo.bottom
     topMargin: 6
     left: userNameInfo.left
-    leftMargin: -4
+    leftMargin: -2
   }
 
   Image {

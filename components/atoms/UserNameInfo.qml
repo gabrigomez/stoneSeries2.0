@@ -4,8 +4,7 @@ Text {
   id: userNameInfo
   anchors {
     left: optionsMenuButton.right
-    leftMargin: 10
-    //verticalCenter: parent.verticalCenter
+    leftMargin: 14
   }
   y: 14
 
