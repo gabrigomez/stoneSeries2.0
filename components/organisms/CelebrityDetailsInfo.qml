@@ -108,6 +108,7 @@ Item {
         font.pixelSize: 24
       }
 
+      //TODO: create just one molecule to all below
       Molecules.CelebrityCountry {
         id: celebrityCountryContainer
       }

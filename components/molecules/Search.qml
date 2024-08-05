@@ -10,7 +10,8 @@ Rectangle {
   anchors {
     right: parent.right
     rightMargin: 4
-    verticalCenter: parent.verticalCenter
+    top: parent.top
+    topMargin: 10
   }
 
   function performSearch() {
@@ -33,6 +34,28 @@ Rectangle {
     Keys.onEscapePressed: () => {
                             stackView.push("Home.qml")
                           }
+  }
+
+  ComboBox {
+    id: searchComboBox
+    width: 170
+
+    anchors {
+      top: searchInputText.bottom
+      topMargin: 10
+    }
+
+    model: ["Shows", "Celebridades"]
+
+    onActivated: {
+      if (currentIndex === 0) {
+        console.log('esta em shows')
+      } else {
+        console.log('esta em celebridades')
+      }
+
+      console.log(currentIndex)
+    }
   }
 
   SearchIcon {}

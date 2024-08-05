@@ -6,7 +6,7 @@ Text {
     left: optionsMenuButton.right
     leftMargin: 14
   }
-  y: 14
+  y: 24
 
   text: "Olá, " + settingsConfig.userName + "!"
   color: "white"

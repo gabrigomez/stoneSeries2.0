@@ -8,7 +8,7 @@ import "../molecules" as Molecules
 
 Rectangle {
   id: navBar
-  height: 80
+  height: 100
   width: parent.width
   color: settingsConfig.navBarColor
 
@@ -30,12 +30,8 @@ Rectangle {
     id: userNameInfo
   }
 
-  Molecules.FavCount {}
-
-  Atoms.LogoIcon {}
-
-  Atoms.AppTitle {
-    id: title
+  Molecules.FavCount {
+    id: favCount
   }
 
   Molecules.ThemeButton {
@@ -43,13 +39,19 @@ Rectangle {
     target: "navBar"
 
     anchors {
-      right: search.left
-      rightMargin: 30
+      left: userNameInfo.right
+      leftMargin: 50
       verticalCenter: parent.verticalCenter
     }
 
     width: 34
     height: 34
+  }
+
+  Atoms.LogoIcon {}
+
+  Atoms.AppTitle {
+    id: title
   }
 
   Molecules.Search {
