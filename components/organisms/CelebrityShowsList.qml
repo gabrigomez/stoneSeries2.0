@@ -13,10 +13,10 @@ Item {
       leftMargin: 10
     }
 
-    color: settingsConfig.themeColor
+    color: "white"
     text: "Shows"
     style: Text.Outline
-    styleColor: "white"
+    styleColor: "black"
 
     font.family: bodyFont.font.family
     font.pixelSize: 44
