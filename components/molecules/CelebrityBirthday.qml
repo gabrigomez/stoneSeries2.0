@@ -2,6 +2,13 @@ import QtQuick
 
 Rectangle {
   width: birthdayIcon.width + celebrityBirthday.contentWidth + 20
+  height: 36
+  anchors {
+    bottom: parent.bottom
+    left: celebrityCountryContainer.right
+  }
+
+  color: "transparent"
 
   anchors {
     bottom: parent.bottom

@@ -2,10 +2,13 @@ import QtQuick
 
 Rectangle {
   width: countryIcon.width + celebrityCountry.contentWidth + 20
+  height: 36
   anchors {
     bottom: parent.bottom
     left: celebrityName.left
   }
+
+  color: "transparent"
 
   Image {
     id: countryIcon

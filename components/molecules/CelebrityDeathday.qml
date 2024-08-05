@@ -2,11 +2,14 @@ import QtQuick
 
 Rectangle {
   width: deathdayIcon.width + celebrityDeathday.contentWidth + 20
+  height: 36
   anchors {
     bottom: parent.bottom
     left: celebrityBirthdayContainer.right
     leftMargin: 10
   }
+
+  color: "transparent"
 
   Image {
     id: deathdayIcon

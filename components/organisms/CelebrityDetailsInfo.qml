@@ -48,7 +48,7 @@ Item {
     Rectangle {
       id: celebrityDetailsInfoCard
       width: 500
-      height: 750
+      height: 800
 
       x: 6
       y: 4
@@ -105,7 +105,7 @@ Item {
         style: Text.Outline
         styleColor: "black"
         font.family: bodyFont.font.family
-        font.pixelSize: 18
+        font.pixelSize: 24
       }
 
       Molecules.CelebrityCountry {
