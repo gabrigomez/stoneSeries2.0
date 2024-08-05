@@ -22,6 +22,12 @@ void ApiController::fetchShows(const QString &query) {
     connect(reply, &QNetworkReply::finished, this, &ApiController::onShowsReply);
 }
 
+void ApiController::fetchCelebrities(const QString &query) {
+    QNetworkRequest request(QUrl("https://api.tvmaze.com/search/people?q=" + (query)));
+    QNetworkReply *reply = networkManager->get(request);
+    connect(reply, &QNetworkReply::finished, this, &ApiController::onCelebritiesReply);
+}
+
 void ApiController::fetchCast(int id) {
     QNetworkRequest request(QUrl(QString("https://api.tvmaze.com/shows/%1/cast").arg(id)));
     QNetworkReply *reply = networkManager->get(request);
@@ -244,6 +250,27 @@ void ApiController::onShowsReply() {
         }
 
         emit showsFetched(jsonArray);
+    } else {
+        emit errorOccurred(reply->errorString());
+    }
+    reply->deleteLater();
+}
+void ApiController::onCelebritiesReply() {
+    QNetworkReply *reply = qobject_cast<QNetworkReply*>(sender());
+
+    if (reply->error() == QNetworkReply::NoError) {
+        QJsonDocument doc = QJsonDocument::fromJson(reply->readAll());
+        QJsonArray jsonArray = doc.array();
+
+        for (int i = 0; i < jsonArray.size(); ++i) {
+            QJsonObject jsonObj = jsonArray[i].toObject();
+            QJsonObject showObj = jsonObj["celebrities"].toObject();
+        }
+
+        qDebug() << jsonArray;
+
+
+        emit celebritiesFetched(jsonArray);
     } else {
         emit errorOccurred(reply->errorString());
     }

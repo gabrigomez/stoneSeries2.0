@@ -48,12 +48,7 @@ Rectangle {
     model: ["Shows", "Celebridades"]
 
     onActivated: {
-      if (currentIndex === 0) {
-        console.log('esta em shows')
-      } else {
-        console.log('esta em celebridades')
-      }
-
+      searchType = currentIndex
       console.log(currentIndex)
     }
   }

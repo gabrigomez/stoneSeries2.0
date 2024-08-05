@@ -54,7 +54,11 @@ Item {
   }
 
   Component.onCompleted: {
-    apiController.fetchShows(searchController.search)
+    if (searchType === 0) {
+      apiController.fetchShows(searchController.search)
+    } else {
+      apiController.fetchCelebrities(searchController.search)
+    }
   }
 
   Connections {

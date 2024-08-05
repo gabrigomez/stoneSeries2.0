@@ -17,6 +17,7 @@ ApplicationWindow {
   title: qsTr("Stone Series 2.0")
 
   //TODO: change celebrity_id
+  property var searchType
   property var showId
   property var celebrity_id
 
