@@ -28,7 +28,7 @@ Item {
   Rectangle {
     id: celebrityDetailsInfo
     width: 512
-    height: 800
+    height: 820
 
     y: 10
     x: 1000
