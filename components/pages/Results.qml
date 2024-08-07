@@ -45,8 +45,13 @@ Item {
         MouseArea {
           anchors.fill: parent
           onClicked: () => {
-                       showId = _id
-                       stackView.push("./ShowDetails.qml")
+                       if (searchType === 0) {
+                         showId = _id
+                         stackView.push("./ShowDetails.qml")
+                       } else {
+                         celebrity_id = _id
+                         stackView.push("./CelebrityDetails.qml")
+                       }
                      }
         }
       }
@@ -78,6 +83,23 @@ Item {
 
       results.map(show => resultsModel.append(show))
     }
+
+    function onCelebritiesFetched(celebrities) {
+      resultsModel?.clear()
+      if (celebrities.length === 0) {
+        stackView.push("./NotFound.qml")
+      }
+      const results = celebrities.map(item => ({
+                                                 "name": item.person.name,
+                                                 "imageUrl": item.person.image ? item.person.image?.original : "",
+                                                 "rating": "",
+                                                 "_id": item.person.id.toString(
+                                                          )
+                                               }))
+
+      results.map(show => resultsModel.append(show))
+    }
+
     function onErrorOccurred(errorString) {
       console.error("Error:", errorString)
     }
