@@ -59,18 +59,18 @@ void ApiController::onCelebrityShowsReply() {
             QJsonObject jsonObj = jsonArray[i].toObject();
             QJsonObject embeddedShowObj = jsonObj["_embedded"].toObject()["show"].toObject();
 
-            QJsonObject showObject;
-            showObject["id"] = embeddedShowObj["id"];
-            showObject["name"] = embeddedShowObj["name"];
+            QJsonObject celebrityObject;
+            celebrityObject["id"] = embeddedShowObj["id"];
+            celebrityObject["name"] = embeddedShowObj["name"];
 
             // define standart image to shows with no image
             if (embeddedShowObj["image"].isObject() && embeddedShowObj["image"].toObject()["medium"].isString()) {
-                showObject["image"] = embeddedShowObj["image"].toObject()["medium"];
+                celebrityObject["image"] = embeddedShowObj["image"].toObject()["medium"];
             } else {
-                showObject["image"] = "https://t3.ftcdn.net/jpg/03/34/83/22/360_F_334832255_IMxvzYRygjd20VlSaIAFZrQWjozQH6BQ.jpg";
+                celebrityObject["image"] = "https://t3.ftcdn.net/jpg/03/34/83/22/360_F_334832255_IMxvzYRygjd20VlSaIAFZrQWjozQH6BQ.jpg";
             }
 
-            celebrityShows.append(showObject);
+            celebrityShows.append(celebrityObject);
         }
 
         //qDebug() << celebrityShows;
@@ -210,7 +210,6 @@ void ApiController::onShowDetailsReply() {
             jsonObj = newJsonObj;
         }
 
-
         emit showDetailsFetched(jsonObj);
     } else {
         emit errorOccurred(reply->errorString());
@@ -264,15 +263,15 @@ void ApiController::onCelebritiesReply() {
 
         for (int i = 0; i < jsonArray.size(); ++i) {
             QJsonObject jsonObj = jsonArray[i].toObject();
-            QJsonObject showObj = jsonObj["person"].toObject();
+            QJsonObject celebrityObject = jsonObj["person"].toObject();
 
             // define standart image to celebrities with no image
-            if (!showObj.contains("image") || showObj["image"].isNull()) {
-                showObj["image"] = QJsonObject{
+            if (!celebrityObject.contains("image") || celebrityObject["image"].isNull()) {
+                celebrityObject["image"] = QJsonObject{
                     {"medium", "https://t3.ftcdn.net/jpg/03/34/83/22/360_F_334832255_IMxvzYRygjd20VlSaIAFZrQWjozQH6BQ.jpg"},
                     {"original", "https://t3.ftcdn.net/jpg/03/34/83/22/360_F_334832255_IMxvzYRygjd20VlSaIAFZrQWjozQH6BQ.jpg"}
                 };
-                jsonObj["person"] = showObj;
+                jsonObj["person"] = celebrityObject;
                 jsonArray[i] = jsonObj;
             }
         }
