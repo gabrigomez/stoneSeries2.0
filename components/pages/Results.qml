@@ -34,7 +34,7 @@ Item {
       model: ListModel {
         id: resultsModel
       }
-      delegate: Organisms.ShowCard {
+      delegate: Organisms.InfoCard {
         id: homeCards
         text: name
         image: imageUrl

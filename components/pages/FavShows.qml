@@ -23,7 +23,7 @@ Item {
       model: ListModel {
         id: favShowsModel
       }
-      delegate: Organisms.ShowCard {
+      delegate: Organisms.InfoCard {
         id: favShowCard
         text: name
         image: imageUrl

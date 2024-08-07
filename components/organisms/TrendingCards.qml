@@ -89,7 +89,7 @@ Rectangle {
       }
     }
 
-    delegate: Organisms.ShowCard {
+    delegate: Organisms.InfoCard {
       text: name
       image: imageUrl
       showRating: rating

@@ -39,7 +39,7 @@ qt_add_qml_module(appStoneSeries2
         RESOURCES assets/Birthday.png
         RESOURCES assets/Deathday.png
         RESOURCES assets/BornAt.png
-        QML_FILES components/organisms/ShowCard.qml
+        QML_FILES components/organisms/InfoCard.qml
         QML_FILES components/atoms/TrendingIcon.qml
         QML_FILES components/molecules/TrendingHeader.qml
         QML_FILES components/molecules/Search.qml
