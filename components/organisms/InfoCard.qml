@@ -63,6 +63,7 @@ Rectangle {
 
       Atoms.RatingIcon {
         id: ratingShowImage
+        visible: homeCards.showRating ? true : false
 
         anchors {
           right: trendingShowRating.left
