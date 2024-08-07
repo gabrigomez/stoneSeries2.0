@@ -7,7 +7,7 @@ import "../molecules" as Molecules
 Rectangle {
   id: showDetailsCard
   width: 512
-  height: 850
+  height: 835
 
   x: 500
   y: 10
@@ -36,7 +36,7 @@ Rectangle {
   Rectangle {
     id: showMainInfoCard
     width: 500
-    height: 840
+    height: 825
 
     x: 6
     y: 4
