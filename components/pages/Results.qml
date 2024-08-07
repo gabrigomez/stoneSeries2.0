@@ -91,7 +91,7 @@ Item {
       }
       const results = celebrities.map(item => ({
                                                  "name": item.person.name,
-                                                 "imageUrl": item.person.image ? item.person.image?.original : "",
+                                                 "imageUrl": item.person.image.original,
                                                  "rating": "",
                                                  "_id": item.person.id.toString(
                                                           )

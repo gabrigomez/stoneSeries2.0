@@ -264,11 +264,18 @@ void ApiController::onCelebritiesReply() {
 
         for (int i = 0; i < jsonArray.size(); ++i) {
             QJsonObject jsonObj = jsonArray[i].toObject();
-            QJsonObject showObj = jsonObj["celebrities"].toObject();
+            QJsonObject showObj = jsonObj["person"].toObject();
+
+            // define standart image to celebrities with no image
+            if (!showObj.contains("image") || showObj["image"].isNull()) {
+                showObj["image"] = QJsonObject{
+                    {"medium", "https://t3.ftcdn.net/jpg/03/34/83/22/360_F_334832255_IMxvzYRygjd20VlSaIAFZrQWjozQH6BQ.jpg"},
+                    {"original", "https://t3.ftcdn.net/jpg/03/34/83/22/360_F_334832255_IMxvzYRygjd20VlSaIAFZrQWjozQH6BQ.jpg"}
+                };
+                jsonObj["person"] = showObj;
+                jsonArray[i] = jsonObj;
+            }
         }
-
-        qDebug() << jsonArray;
-
 
         emit celebritiesFetched(jsonArray);
     } else {
