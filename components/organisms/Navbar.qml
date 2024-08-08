@@ -34,20 +34,6 @@ Rectangle {
     id: favCount
   }
 
-  Molecules.ThemeButton {
-    id: themeButton
-    target: "navBar"
-
-    anchors {
-      left: userNameInfo.right
-      leftMargin: 50
-      verticalCenter: parent.verticalCenter
-    }
-
-    width: 34
-    height: 34
-  }
-
   Atoms.LogoIcon {}
 
   Atoms.AppTitle {
@@ -56,5 +42,19 @@ Rectangle {
 
   Molecules.Search {
     id: search
+  }
+
+  Molecules.ThemeButton {
+    id: themeButton
+    target: "navBar"
+    y: 56
+
+    anchors {
+      right: parent.right
+      rightMargin: 16
+    }
+
+    width: 28
+    height: 28
   }
 }

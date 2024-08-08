@@ -40,8 +40,8 @@ Button {
   Image {
     source: "../../assets/Theme.png"
 
-    width: 32
-    height: 32
+    width: 28
+    height: 28
 
     anchors {
       centerIn: parent
