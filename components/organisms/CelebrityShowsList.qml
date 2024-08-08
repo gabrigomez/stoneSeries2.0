@@ -22,6 +22,11 @@ Item {
     font.pixelSize: 44
   }
 
+  Molecules.NoShows {
+    id: noShows
+    visible: celebrityShowListModel.count === 0
+  }
+
   Rectangle {
     id: celebrityShowListMainCard
     height: 720

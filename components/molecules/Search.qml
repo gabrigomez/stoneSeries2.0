@@ -49,7 +49,6 @@ Rectangle {
 
     onActivated: {
       searchType = currentIndex
-      console.log(currentIndex)
     }
   }
 
