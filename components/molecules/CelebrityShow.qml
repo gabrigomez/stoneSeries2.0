@@ -55,6 +55,14 @@ Rectangle {
       Rectangle {
         anchors.fill: parent
         visible: celebrityShowImage.status === 1
+        opacity: celebrityShowImage.status === 1
+
+        Behavior on opacity {
+          PropertyAnimation {
+            duration: 500
+            easing.type: Easing.InOutQuad
+          }
+        }
 
         Image {
           id: celebrityShowImage
