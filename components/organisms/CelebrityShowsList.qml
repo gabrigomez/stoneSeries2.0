@@ -34,7 +34,7 @@ Item {
 
     color: "transparent"
     clip: true
-    visible: celebrityShowListMainCard.isShowsLoaded ? true : false
+    visible: celebrityShowListMainCard.isShowsLoaded
 
     property bool isShowsLoaded: false
 

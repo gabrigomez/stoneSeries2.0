@@ -1,5 +1,7 @@
 import QtQuick
 
+import QtQuick.Controls.Material 2.12
+
 Rectangle {
   height: 260
   width: 604
@@ -40,14 +42,29 @@ Rectangle {
         leftMargin: 4
       }
 
-      Image {
-        id: celebrityShowImage
-        source: celebrityCard.image
-        width: 156
-        height: 246
+      BusyIndicator {
+        id: busyIndicator
+        visible: celebrityShowImage.status !== 1
+        width: 100
+        height: 100
 
-        anchors {
-          centerIn: parent
+        anchors.centerIn: parent
+        Material.accent: settingsConfig.themeColor
+      }
+
+      Rectangle {
+        anchors.fill: parent
+        visible: celebrityShowImage.status === 1
+
+        Image {
+          id: celebrityShowImage
+          source: celebrityCard.image
+          width: 156
+          height: 246
+
+          anchors {
+            centerIn: parent
+          }
         }
       }
     }
