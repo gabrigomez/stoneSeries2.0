@@ -18,6 +18,7 @@ A primeira versão pode ser conferida [aqui](https://github.com/gabrigomez/stone
 ## Features :boom:
 
 - Possibilidade de favoritar as séries preferidas
+- Pesquisa por celebridades
 - Customização das infos do usuário, como foto e username
 - Temas na barra de navegação e demais componentes
 - Link para consulta das séries no IMDB
@@ -32,16 +33,19 @@ Uma vez tendo o ambiente corretamente configurado, basta fazer o `git clone` do 
 
 ## Previews :eyes:	
 
-![My Remote Image](https://github.com/user-attachments/assets/14add309-3b47-4f21-8ed9-cc659cec5220)
+![My Remote Image](https://github.com/user-attachments/assets/2615e643-8a8f-4af6-b174-b09e8d272139)
 <br><br>
 
-![My Remote Image](https://github.com/user-attachments/assets/f9a08349-f416-416d-8b7b-91af72989ac6)
+![My Remote Image](https://github.com/user-attachments/assets/ba70c84d-e59a-416a-8e8a-593bd7441adc)
 <br><br>
 
-![My Remote Image](https://github.com/user-attachments/assets/1176b278-2859-4bcf-8e09-ba67e6ddac05)
+![My Remote Image](https://github.com/user-attachments/assets/caead6e0-589b-4fe5-89ff-7936edf8c9e3)
 <br><br>
 
-![My Remote Image](https://github.com/user-attachments/assets/64a3fbbe-9250-4943-8b9c-4667dfc67543)
+![My Remote Image](https://github.com/user-attachments/assets/72da1a8e-2206-408f-816d-99b285429dd5)
+<br><br>
+
+![My Remote Image](https://github.com/user-attachments/assets/f210f6f4-1973-4ac7-a693-60029a6985b2)
 <br><br>
 
 
