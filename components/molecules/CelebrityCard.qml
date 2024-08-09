@@ -1,4 +1,5 @@
 import QtQuick
+import QtQuick.Controls.Material 2.12
 
 Rectangle {
   height: 354
@@ -15,6 +16,16 @@ Rectangle {
 
   property var celebrityId
 
+  BusyIndicator {
+    id: busyIndicator
+    visible: celebrityImage.status !== 1
+    width: 100
+    height: 100
+
+    anchors.centerIn: parent
+    Material.accent: settingsConfig.themeColor
+  }
+
   Rectangle {
     id: celebrityCard
     height: 350
@@ -22,7 +33,9 @@ Rectangle {
     x: 2
     y: 2
 
+    visible: celebrityImage.status === 1
     color: settingsConfig.themeColor
+
     topRightRadius: 5
     topLeftRadius: 5
     bottomRightRadius: 10
