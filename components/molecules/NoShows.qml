@@ -12,7 +12,7 @@ Rectangle {
 
   Image {
     id: noShowsImage
-    source: "../../assets/SadFace.png"
+    source: "../../assets/NoResult.png"
     height: 120
     width: 120
 
