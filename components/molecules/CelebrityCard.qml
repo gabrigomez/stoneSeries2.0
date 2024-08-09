@@ -34,12 +34,20 @@ Rectangle {
     y: 2
 
     visible: celebrityImage.status === 1
+    opacity: celebrityImage.status === 1
     color: settingsConfig.themeColor
 
     topRightRadius: 5
     topLeftRadius: 5
     bottomRightRadius: 10
     bottomLeftRadius: 10
+
+    Behavior on opacity {
+      PropertyAnimation {
+        duration: 500
+        easing.type: Easing.InOutQuad
+      }
+    }
 
     Image {
       id: celebrityImage
