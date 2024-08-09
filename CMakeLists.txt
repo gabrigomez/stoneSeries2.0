@@ -25,7 +25,6 @@ qt_add_qml_module(appStoneSeries2
         RESOURCES assets/Logo.png
         RESOURCES assets/BackIcon.png
         RESOURCES assets/CalendarIcon.png
-        RESOURCES assets/Settings.png
         RESOURCES assets/NotFound.png
         RESOURCES assets/UploadImage.png
         RESOURCES assets/Theme.png
