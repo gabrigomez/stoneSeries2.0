@@ -6,7 +6,7 @@ import "../molecules" as Molecules
 Item {
   BusyIndicator {
     id: busyIndicator
-    visible: castMainCard.isCastLoaded ? false : true
+    visible: !castMainCard.isCastLoaded
     x: 150
     y: 50
 
@@ -22,7 +22,7 @@ Item {
 
     color: "transparent"
     clip: true
-    visible: castMainCard.isCastLoaded ? true : false
+    visible: castMainCard.isCastLoaded
 
     property bool isCastLoaded: false
 
