@@ -59,10 +59,6 @@ Rectangle {
       id: showName
     }
 
-    Atoms.GenresIcon {
-      id: genresIcon
-    }
-
     Molecules.GenresInfo {
       id: showGenresRow
     }

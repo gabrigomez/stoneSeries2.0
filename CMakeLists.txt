@@ -79,7 +79,6 @@ qt_add_qml_module(appStoneSeries2
         QML_FILES components/organisms/ShowDetailsInfo.qml
         QML_FILES components/atoms/ShowDetailsImage.qml
         QML_FILES components/atoms/ShowDetailsTitle.qml
-        QML_FILES components/atoms/GenresIcon.qml
         QML_FILES components/molecules/GenresInfo.qml
         QML_FILES components/atoms/ShowDetailsRating.qml
         QML_FILES components/atoms/CalendarIcon.qml

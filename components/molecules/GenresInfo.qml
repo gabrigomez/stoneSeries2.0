@@ -2,9 +2,10 @@ import QtQuick
 
 Row {
   id: showGenresRow
+
   anchors {
-    bottom: genresIcon.bottom
-    left: genresIcon.right
+    left: parent.left
+    top: showName.bottom
     leftMargin: 4
   }
 
