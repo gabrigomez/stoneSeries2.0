@@ -8,6 +8,7 @@ Image {
 
   anchors {
     left: parent.left
+    leftMargin: 4
     top: showGenresRow.bottom
     topMargin: 4
   }
