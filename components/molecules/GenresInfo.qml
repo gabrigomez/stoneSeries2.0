@@ -17,7 +17,7 @@ Row {
     Text {
       text: modelData + (index < showGenresRepeater.count - 1 ? ", " : "")
       font.family: bodyFont.font.family
-      font.pixelSize: 22
+      font.pixelSize: 20
 
       color: "white"
       style: Text.Outline
