@@ -16,10 +16,6 @@ Rectangle {
     id: fileDialog
     nameFilters: ["Image Files (*.jpg *.png *.jpeg)"]
     onAccepted: settingsConfig.userAvatar = selectedFile
-    onRejected: {
-      errorMessage.text = "Ocorreu um erro, tente novamente"
-      errorMessage.visible = true
-    }
   }
 
   Atoms.SettingsTitle {}
