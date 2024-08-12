@@ -6,6 +6,8 @@ import "../organisms" as Organisms
 
 Rectangle {
   id: settingsCard
+  objectName: "settingsPage"
+
   width: root.width
   height: root.height
   color: "transparent"

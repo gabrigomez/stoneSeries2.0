@@ -15,4 +15,14 @@ Text {
 
   style: Text.Outline
   styleColor: "black"
+
+  MouseArea {
+    anchors.fill: parent
+    cursorShape: Qt.PointingHandCursor
+    onClicked: () => {
+                 if (stackView.currentItem.objectName !== "settingsPage") {
+                   stackView.push("../pages/Settings.qml")
+                 }
+               }
+  }
 }
