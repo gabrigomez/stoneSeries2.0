@@ -18,7 +18,21 @@ Button {
                  return
                }
                settingsConfig.userName = editUserNameInput.text
+               errorMessage.visible = true
+               errorMessage.text = "Alterações salvas com sucesso!"
+               redirectTimer.start()
              }
+
+  Timer {
+    id: redirectTimer
+    interval: 2300
+    repeat: false
+    onTriggered: {
+      errorMessage.visible = false
+      errorMessage.text = ""
+      stackView.pop(null)
+    }
+  }
 
   background: Rectangle {
     id: saveButtonColor
