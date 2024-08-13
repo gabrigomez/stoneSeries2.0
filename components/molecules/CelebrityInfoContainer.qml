@@ -1,33 +1,28 @@
 import QtQuick
 
 Rectangle {
-  width: countryIcon.width + celebrityCountry.contentWidth + 20
+  width: celebrityInfoIcon.width + celebrityInfoText.contentWidth + 20
   height: 36
-  anchors {
-    bottom: parent.bottom
-    left: celebrityName.left
-  }
-
   color: "transparent"
 
+  property alias imgSource: celebrityInfoIcon.source
+  property alias info: celebrityInfoText.text
+
   Image {
-    id: countryIcon
-    source: "../../assets/BornAt.png"
+    id: celebrityInfoIcon
     width: 30
     height: 30
   }
 
   Text {
-    id: celebrityCountry
+    id: celebrityInfoText
 
     anchors {
-      top: countryIcon.top
+      top: celebrityInfoIcon.top
       topMargin: 8
-      left: countryIcon.right
+      left: celebrityInfoIcon.right
       leftMargin: 5
     }
-
-    text: celebrityDetails?.country ? celebrityDetails.country : ""
     x: 5
 
     color: "white"

@@ -109,16 +109,38 @@ Item {
       }
 
       //TODO: create just one molecule to all below
-      Molecules.CelebrityCountry {
+      Molecules.CelebrityInfoContainer {
         id: celebrityCountryContainer
+        info: celebrityDetails?.country ? celebrityDetails.country : ""
+        imgSource: "../../assets/BornAt.png"
+
+        anchors {
+          bottom: parent.bottom
+          left: celebrityName.left
+        }
       }
 
-      Molecules.CelebrityBirthday {
+      Molecules.CelebrityInfoContainer {
         id: celebrityBirthdayContainer
+        info: celebrityDetails?.birthday ? celebrityDetails.birthday : ""
+        imgSource: "../../assets/Birthday.png"
+
+        anchors {
+          bottom: parent.bottom
+          left: celebrityCountryContainer.right
+        }
       }
 
-      Molecules.CelebrityDeathday {
+      Molecules.CelebrityInfoContainer {
         id: celebrityDeathdayContainer
+        visible: celebrityDetails.deathday ? true : false
+        info: celebrityDetails?.deathday ? celebrityDetails.deathday : ""
+        imgSource: "../../assets/Deathday.png"
+
+        anchors {
+          bottom: parent.bottom
+          left: celebrityBirthdayContainer.right
+        }
       }
     }
   }
