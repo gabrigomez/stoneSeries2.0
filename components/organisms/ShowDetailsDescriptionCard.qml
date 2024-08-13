@@ -1,5 +1,6 @@
 import QtQuick
 import QtQuick.Controls
+import QtQuick.Controls.Material 2.12
 
 import "../atoms" as Atoms
 import "../molecules" as Molecules
@@ -22,10 +23,21 @@ Flickable {
   property alias favButtonText: favShowButton.text
   property alias favButtonBgColor: favShowButton.bgColor
 
+  BusyIndicator {
+    id: busyIndicator
+    visible: showDetails?.description ? false : true
+
+    anchors.centerIn: parent
+    width: 281
+    height: 281
+    Material.accent: settingsConfig.themeColor
+  }
+
   Rectangle {
     id: showDescriptionCard
     width: 500
     height: 100 + showDetailsSummary.height
+    visible: showDetails?.description ? true : false
 
     color: settingsConfig.themeColor
     border {

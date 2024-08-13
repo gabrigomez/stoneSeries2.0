@@ -1,5 +1,4 @@
 import QtQuick
-import QtQuick.Controls.Material 2.12
 
 import "../organisms" as Organisms
 
@@ -49,26 +48,8 @@ Rectangle {
     id: showDetailsCard
   }
 
-  BusyIndicator {
-    id: busyIndicator
-    visible: showDetails?.description ? false : true
-
-    anchors {
-      top: showDetails.top
-      left: showDetailsCard.right
-      topMargin: 60
-      leftMargin: 150
-    }
-
-    width: 281
-    height: 281
-    Material.accent: settingsConfig.themeColor
-  }
-
   Organisms.ShowDetailsDescriptionCard {
     id: showDescriptionCard
-    visible: showDetails?.description ? true : false
-
     favButtonText: showDetails.favButtonText
     favButtonBgColor: showDetails.favButtonBg
   }
