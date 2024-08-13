@@ -9,7 +9,7 @@ Rectangle {
 
   anchors {
     top: parent.top
-    topMargin: 10
+    topMargin: 40
     horizontalCenter: parent.horizontalCenter
   }
   width: 206

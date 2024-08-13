@@ -12,6 +12,10 @@ Text {
   font.family: bodyFont.font.family
   font.pixelSize: 30
 
+  color: "white"
+  style: Text.Outline
+  styleColor: "black"
+
   // transition when change username
   Behavior on text {
     SequentialAnimation {

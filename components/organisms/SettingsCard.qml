@@ -8,11 +8,11 @@ Rectangle {
   id: settingsInfo
   anchors.centerIn: parent
   width: 500
-  height: 500
+  height: 550
 
-  color: 'transparent'
+  color: settingsConfig.themeColor
   radius: 20
-  border.color: settingsConfig.themeColor
+  border.color: "#27AE60"
 
   ColorDialog {
     id: colorDialog
@@ -40,7 +40,7 @@ Rectangle {
 
     anchors {
       top: userName.bottom
-      topMargin: 14
+      topMargin: 30
       horizontalCenter: parent.horizontalCenter
     }
   }
