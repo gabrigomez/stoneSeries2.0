@@ -1,49 +1,16 @@
 import QtQuick
 
-import "../organisms" as Organisms
-import "../molecules" as Molecules
+import "../templates" as Templates
 
 Item {
   objectName: "favShowPage"
 
-  Rectangle {
-    id: favShowCards
+  Templates.FavShowsTemplate {
+    favShowsData: favShowsModel
+  }
 
-    width: root.width
-    height: 820
-    x: 10
-    y: 10
-
-    color: "transparent"
-
-    ListView {
-      anchors.fill: parent
-      orientation: Qt.Horizontal
-      spacing: 40
-      model: ListModel {
-        id: favShowsModel
-      }
-      delegate: Organisms.InfoCard {
-        id: favShowCard
-        text: name
-        image: imageUrl
-        showRating: rating
-
-        height: 820
-
-        MouseArea {
-          anchors.fill: parent
-          onClicked: () => {
-                       showId = _id
-                       stackView.push("../pages/ShowDetails.qml")
-                     }
-        }
-      }
-    }
-
-    Molecules.NoFavListShow {
-      id: noFavListShow
-    }
+  ListModel {
+    id: favShowsModel
   }
 
   Component.onCompleted: {

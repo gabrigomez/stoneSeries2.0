@@ -17,7 +17,6 @@ Rectangle {
   property var deathday
   property var country
 
-  //Organisms.CelebrityDetailsInfo {}
   Templates.CelebrityDetailsTemplate {}
 
   Component.onCompleted: {
