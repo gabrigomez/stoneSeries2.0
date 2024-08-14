@@ -2,6 +2,7 @@ import QtQuick
 import QtQuick.Controls.Material 2.12
 
 import "../molecules" as Molecules
+import "../organisms" as Organisms
 
 Item {
   id: celebrityDetailsInfoContainer
@@ -18,7 +19,7 @@ Item {
     Material.accent: settingsConfig.themeColor
   }
 
-  CelebrityShowsList {
+  Organisms.CelebrityShowsList {
     id: celebrityShowListContainer
     y: 80
     x: 350
@@ -46,7 +47,7 @@ Item {
     bottomRightRadius: 20
     bottomLeftRadius: 20
 
-    CelebrityDetailsInfoCard {
+    Organisms.CelebrityDetailsInfoCard {
       id: celebrityDetailsInfoCard
     }
   }

@@ -2,6 +2,7 @@ import QtQuick
 import QtQuick.Controls.Material 2.12
 
 import "../organisms" as Organisms
+import "../templates" as Templates
 
 Rectangle {
   id: celebrityDetails
@@ -16,7 +17,8 @@ Rectangle {
   property var deathday
   property var country
 
-  Organisms.CelebrityDetailsInfo {}
+  //Organisms.CelebrityDetailsInfo {}
+  Templates.CelebrityDetailsTemplate {}
 
   Component.onCompleted: {
     apiController.fetchCelebrityDetails(celebrity_id)
