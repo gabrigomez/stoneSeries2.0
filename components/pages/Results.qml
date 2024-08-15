@@ -1,61 +1,15 @@
 import QtQuick
 import QtQuick.Controls.Material 2.12
 
-import "../organisms" as Organisms
+import "../templates" as Templates
 
 Item {
-  BusyIndicator {
-    id: busyIndicator
-    visible: resultsModel.count === 0 ? true : false
-
-    anchors {
-      centerIn: parent
-    }
-
-    width: 281
-    height: 281
-    Material.accent: settingsConfig.themeColor === "#000000" ? "white" : "black"
+  ListModel {
+    id: resultsModel
   }
 
-  Rectangle {
-    id: searchedShowCards
-    width: root.width - 40
-    height: 820
-    x: 10
-    y: 10
-
-    visible: resultsModel.count > 0 ? true : false
-    color: "transparent"
-
-    ListView {
-      anchors.fill: parent
-      orientation: Qt.Horizontal
-      spacing: 40
-      model: ListModel {
-        id: resultsModel
-      }
-      delegate: Organisms.InfoCard {
-        id: homeCards
-        text: name
-        image: imageUrl
-        showRating: rating
-
-        height: 820
-
-        MouseArea {
-          anchors.fill: parent
-          onClicked: () => {
-                       if (searchType === 0) {
-                         showId = _id
-                         stackView.push("./ShowDetails.qml")
-                       } else {
-                         celebrity_id = _id
-                         stackView.push("./CelebrityDetails.qml")
-                       }
-                     }
-        }
-      }
-    }
+  Templates.ResultsTemplate {
+    resultsData: resultsModel
   }
 
   Component.onCompleted: {
