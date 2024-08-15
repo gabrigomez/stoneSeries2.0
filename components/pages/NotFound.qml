@@ -1,6 +1,6 @@
 import QtQuick
 
-import "../atoms" as Atoms
+import "../templates" as Templates
 
 Rectangle {
   id: noResultsPage
@@ -8,9 +8,5 @@ Rectangle {
   width: root.width
   height: 820
 
-  Atoms.NotFoundDescription {
-    id: noResultsMessage
-  }
-
-  Atoms.NotFoundImage {}
+  Templates.NotFoundTemplate {}
 }
