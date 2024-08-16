@@ -1,11 +1,12 @@
 import QtQuick
 
-import "../organisms" as Organisms
+import "../templates" as Templates
 
 Rectangle {
   id: showDetails
   width: parent?.width
   height: parent?.height
+
   color: "white"
 
   property var name
@@ -20,6 +21,15 @@ Rectangle {
 
   property string favButtonText
   property string favButtonBg
+
+  property var startYear: getYear(startDate)
+  property var endYear: getYear(endDate)
+  property var statusIcon: getStatusIcon(status)
+
+  Templates.ShowDetailsTemplate {
+    favButtonBg: showDetails.favButtonBg
+    favButtonText: showDetails.favButtonText
+  }
 
   function getYear(date) {
     if (date) {
@@ -38,20 +48,6 @@ Rectangle {
     } else {
       return "../../assets/Doubt.png"
     }
-  }
-
-  property var startYear: getYear(startDate)
-  property var endYear: getYear(endDate)
-  property var statusIcon: getStatusIcon(status)
-
-  Organisms.ShowDetailsInfo {
-    id: showDetailsCard
-  }
-
-  Organisms.ShowDetailsDescriptionCard {
-    id: showDescriptionCard
-    favButtonText: showDetails.favButtonText
-    favButtonBgColor: showDetails.favButtonBg
   }
 
   Component.onCompleted: {
