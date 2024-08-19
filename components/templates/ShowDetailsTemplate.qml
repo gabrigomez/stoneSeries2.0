@@ -7,6 +7,7 @@ Item {
 
   property string favButtonText
   property string favButtonBg
+  property var castData
 
   anchors.fill: parent
 
@@ -18,5 +19,6 @@ Item {
     id: showDescriptionCard
     favButtonText: showDetailsTemplateContainer.favButtonText
     favButtonBgColor: showDetailsTemplateContainer.favButtonBg
+    castModelData: showDetailsTemplateContainer.castData
   }
 }

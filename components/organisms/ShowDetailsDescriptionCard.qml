@@ -22,6 +22,7 @@ Flickable {
 
   property alias favButtonText: favShowButton.text
   property alias favButtonBgColor: favShowButton.bgColor
+  property var castModelData
 
   BusyIndicator {
     id: busyIndicator
@@ -82,6 +83,7 @@ Flickable {
 
     CastCard {
       id: castCard
+      castData: flickable.castModelData
 
       anchors {
         top: favShowButton.bottom

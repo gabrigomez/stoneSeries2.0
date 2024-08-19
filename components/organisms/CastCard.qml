@@ -4,9 +4,13 @@ import QtQuick.Controls.Material 2.12
 import "../molecules" as Molecules
 
 Item {
+  id: castCardContainer
+
+  property var castData
+
   BusyIndicator {
     id: busyIndicator
-    visible: !castMainCard.isCastLoaded
+    visible: !castCardContainer.castData
     x: 150
     y: 50
 
@@ -22,9 +26,9 @@ Item {
 
     color: "transparent"
     clip: true
-    visible: castMainCard.isCastLoaded
+    visible: castCardContainer.castData
 
-    property bool isCastLoaded: false
+    property bool isCastLoaded: castCard
 
     Molecules.NoCast {
       anchors.fill: parent
@@ -35,9 +39,7 @@ Item {
       anchors.fill: parent
       orientation: Qt.Horizontal
       spacing: 25
-      model: ListModel {
-        id: castModel
-      }
+      model: castCardContainer.castData
 
       delegate: Molecules.CelebrityCard {
         text: name
@@ -52,30 +54,6 @@ Item {
                        stackView.push("../pages/CelebrityDetails.qml")
                      }
         }
-      }
-    }
-
-    Component.onCompleted: {
-      apiController.fetchCast(showId)
-    }
-
-    Connections {
-      target: apiController
-
-      function onCastFetched(cast) {
-        castModel?.clear()
-        const results = cast.map(item => ({
-                                            "name": item.person.name,
-                                            "imageUrl": item.person.image?.medium,
-                                            "id": item.person.id
-                                          }))
-
-        results.map(cast => castModel.append(cast))
-        castMainCard.isCastLoaded = true
-      }
-
-      function onErrorOccurred(errorString) {
-        console.error("Error:", errorString)
       }
     }
   }

@@ -29,6 +29,7 @@ Rectangle {
   Templates.ShowDetailsTemplate {
     favButtonBg: showDetails.favButtonBg
     favButtonText: showDetails.favButtonText
+    castData: castModel
   }
 
   function getYear(date) {
@@ -52,6 +53,8 @@ Rectangle {
 
   Component.onCompleted: {
     apiController.fetchShowDetails(showId)
+    apiController.fetchCast(showId)
+
     var favList = settingsConfig.favShowsList
     var index = favList.findIndex(show => show._id === showId.toString())
 
@@ -62,6 +65,10 @@ Rectangle {
       showDetails.favButtonText = "Remover dos favoritos"
       showDetails.favButtonBg = "red"
     }
+  }
+
+  ListModel {
+    id: castModel
   }
 
   Connections {
@@ -79,6 +86,17 @@ Rectangle {
       showDetails.status = details?.status
     }
 
+    function onCastFetched(cast) {
+      castModel?.clear()
+      const results = cast.map(item => ({
+                                          "name": item.person.name,
+                                          "imageUrl": item.person.image?.medium,
+                                          "id": item.person.id
+                                        }))
+
+      results.map(cast => castModel.append(cast))
+      //castMainCard.isCastLoaded = true
+    }
     function onErrorOccurred(errorString) {
       console.error("Error:", errorString)
     }
