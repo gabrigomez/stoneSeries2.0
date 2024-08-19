@@ -26,6 +26,11 @@ Item {
 
     property bool isCastLoaded: false
 
+    Molecules.NoCast {
+      anchors.fill: parent
+      visible: castModel.count === 0
+    }
+
     ListView {
       anchors.fill: parent
       orientation: Qt.Horizontal
