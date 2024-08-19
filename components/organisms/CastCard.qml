@@ -10,7 +10,7 @@ Item {
 
   BusyIndicator {
     id: busyIndicator
-    visible: !castCardContainer.castData
+    visible: apiController.isCastLoad === false
     x: 150
     y: 50
 
@@ -26,7 +26,7 @@ Item {
 
     color: "transparent"
     clip: true
-    visible: castCardContainer.castData
+    visible: apiController.isCastLoad
 
     property bool isCastLoaded: castCard
 

@@ -8,8 +8,11 @@
 class ApiController : public QObject
 {
     Q_OBJECT
+    Q_PROPERTY(bool isCastLoad READ isCastLoad WRITE setIsCastLoad NOTIFY isCastLoadChanged FINAL)  // to control CastCard load state
 public:
     explicit ApiController(QObject *parent = nullptr);
+    bool isCastLoad() const;
+    void setIsCastLoad(const bool &newIsCastLoad);
 
     Q_INVOKABLE void fetchShowDetails(int id);
     Q_INVOKABLE void fetchShows(const QString &query);
@@ -26,6 +29,7 @@ signals:
     void celebrityDetailsFetched(const QJsonObject &details);
     void celebrityShowsFetched(const QJsonArray &details);
     void errorOccurred(const QString &error);
+    void isCastLoadChanged();
 
 private slots:
     void onShowDetailsReply();
@@ -37,7 +41,8 @@ private slots:
 
 private:
     QNetworkAccessManager *networkManager;
+    bool m_isCastLoad;
 };
 
 
-#endif // APICONTROLLER_H
+#endif

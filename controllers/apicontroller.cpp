@@ -10,6 +10,18 @@ ApiController::ApiController(QObject *parent) : QObject(parent) {
     networkManager = new QNetworkAccessManager(this);
 }
 
+bool ApiController::isCastLoad() const
+{
+    return m_isCastLoad;
+}
+
+void ApiController::setIsCastLoad(const bool &newIsCastLoad)
+{
+
+    m_isCastLoad = newIsCastLoad;
+    emit isCastLoadChanged();
+}
+
 void ApiController::fetchShowDetails(int id) {
     QNetworkRequest request(QUrl("https://api.tvmaze.com/shows/" + QString::number(id)));
     QNetworkReply *reply = networkManager->get(request);

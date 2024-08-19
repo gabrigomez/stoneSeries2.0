@@ -88,6 +88,7 @@ Rectangle {
 
     function onCastFetched(cast) {
       castModel?.clear()
+      apiController.isCastLoad = false
       const results = cast.map(item => ({
                                           "name": item.person.name,
                                           "imageUrl": item.person.image?.medium,
@@ -95,7 +96,7 @@ Rectangle {
                                         }))
 
       results.map(cast => castModel.append(cast))
-      //castMainCard.isCastLoaded = true
+      apiController.isCastLoad = true
     }
     function onErrorOccurred(errorString) {
       console.error("Error:", errorString)

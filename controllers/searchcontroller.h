@@ -23,4 +23,4 @@ private:
 };
 
 
-#endif // SEARCHCONTROLLER_H
+#endif
