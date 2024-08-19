@@ -43,8 +43,8 @@ Rectangle {
       height: homeCards.height - 10
       color: "transparent"
 
-      visible: trendingShowTitle.text === "" ? false : true
-      opacity: trendingShowTitle.text === "" ? false : true
+      visible: trendingShowImage.status === 1 ? true : false
+      opacity: trendingShowImage.status === 1 ? true : false
 
       Behavior on opacity {
         PropertyAnimation {
