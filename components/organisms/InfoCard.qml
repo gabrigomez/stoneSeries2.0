@@ -17,9 +17,9 @@ Rectangle {
   width: 512
   height: 760
 
-  property alias text: trendingShowTitle.text
-  property alias image: trendingShowImage.source
-  property alias showRating: trendingShowRating.text
+  property alias text: infoCardTitle.text
+  property alias image: infoCardImage.source
+  property alias showRating: infoCardRating.text
 
   Rectangle {
     x: 6
@@ -27,7 +27,7 @@ Rectangle {
 
     BusyIndicator {
       id: busyIndicator
-      visible: trendingShowImage.status === 1 ? false : true
+      visible: infoCardImage.status === 1 ? false : true
 
       x: 120
       y: 250
@@ -43,8 +43,8 @@ Rectangle {
       height: homeCards.height - 10
       color: "transparent"
 
-      visible: trendingShowImage.status === 1 ? true : false
-      opacity: trendingShowImage.status === 1 ? true : false
+      visible: infoCardImage.status === 1 ? true : false
+      opacity: infoCardImage.status === 1 ? true : false
 
       Behavior on opacity {
         PropertyAnimation {
@@ -54,11 +54,11 @@ Rectangle {
       }
 
       Atoms.ShowImage {
-        id: trendingShowImage
+        id: infoCardImage
       }
 
       Atoms.ShowTitle {
-        id: trendingShowTitle
+        id: infoCardTitle
       }
 
       Atoms.RatingIcon {
@@ -66,15 +66,15 @@ Rectangle {
         visible: homeCards.showRating ? true : false
 
         anchors {
-          right: trendingShowRating.left
+          right: infoCardRating.left
           rightMargin: 6
-          bottom: trendingShowRating.bottom
+          bottom: infoCardRating.bottom
           bottomMargin: 6
         }
       }
 
       Atoms.ShowRating {
-        id: trendingShowRating
+        id: infoCardRating
       }
     }
   }

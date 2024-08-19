@@ -3,7 +3,7 @@ import QtQuick
 Text {
   id: trendingShowTitle
   anchors {
-    top: trendingShowImage.bottom
+    top: infoCardImage.bottom
     topMargin: 10
   }
   color: "white"
@@ -14,6 +14,6 @@ Text {
   font.pixelSize: 40
 
   maximumLineCount: 2
-  width: trendingShowImage.width
+  width: infoCardImage.width
   wrapMode: Text.Wrap
 }

@@ -1,7 +1,7 @@
 import QtQuick
 
 Image {
-  id: trendingShowImage
+  id: showImage
   y: 2
   source: homeCards.image
   width: 500
