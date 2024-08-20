@@ -24,9 +24,11 @@ Item {
 
   Rectangle {
     id: noShowsContainer
+
     height: 250
     width: 600
     color: settingsConfig.themeColor
+    visible: celebrityShowListModel.count === 0
 
     topRightRadius: 5
     topLeftRadius: 5
