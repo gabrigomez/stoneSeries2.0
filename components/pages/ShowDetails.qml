@@ -26,6 +26,8 @@ Rectangle {
   property var endYear: getYear(endDate)
   property var statusIcon: getStatusIcon(status)
 
+  property bool isFetchFinished: false
+
   Templates.ShowDetailsTemplate {
     favButtonBg: showDetails.favButtonBg
     favButtonText: showDetails.favButtonText
@@ -88,7 +90,6 @@ Rectangle {
 
     function onCastFetched(cast) {
       castModel?.clear()
-      apiController.isCastLoad = false
       const results = cast.map(item => ({
                                           "name": item.person.name,
                                           "imageUrl": item.person.image?.medium,
@@ -96,7 +97,7 @@ Rectangle {
                                         }))
 
       results.map(cast => castModel.append(cast))
-      apiController.isCastLoad = true
+      showDetails.isFetchFinished = true // only load the component after all api calls
     }
     function onErrorOccurred(errorString) {
       console.error("Error:", errorString)

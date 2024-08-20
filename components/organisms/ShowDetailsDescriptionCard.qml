@@ -22,11 +22,12 @@ Flickable {
 
   property alias favButtonText: favShowButton.text
   property alias favButtonBgColor: favShowButton.bgColor
+  property bool isCastLoaded
   property var castModelData
 
   BusyIndicator {
     id: busyIndicator
-    visible: showDetails?.description ? false : true
+    visible: !flickable.isCastLoaded
 
     anchors.centerIn: parent
     width: 281
@@ -38,7 +39,7 @@ Flickable {
     id: showDescriptionCard
     width: 500
     height: 100 + showDetailsSummary.height
-    visible: showDetails?.description ? true : false
+    visible: flickable.isCastLoaded
 
     color: settingsConfig.themeColor
     border {

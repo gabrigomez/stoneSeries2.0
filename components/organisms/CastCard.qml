@@ -8,17 +8,6 @@ Item {
 
   property var castData
 
-  BusyIndicator {
-    id: busyIndicator
-    visible: apiController.isCastLoad === false
-    x: 150
-    y: 50
-
-    width: 200
-    height: 200
-    Material.accent: settingsConfig.themeColor
-  }
-
   Rectangle {
     id: castMainCard
     height: 400
@@ -26,12 +15,9 @@ Item {
 
     color: "transparent"
     clip: true
-    visible: apiController.isCastLoad
-
-    property bool isCastLoaded: castCard
 
     Molecules.NotFoundMolecule {
-      visible: castModel.count === 0
+      visible: castListView.count === 0
 
       image: "../../assets/Alert.png"
       message: "No cast info"
@@ -40,6 +26,7 @@ Item {
     }
 
     ListView {
+      id: castListView
       anchors.fill: parent
       orientation: Qt.Horizontal
       spacing: 25

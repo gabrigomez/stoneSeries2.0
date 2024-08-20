@@ -17,8 +17,10 @@ Item {
 
   Organisms.ShowDetailsDescriptionCard {
     id: showDescriptionCard
+
     favButtonText: showDetailsTemplateContainer.favButtonText
     favButtonBgColor: showDetailsTemplateContainer.favButtonBg
     castModelData: showDetailsTemplateContainer.castData
+    isCastLoaded: showDetails.isFetchFinished //to prevent load issues
   }
 }
