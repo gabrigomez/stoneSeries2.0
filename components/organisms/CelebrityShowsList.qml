@@ -40,6 +40,7 @@ Item {
       image: "../../assets/NoResult.png"
       message: "Nenhum show encontrado."
       textSize: 18
+      textColor: "white"
     }
   }
 
