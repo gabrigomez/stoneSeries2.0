@@ -5,9 +5,5 @@ Image {
   height: 120
   width: notFoundImageAtom.height
 
-  anchors {
-    horizontalCenter: parent.horizontalCenter
-    bottom: notFoundMessage.top
-    //bottomMargin: 20
-  }
+  anchors.centerIn: parent
 }

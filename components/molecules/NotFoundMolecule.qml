@@ -10,11 +10,11 @@ Rectangle {
   property alias image: notFoundImage.source
   property alias imageSize: notFoundImage.height
 
-  Atoms.NotFoundDescription {
-    id: notFoundMessage
-  }
-
   Atoms.NotFoundImage {
     id: notFoundImage
+  }
+
+  Atoms.NotFoundDescription {
+    id: notFoundMessage
   }
 }
