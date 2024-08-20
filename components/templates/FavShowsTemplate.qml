@@ -14,6 +14,7 @@ Rectangle {
   color: "transparent"
 
   property var favShowsData: []
+  property bool noResults
 
   ListView {
     anchors.fill: parent
@@ -40,7 +41,7 @@ Rectangle {
 
   Molecules.NotFoundMolecule {
     id: noFavListShow
-    visible: true
+    visible: favShowCards.noResults
     message: "Nenhuma série favoritada :("
     image: ""
   }

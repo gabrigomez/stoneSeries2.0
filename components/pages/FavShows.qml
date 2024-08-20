@@ -6,6 +6,7 @@ Item {
   objectName: "favShowPage"
 
   Templates.FavShowsTemplate {
+    id: favShowsTemplate
     favShowsData: favShowsModel
   }
 
@@ -15,7 +16,7 @@ Item {
 
   Component.onCompleted: {
     if (settingsConfig.favShowsList.length === 0) {
-      noFavListShow.visible = true
+      favShowsTemplate.noResults = true
     }
     const shows = settingsConfig.favShowsList
     shows.forEach(show => favShowsModel.append(show))
