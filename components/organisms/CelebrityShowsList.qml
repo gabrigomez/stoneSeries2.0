@@ -22,9 +22,25 @@ Item {
     font.pixelSize: 44
   }
 
-  Molecules.NoShows {
-    id: noShows
-    visible: celebrityShowListModel.count === 0
+  Rectangle {
+    id: noShowsContainer
+    height: 250
+    width: 600
+    color: settingsConfig.themeColor
+
+    topRightRadius: 5
+    topLeftRadius: 5
+    bottomRightRadius: 10
+    bottomLeftRadius: 10
+
+    Molecules.NotFoundMolecule {
+      id: noShows
+      visible: celebrityShowListModel.count === 0
+
+      image: "../../assets/NoResult.png"
+      message: "Nenhum show encontrado."
+      textSize: 18
+    }
   }
 
   Rectangle {

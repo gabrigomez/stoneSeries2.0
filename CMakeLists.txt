@@ -63,7 +63,6 @@ qt_add_qml_module(appStoneSeries2
         QML_FILES components/atoms/Mask.qml
         QML_FILES components/molecules/UserOptionsActions.qml
         QML_FILES components/atoms/UserOptionsBackground.qml
-        QML_FILES components/molecules/NoFavListShow.qml
         QML_FILES components/atoms/NotFoundDescription.qml
         QML_FILES components/atoms/NotFoundImage.qml
         QML_FILES components/atoms/SettingsTitle.qml
@@ -102,7 +101,6 @@ qt_add_qml_module(appStoneSeries2
         QML_FILES components/pages/CelebrityDetails.qml
         QML_FILES components/molecules/CelebrityShow.qml
         QML_FILES components/organisms/CelebrityShowsList.qml
-        QML_FILES components/molecules/NoShows.qml
         QML_FILES components/molecules/CelebrityInfoContainer.qml
         QML_FILES components/organisms/CelebrityDetailsInfoCard.qml
         QML_FILES components/templates/CelebrityDetailsTemplate.qml
@@ -113,7 +111,6 @@ qt_add_qml_module(appStoneSeries2
         QML_FILES components/templates/ResultsTemplate.qml
         QML_FILES components/templates/SettingsTemplate.qml
         QML_FILES components/templates/ShowDetailsTemplate.qml
-        QML_FILES components/molecules/NoCast.qml
 )
 
 # Qt for iOS sets MACOSX_BUNDLE_GUI_IDENTIFIER automatically since Qt 6.1.

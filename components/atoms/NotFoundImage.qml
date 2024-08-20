@@ -1,12 +1,13 @@
 import QtQuick
 
 Image {
-  source: "../../assets/NotFound.png"
+  id: notFoundImageAtom
   height: 120
-  width: 120
+  width: notFoundImageAtom.height
+
   anchors {
     horizontalCenter: parent.horizontalCenter
-    bottom: noResultsMessage.top
-    bottomMargin: 20
+    bottom: notFoundMessage.top
+    //bottomMargin: 20
   }
 }

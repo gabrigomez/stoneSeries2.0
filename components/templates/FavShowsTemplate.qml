@@ -38,7 +38,10 @@ Rectangle {
     }
   }
 
-  Molecules.NoFavListShow {
+  Molecules.NotFoundMolecule {
     id: noFavListShow
+    visible: true
+    message: "Nenhuma série favoritada :("
+    image: ""
   }
 }

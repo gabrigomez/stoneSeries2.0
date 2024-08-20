@@ -30,9 +30,13 @@ Item {
 
     property bool isCastLoaded: castCard
 
-    Molecules.NoCast {
-      anchors.fill: parent
+    Molecules.NotFoundMolecule {
       visible: castModel.count === 0
+
+      image: "../../assets/Alert.png"
+      message: "No cast info"
+      textSize: 24
+      imageSize: 60
     }
 
     ListView {

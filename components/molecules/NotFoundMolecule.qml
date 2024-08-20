@@ -2,12 +2,19 @@ import QtQuick
 
 import "../atoms" as Atoms
 
-Item {
+Rectangle {
   anchors.centerIn: parent
 
+  property alias message: notFoundMessage.text
+  property alias textSize: notFoundMessage.font.pixelSize
+  property alias image: notFoundImage.source
+  property alias imageSize: notFoundImage.height
+
   Atoms.NotFoundDescription {
-    id: noResultsMessage
+    id: notFoundMessage
   }
 
-  Atoms.NotFoundImage {}
+  Atoms.NotFoundImage {
+    id: notFoundImage
+  }
 }
