@@ -23,6 +23,8 @@ Item {
       message: "No cast info"
       textSize: 24
       imageSize: 60
+
+      anchors.centerIn: parent
     }
 
     ListView {

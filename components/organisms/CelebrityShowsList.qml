@@ -43,6 +43,8 @@ Item {
       message: "Nenhum show encontrado."
       textSize: 18
       textColor: "white"
+
+      anchors.centerIn: parent
     }
   }
 

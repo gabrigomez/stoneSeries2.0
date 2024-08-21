@@ -44,5 +44,11 @@ Rectangle {
     visible: favShowCards.noResults
     message: "Nenhuma série favoritada :("
     image: ""
+
+    anchors {
+      horizontalCenter: parent.horizontalCenter
+      top: parent.top
+      topMargin: 300
+    }
   }
 }

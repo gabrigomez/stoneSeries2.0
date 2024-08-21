@@ -3,8 +3,6 @@ import QtQuick
 import "../atoms" as Atoms
 
 Rectangle {
-  anchors.centerIn: parent
-
   property alias message: notFoundMessage.text
   property alias textSize: notFoundMessage.font.pixelSize
   property alias textColor: notFoundMessage.color
