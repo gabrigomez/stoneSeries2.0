@@ -6,7 +6,7 @@ import "../molecules" as Molecules
 Rectangle {
   id: favShowCards
 
-  width: root.width
+  width: root.width - 40
   height: 820
   x: 10
   y: 10
