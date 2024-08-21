@@ -43,7 +43,8 @@ Rectangle {
     id: noFavListShow
     visible: favShowCards.noResults
     message: "Nenhuma série favoritada :("
-    image: ""
+    image: "../../assets/Alert.png"
+    imageSize: 70
 
     anchors {
       horizontalCenter: parent.horizontalCenter
