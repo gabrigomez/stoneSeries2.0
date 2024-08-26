@@ -15,6 +15,7 @@ ApplicationWindow {
 
   visible: true
   title: qsTr("Stone Series 2.0")
+  color: "white"
 
   //TODO: change celebrity_id
   property int searchType: 0
