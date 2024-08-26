@@ -2,7 +2,7 @@ import QtQuick
 
 Image {
   id: userAvatar
-  source: settingsConfig.userAvatar
+  source: settingsConfig.userAvatar !== "" ? settingsConfig.userAvatar : "../../assets/User.png"
   anchors {
     centerIn: parent
   }
