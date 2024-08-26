@@ -8,7 +8,7 @@ Text {
   }
   y: 24
 
-  text: "Olá, " + settingsConfig.userName + "!"
+  text: "Olá, " + userNameInfo.hasUserName() + "!"
   color: "white"
   font.family: bodyFont.font.family
   font.pixelSize: 20
@@ -24,5 +24,9 @@ Text {
                    stackView.push("../pages/Settings.qml")
                  }
                }
+  }
+
+  function hasUserName() {
+    return settingsConfig.userName !== "" ? settingsConfig.userName : "usuário"
   }
 }
