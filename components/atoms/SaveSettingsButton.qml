@@ -10,19 +10,6 @@ Button {
     horizontalCenter: parent.horizontalCenter
   }
 
-  text: "Salvar"
-  onClicked: () => {
-               if (editUserNameInput.text === "") {
-                 errorMessage.visible = true
-                 errorMessage.text = "O username não pode ser vazio"
-                 return
-               }
-               settingsConfig.userName = editUserNameInput.text
-               errorMessage.visible = true
-               errorMessage.text = "Alterações salvas com sucesso!"
-               redirectTimer.start()
-             }
-
   Timer {
     id: redirectTimer
     interval: 2300
@@ -32,6 +19,13 @@ Button {
       errorMessage.text = ""
       stackView.pop(null)
     }
+  }
+
+  contentItem: Text {
+    text: "Salvar"
+    color: saveButton.hovered ? "#27AE60" : "black"
+    horizontalAlignment: Text.AlignHCenter
+    verticalAlignment: Text.AlignVCenter
   }
 
   background: Rectangle {
@@ -53,4 +47,16 @@ Button {
       }
     }
   }
+
+  onClicked: () => {
+               if (editUserNameInput.text === "") {
+                 errorMessage.visible = true
+                 errorMessage.text = "O username não pode ser vazio"
+                 return
+               }
+               settingsConfig.userName = editUserNameInput.text
+               errorMessage.visible = true
+               errorMessage.text = "Alterações salvas com sucesso!"
+               redirectTimer.start()
+             }
 }
