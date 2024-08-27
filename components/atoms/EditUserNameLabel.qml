@@ -7,6 +7,7 @@ Label {
     bottomMargin: 4
     left: editUserNameInput.left
   }
+
   text: "Edite o username"
 
   color: "white"

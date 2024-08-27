@@ -7,6 +7,7 @@ Text {
     right: showCardContainer.right
     rightMargin: 5
   }
+
   color: "white"
   text: ""
   style: Text.Outline

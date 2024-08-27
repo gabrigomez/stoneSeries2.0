@@ -15,9 +15,9 @@ Text {
   color: "white"
   style: Text.Outline
   styleColor: "black"
+
   font.family: bodyFont.font.family
   font.pixelSize: 40
-
   wrapMode: Text.WrapAtWordBoundaryOrAnywhere
   maximumLineCount: 2
 }

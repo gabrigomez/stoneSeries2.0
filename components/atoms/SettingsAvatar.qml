@@ -3,11 +3,12 @@ import QtQuick
 Image {
   id: userAvatar
   source: settingsConfig.userAvatar !== "" ? settingsConfig.userAvatar : "../../assets/User.png"
+  width: 200
+  height: 200
+
   anchors {
     centerIn: parent
   }
-  width: 200
-  height: 200
   visible: false
 
   //transition when change avatar

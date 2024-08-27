@@ -2,7 +2,6 @@ import QtQuick
 
 Text {
   id: showDetailsStatus
-
   anchors {
     top: showDescriptionCard.bottom
     topMargin: 24
