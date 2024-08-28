@@ -5,7 +5,10 @@ import "../atoms" as Atoms
 
 Rectangle {
   id: homeCards
+  width: 512
+  height: 760
   color: settingsConfig.themeColor
+
   border.color: "black"
   border.width: 2
 
@@ -13,9 +16,6 @@ Rectangle {
   topLeftRadius: 5
   bottomRightRadius: 20
   bottomLeftRadius: 20
-
-  width: 512
-  height: 760
 
   property alias text: infoCardTitle.text
   property alias image: infoCardImage.source
@@ -27,13 +27,12 @@ Rectangle {
 
     BusyIndicator {
       id: busyIndicator
+      width: 281
+      height: 281
       visible: infoCardImage.status === 1 ? false : true
 
       x: 120
       y: 250
-
-      width: 281
-      height: 281
       Material.accent: settingsConfig.themeColor === "#000000" ? "white" : "black"
     }
 
@@ -63,14 +62,13 @@ Rectangle {
 
       Atoms.RatingIcon {
         id: ratingShowImage
-        visible: homeCards.showRating ? true : false
-
         anchors {
           right: infoCardRating.left
           rightMargin: 6
           bottom: infoCardRating.bottom
           bottomMargin: 6
         }
+        visible: homeCards.showRating ? true : false
       }
 
       Atoms.ShowRating {

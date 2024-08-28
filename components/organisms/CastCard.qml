@@ -17,19 +17,19 @@ Item {
     clip: true
 
     Molecules.NotFoundMolecule {
+      anchors.centerIn: parent
       visible: castListView.count === 0
 
       image: "../../assets/Alert.png"
       message: "No cast info"
       textSize: 24
       imageSize: 60
-
-      anchors.centerIn: parent
     }
 
     ListView {
       id: castListView
       anchors.fill: parent
+
       orientation: Qt.Horizontal
       spacing: 25
       model: castCardContainer.castData

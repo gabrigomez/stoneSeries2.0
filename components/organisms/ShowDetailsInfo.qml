@@ -26,10 +26,11 @@ Rectangle {
 
   BusyIndicator {
     id: busyIndicator
-    visible: showImage.status === 1 ? false : true
-    anchors.centerIn: parent
     width: 281
     height: 281
+    anchors.centerIn: parent
+
+    visible: showImage.status === 1 ? false : true
     Material.accent: settingsConfig.themeColor === "#000000" ? "white" : "black"
   }
 
@@ -65,7 +66,6 @@ Rectangle {
 
     Atoms.RatingIcon {
       id: ratingShowImage
-
       anchors {
         right: showRating.left
         rightMargin: 4

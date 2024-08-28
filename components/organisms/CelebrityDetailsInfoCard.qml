@@ -32,21 +32,20 @@ Rectangle {
 
   Text {
     id: celebrityName
+    width: 500
     anchors {
       top: celebrityImage.bottom
       topMargin: 10
     }
-    width: 500
 
     text: celebrityDetails?.name ? celebrityDetails.name : ""
     x: 5
-
     color: "white"
     style: Text.Outline
+
     styleColor: "black"
     font.family: bodyFont.font.family
     font.pixelSize: 38
-
     wrapMode: Text.WrapAtWordBoundaryOrAnywhere
     maximumLineCount: 2
   }
@@ -69,35 +68,35 @@ Rectangle {
 
   Molecules.CelebrityInfoContainer {
     id: celebrityCountryContainer
-    info: celebrityDetails?.country ? celebrityDetails.country : ""
-    imgSource: "../../assets/BornAt.png"
-
     anchors {
       bottom: parent.bottom
       left: celebrityName.left
     }
+
+    info: celebrityDetails?.country ? celebrityDetails.country : ""
+    imgSource: "../../assets/BornAt.png"
   }
 
   Molecules.CelebrityInfoContainer {
     id: celebrityBirthdayContainer
-    info: celebrityDetails?.birthday ? celebrityDetails.birthday : ""
-    imgSource: "../../assets/Birthday.png"
-
     anchors {
       bottom: parent.bottom
       left: celebrityCountryContainer.right
     }
+
+    info: celebrityDetails?.birthday ? celebrityDetails.birthday : ""
+    imgSource: "../../assets/Birthday.png"
   }
 
   Molecules.CelebrityInfoContainer {
     id: celebrityDeathdayContainer
-    visible: celebrityDetails.deathday ? true : false
-    info: celebrityDetails?.deathday ? celebrityDetails.deathday : ""
-    imgSource: "../../assets/Deathday.png"
-
     anchors {
       bottom: parent.bottom
       left: celebrityBirthdayContainer.right
     }
+
+    visible: celebrityDetails.deathday ? true : false
+    info: celebrityDetails?.deathday ? celebrityDetails.deathday : ""
+    imgSource: "../../assets/Deathday.png"
   }
 }

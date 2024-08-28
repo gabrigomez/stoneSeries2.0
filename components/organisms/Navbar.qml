@@ -46,15 +46,14 @@ Rectangle {
 
   Molecules.ThemeButton {
     id: themeButton
-    target: "navBar"
-    y: 56
-
+    width: 28
+    height: 28
     anchors {
       right: parent.right
       rightMargin: 16
     }
 
-    width: 28
-    height: 28
+    target: "navBar"
+    y: 56
   }
 }

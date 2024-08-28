@@ -9,7 +9,6 @@ Flickable {
   id: flickable
   width: 500
   height: parent?.height
-
   anchors {
     left: showDetailsCard.right
     leftMargin: 40
@@ -27,11 +26,11 @@ Flickable {
 
   BusyIndicator {
     id: busyIndicator
-    visible: !flickable.isCastLoaded
-
-    anchors.centerIn: parent
     width: 281
     height: 281
+    anchors.centerIn: parent
+
+    visible: !flickable.isCastLoaded
     Material.accent: settingsConfig.themeColor
   }
 
@@ -84,13 +83,12 @@ Flickable {
 
     CastCard {
       id: castCard
-      castData: flickable.castModelData
-
       anchors {
         top: favShowButton.bottom
         topMargin: 20
         left: favShowButton.left
       }
+      castData: flickable.castModelData
     }
   }
 }

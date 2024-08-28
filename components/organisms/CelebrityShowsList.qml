@@ -37,14 +37,13 @@ Item {
 
     Molecules.NotFoundMolecule {
       id: noShows
+      anchors.centerIn: parent
       visible: celebrityShowListModel.count === 0
 
       image: "../../assets/NoResult.png"
       message: "Nenhum show encontrado."
       textSize: 18
       textColor: "white"
-
-      anchors.centerIn: parent
     }
   }
 

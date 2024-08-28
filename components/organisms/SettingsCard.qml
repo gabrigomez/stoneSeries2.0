@@ -6,9 +6,9 @@ import "../molecules" as Molecules
 
 Rectangle {
   id: settingsInfo
-  anchors.centerIn: parent
   width: 500
   height: 550
+  anchors.centerIn: parent
 
   color: settingsConfig.themeColor
   radius: 20
@@ -37,7 +37,6 @@ Rectangle {
 
   Molecules.ThemeButton {
     id: themeButton
-
     anchors {
       top: userName.bottom
       topMargin: 30
