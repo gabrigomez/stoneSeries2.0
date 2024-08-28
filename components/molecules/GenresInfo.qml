@@ -2,7 +2,6 @@ import QtQuick
 
 Row {
   id: showGenresRow
-
   anchors {
     left: parent.left
     top: showName.bottom

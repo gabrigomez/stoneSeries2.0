@@ -26,9 +26,9 @@ Button {
   }
 
   background: Rectangle {
+    anchors.fill: parent
     color: favCount.hovered ? "white" : "#ececec"
     border.color: favCount.hovered ? "silver" : "white"
-    anchors.fill: parent
     radius: 20
 
     Behavior on color {

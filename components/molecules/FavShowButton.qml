@@ -3,7 +3,6 @@ import QtQuick.Controls
 
 Button {
   id: favShowButton
-  text: ""
   width: implicitContentWidth + 60
   height: 36
 
@@ -11,6 +10,8 @@ Button {
     top: showDetailsStatus.bottom
     topMargin: 20
   }
+
+  text: ""
 
   property string bgColor: "#08FF5B"
 

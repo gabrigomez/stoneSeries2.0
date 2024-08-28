@@ -1,6 +1,8 @@
 import QtQuick
 
 Rectangle {
+  width: 30
+  height: 30
   anchors {
     right: search.right
     rightMargin: 10
@@ -8,8 +10,6 @@ Rectangle {
   }
 
   color: mouse.hovered ? "white" : "transparent"
-  width: 30
-  height: 30
   radius: 15
 
   HoverHandler {

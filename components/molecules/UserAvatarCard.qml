@@ -6,16 +6,15 @@ import "../atoms" as Atoms
 
 Rectangle {
   id: userAvatarCard
-
+  width: 206
+  height: 206
   anchors {
     top: parent.top
     topMargin: 40
     horizontalCenter: parent.horizontalCenter
   }
-  width: 206
-  height: 206
-  radius: 103
 
+  radius: 103
   color: "#27AE60"
 
   MultiEffect {

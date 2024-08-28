@@ -3,11 +3,10 @@ import QtQuick.Controls
 
 Button {
   id: themeButton
-
-  property string target: ""
-
   width: 44
   height: 44
+
+  property string target: ""
 
   background: Rectangle {
     id: themeButtonBackground
@@ -39,7 +38,6 @@ Button {
 
   Image {
     source: "../../assets/Theme.png"
-
     width: 28
     height: 28
 
