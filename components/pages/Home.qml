@@ -14,72 +14,28 @@ Rectangle {
     return -1
   }
 
+  function addShowToModel(showIds) {
+    for (var i = 0; i < showIds.length; i++) {
+      showListView.append({
+                            "name": "",
+                            "imageUrl": "",
+                            "rating": "",
+                            "show": showIds[i]
+                          })
+    }
+  }
+
   Templates.HomeTemplate {
     trendingTemplateData: showListView
   }
 
   ListModel {
     id: showListView
-    ListElement {
-      name: ""
-      imageUrl: ""
-      rating: ""
-      show: 526
-    }
-    ListElement {
-      name: ""
-      imageUrl: ""
-      rating: ""
-      show: 169
-    }
-    ListElement {
-      name: ""
-      imageUrl: ""
-      rating: ""
-      show: 66
-    }
-    ListElement {
-      name: ""
-      imageUrl: ""
-      rating: ""
-      show: 73
-    }
-    ListElement {
-      name: ""
-      imageUrl: ""
-      rating: ""
-      show: 2993
-    }
-    ListElement {
-      name: ""
-      imageUrl: ""
-      rating: ""
-      show: 41007
-    }
-    ListElement {
-      name: ""
-      imageUrl: ""
-      rating: ""
-      show: 82
-    }
-    ListElement {
-      name: ""
-      imageUrl: ""
-      rating: ""
-      show: 46562
-    }
-    ListElement {
-      name: ""
-      imageUrl: ""
-      rating: ""
-      show: 44778
-    }
-    ListElement {
-      name: ""
-      imageUrl: ""
-      rating: ""
-      show: 15299
-    }
+  }
+
+  Component.onCompleted: {
+    var showIds = [526, 169, 66, 73, 2993, 41007, 82, 46562, 44778, 15299]
+    addShowToModel(showIds)
   }
 
   Connections {
