@@ -6,9 +6,8 @@ Item {
   anchors.centerIn: parent
 
   Molecules.NotFoundMolecule {
+    anchors.centerIn: parent
     message: "Nenhum resultado encontrado."
     image: "../../assets/NotFound.png"
-
-    anchors.centerIn: parent
   }
 }

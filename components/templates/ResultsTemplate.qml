@@ -10,14 +10,13 @@ Item {
 
   BusyIndicator {
     id: busyIndicator
-    visible: resultsModel.count === 0 ? true : false
-
+    width: 281
+    height: 281
     anchors {
       centerIn: parent
     }
 
-    width: 281
-    height: 281
+    visible: resultsModel.count === 0 ? true : false
     Material.accent: settingsConfig.themeColor === "#000000" ? "white" : "black"
   }
 

@@ -11,11 +11,11 @@ Item {
 
   BusyIndicator {
     id: busyIndicator
-    visible: celebrityDetailsInfoCard.imageStatus === 1 ? false : true
-    anchors.centerIn: parent
-
     width: 281
     height: 281
+    anchors.centerIn: parent
+
+    visible: celebrityDetailsInfoCard.imageStatus === 1 ? false : true
     Material.accent: settingsConfig.themeColor
   }
 
@@ -33,7 +33,6 @@ Item {
 
     y: 10
     x: 1000
-
     visible: celebrityDetailsInfoCard.imageStatus === 1 ? true : false
     color: settingsConfig.themeColor
 

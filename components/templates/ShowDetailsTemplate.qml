@@ -4,12 +4,11 @@ import "../organisms" as Organisms
 
 Item {
   id: showDetailsTemplateContainer
+  anchors.fill: parent
 
   property string favButtonText
   property string favButtonBg
   property var castData
-
-  anchors.fill: parent
 
   Organisms.ShowDetailsInfo {
     id: showDetailsCard

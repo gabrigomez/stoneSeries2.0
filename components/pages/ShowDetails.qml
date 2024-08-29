@@ -6,7 +6,6 @@ Rectangle {
   id: showDetails
   width: parent?.width
   height: parent?.height
-
   color: "white"
 
   property var name
