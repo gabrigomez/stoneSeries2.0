@@ -1,10 +1,16 @@
 import QtQuick
 
 Rectangle {
-  anchors.fill: parent
+  id: episodeListTemplate
+  width: 1300
+  height: 850
+  anchors.centerIn: parent
+
+  color: "red"
 
   Text {
-    text: "EpisodeList Template"
-    anchors.centerIn: parent
+    text: "Episode List"
+    font.pixelSize: 22
+    anchors.horizontalCenter: parent.horizontalCenter
   }
 }
