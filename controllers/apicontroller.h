@@ -14,16 +14,18 @@ public:
     bool isCastLoad() const;
     void setIsCastLoad(const bool &newIsCastLoad);
 
-    Q_INVOKABLE void fetchShowDetails(int id);
     Q_INVOKABLE void fetchShows(const QString &query);
     Q_INVOKABLE void fetchCelebrities(const QString &query);
     Q_INVOKABLE void fetchCast(int id);
+    Q_INVOKABLE void fetchEpisodes(int id);
+    Q_INVOKABLE void fetchShowDetails(int id);
     Q_INVOKABLE void fetchCelebrityDetails(int id);
     Q_INVOKABLE void fetchCelebrityShows(int id);
 
 signals:
     void showDetailsFetched(const QJsonObject &details);
     void showsFetched(const QJsonArray &shows);
+    void episodesFetched(const QJsonArray &episodes);
     void celebritiesFetched(const QJsonArray &celebrities);
     void castFetched(const QJsonArray &cast);
     void celebrityDetailsFetched(const QJsonObject &details);
@@ -34,6 +36,7 @@ signals:
 private slots:
     void onShowDetailsReply();
     void onShowsReply();
+    void onEpisodesReply();
     void onCelebritiesReply();
     void onCastReply();
     void onCelebrityShowsReply();

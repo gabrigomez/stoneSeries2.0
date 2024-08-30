@@ -58,6 +58,12 @@ void ApiController::fetchCelebrityShows(int id) {
     connect(reply, &QNetworkReply::finished, this, &ApiController::onCelebrityShowsReply);
 }
 
+void ApiController::fetchEpisodes(int id) {
+    QNetworkRequest request(QUrl(QString("https://api.tvmaze.com/shows/%1/episodes").arg(id)));
+    QNetworkReply *reply = networkManager->get(request);
+    connect(reply, &QNetworkReply::finished, this, &ApiController::onEpisodesReply);
+}
+
 void ApiController::onCelebrityShowsReply() {
     QNetworkReply *reply = qobject_cast<QNetworkReply*>(sender());
 
@@ -266,6 +272,7 @@ void ApiController::onShowsReply() {
     }
     reply->deleteLater();
 }
+
 void ApiController::onCelebritiesReply() {
     QNetworkReply *reply = qobject_cast<QNetworkReply*>(sender());
 
@@ -289,6 +296,37 @@ void ApiController::onCelebritiesReply() {
         }
 
         emit celebritiesFetched(jsonArray);
+    } else {
+        emit errorOccurred(reply->errorString());
+    }
+    reply->deleteLater();
+}
+
+void ApiController::onEpisodesReply() {
+    QNetworkReply *reply = qobject_cast<QNetworkReply*>(sender());
+
+    if (reply->error() == QNetworkReply::NoError) {
+        QJsonDocument doc = QJsonDocument::fromJson(reply->readAll());
+        QJsonArray jsonArray = doc.array();
+
+        for (int i = 0; i < jsonArray.size(); ++i) {
+            QJsonObject jsonObj = jsonArray[i].toObject();
+            QJsonObject episodeObj = jsonObj["episode"].toObject();
+
+            // define standart image to episodes with no image
+            if (!episodeObj.contains("image") || episodeObj["image"].isNull()) {
+                episodeObj["image"] = QJsonObject{
+                    {"medium", "https://t3.ftcdn.net/jpg/03/34/83/22/360_F_334832255_IMxvzYRygjd20VlSaIAFZrQWjozQH6BQ.jpg"},
+                    {"original", "https://t3.ftcdn.net/jpg/03/34/83/22/360_F_334832255_IMxvzYRygjd20VlSaIAFZrQWjozQH6BQ.jpg"}
+                };
+                jsonObj["episode"] = episodeObj;
+                jsonArray[i] = jsonObj;
+            }
+        }
+
+        //qDebug() << doc;
+
+        emit episodesFetched(jsonArray);
     } else {
         emit errorOccurred(reply->errorString());
     }

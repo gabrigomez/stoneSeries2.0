@@ -6,7 +6,7 @@ Rectangle {
   height: 850
   anchors.centerIn: parent
 
-  color: "red"
+  color: "gray"
 
   Text {
     text: "Episode List"
