@@ -73,6 +73,8 @@ Flickable {
       }
     }
 
+    Atoms.EpisodeListLink {}
+
     Molecules.FavShowButton {
       id: favShowButton
     }
