@@ -7,7 +7,9 @@ Item {
     id: episodeListModel
   }
 
-  Templates.EpisodeListTemplate {}
+  Templates.EpisodeListTemplate {
+    episodeList: episodeListModel
+  }
 
   Component.onCompleted: {
     apiController.fetchEpisodes(showId)
@@ -23,8 +25,8 @@ Item {
 
       const results = episodes.map(item => ({
                                               "name": item.name,
-                                              "imageUrl": item.image.original,
-                                              "_id": item.id.toString()
+                                              "_id"//"imageUrl": item.image.original,
+                                              : item.id.toString()
                                             }))
 
       results.map(episode => episodeListModel.append(episode))
