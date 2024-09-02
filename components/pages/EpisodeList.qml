@@ -25,8 +25,8 @@ Item {
 
       const results = episodes.map(item => ({
                                               "name": item.name,
-                                              "_id"//"imageUrl": item.image.original,
-                                              : item.id.toString()
+                                              "imageUrl": item.image.original,
+                                              "_id": item.id.toString()
                                             }))
 
       results.map(episode => episodeListModel.append(episode))

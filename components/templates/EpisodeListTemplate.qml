@@ -42,7 +42,7 @@ Rectangle {
         imgWidth: 700
         imgHeight: 350
         text: name
-        image: "https://static.tvmaze.com/uploads/images/original_untouched/4/12368.jpg"
+        image: imageUrl
       }
     }
   }

@@ -311,20 +311,19 @@ void ApiController::onEpisodesReply() {
 
         for (int i = 0; i < jsonArray.size(); ++i) {
             QJsonObject jsonObj = jsonArray[i].toObject();
-            QJsonObject episodeObj = jsonObj["episode"].toObject();
+            QJsonObject imageObj = jsonObj["image"].toObject();
 
             // define standart image to episodes with no image
-            if (!episodeObj.contains("image") || episodeObj["image"].isNull()) {
-                episodeObj["image"] = QJsonObject{
-                    {"medium", "https://t3.ftcdn.net/jpg/03/34/83/22/360_F_334832255_IMxvzYRygjd20VlSaIAFZrQWjozQH6BQ.jpg"},
-                    {"original", "https://t3.ftcdn.net/jpg/03/34/83/22/360_F_334832255_IMxvzYRygjd20VlSaIAFZrQWjozQH6BQ.jpg"}
+            if (!jsonObj.contains("image") || imageObj.isEmpty() || imageObj["original"].isNull()) {
+                imageObj = QJsonObject{
+                    {"original", "https://salonlfc.com/wp-content/uploads/2018/01/image-not-found-1-scaled-1150x647.png"}
                 };
-                jsonObj["episode"] = episodeObj;
+                jsonObj["image"] = imageObj;
                 jsonArray[i] = jsonObj;
             }
         }
 
-        //qDebug() << doc;
+        //qDebug() << jsonArray;
 
         emit episodesFetched(jsonArray);
     } else {
