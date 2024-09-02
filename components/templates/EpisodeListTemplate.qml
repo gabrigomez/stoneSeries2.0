@@ -41,8 +41,9 @@ Rectangle {
 
         imgWidth: 700
         imgHeight: 350
-        text: name
         image: imageUrl
+        text: name
+        textSize: 32
       }
     }
   }

@@ -18,8 +18,10 @@ Rectangle {
   bottomLeftRadius: 20
 
   property alias text: infoCardTitle.text
+  property alias textSize: infoCardTitle.font.pixelSize
   property alias image: infoCardImage.source
   property alias showRating: infoCardRating.text
+
   property alias imgWidth: infoCardImage.width
   property alias imgHeight: infoCardImage.height
 
