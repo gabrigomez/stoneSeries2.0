@@ -24,6 +24,7 @@ Rectangle {
 
   property alias imgWidth: infoCardImage.width
   property alias imgHeight: infoCardImage.height
+  property alias seasonInfo: seasonInfo.text
   property bool isEpisode: false
 
   Rectangle {
@@ -78,6 +79,16 @@ Rectangle {
 
       Atoms.ShowRating {
         id: infoCardRating
+      }
+
+      Atoms.SeasonInfo {
+        id: seasonInfo
+        anchors {
+          top: infoCardImage.bottom
+          topMargin: 60
+          right: infoCardImage.right
+          rightMargin: 10
+        }
       }
     }
   }

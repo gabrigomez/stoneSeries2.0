@@ -38,9 +38,11 @@ Rectangle {
         id: episodeCard
         width: 710
         height: 450
-        text: name
 
+        text: name
         image: imageUrl
+        seasonInfo: season
+
         imgWidth: 700
         imgHeight: 350
         isEpisode: true
