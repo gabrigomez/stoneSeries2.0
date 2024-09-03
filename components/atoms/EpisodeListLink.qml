@@ -9,13 +9,16 @@ Text {
     leftMargin: 20
   }
 
-  color: "Black"
+  color: mouseAreaLink.containsMouse ? "#2D2D2D" : "black"
   font.pixelSize: 16
   font.family: bodyFont.font.family
 
   MouseArea {
+    id: mouseAreaLink
+    hoverEnabled: true
     anchors.fill: parent
     cursorShape: Qt.PointingHandCursor
+
     onClicked: () => {
                  stackView.push("../pages/EpisodeList.qml")
                }
