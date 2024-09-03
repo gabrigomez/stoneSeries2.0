@@ -38,11 +38,12 @@ Rectangle {
         id: episodeCard
         width: 710
         height: 450
+        text: name
 
+        image: imageUrl
         imgWidth: 700
         imgHeight: 350
-        image: imageUrl
-        text: name
+        isEpisode: true
         textSize: 32
       }
     }

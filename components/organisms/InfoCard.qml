@@ -24,6 +24,7 @@ Rectangle {
 
   property alias imgWidth: infoCardImage.width
   property alias imgHeight: infoCardImage.height
+  property bool isEpisode: false
 
   Rectangle {
     x: 6
@@ -35,8 +36,8 @@ Rectangle {
       height: 281
       visible: infoCardImage.status === 1 ? false : true
 
-      x: 120
-      y: 250
+      x: homeCards.isEpisode ? 220 : 120
+      y: homeCards.isEpisode ? 70 : 250
       Material.accent: settingsConfig.themeColor === "#000000" ? "white" : "black"
     }
 
