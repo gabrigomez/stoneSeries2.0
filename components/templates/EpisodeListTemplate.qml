@@ -13,15 +13,20 @@ Rectangle {
   Text {
     id: episodeListTitle
     text: "Episode List"
-    font.pixelSize: 22
+    font.pixelSize: 28
     anchors.horizontalCenter: parent.horizontalCenter
+
+    color: "white"
+    style: Text.Outline
+    styleColor: "black"
+    font.family: bodyFont.font.family
   }
 
   Rectangle {
     id: episodeListContainer
     anchors {
       top: episodeListTitle.bottom
-      topMargin: 40
+      topMargin: 44
       fill: parent
     }
     clip: true
