@@ -4,7 +4,7 @@ import "../organisms" as Organisms
 
 Rectangle {
   id: episodeListTemplate
-  width: 710
+  width: 712
   height: 850
   anchors.centerIn: parent
 
@@ -41,7 +41,7 @@ Rectangle {
 
       delegate: Organisms.InfoCard {
         id: episodeCard
-        width: 710
+        width: 712
         height: 450
 
         text: name

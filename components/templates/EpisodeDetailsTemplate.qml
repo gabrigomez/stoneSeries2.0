@@ -34,7 +34,7 @@ Rectangle {
 
   Organisms.InfoCard {
     id: episodeDetailsCard
-    width: 710
+    width: 712
     height: 410
 
     anchors {
