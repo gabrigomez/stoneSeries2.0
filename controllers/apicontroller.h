@@ -19,6 +19,7 @@ public:
     Q_INVOKABLE void fetchCast(int id);
     Q_INVOKABLE void fetchEpisodes(int id);
     Q_INVOKABLE void fetchShowDetails(int id);
+    Q_INVOKABLE void fetchEpisodeDetails(int id);
     Q_INVOKABLE void fetchCelebrityDetails(int id);
     Q_INVOKABLE void fetchCelebrityShows(int id);
 
@@ -29,6 +30,7 @@ signals:
     void celebritiesFetched(const QJsonArray &celebrities);
     void castFetched(const QJsonArray &cast);
     void celebrityDetailsFetched(const QJsonObject &details);
+    void episodeDetailsFetched(const QJsonObject &details);
     void celebrityShowsFetched(const QJsonArray &details);
     void errorOccurred(const QString &error);
     void isCastLoadChanged();
@@ -37,6 +39,7 @@ private slots:
     void onShowDetailsReply();
     void onShowsReply();
     void onEpisodesReply();
+    void onEpisodeDetailsReply();
     void onCelebritiesReply();
     void onCastReply();
     void onCelebrityShowsReply();

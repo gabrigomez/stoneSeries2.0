@@ -64,6 +64,12 @@ void ApiController::fetchEpisodes(int id) {
     connect(reply, &QNetworkReply::finished, this, &ApiController::onEpisodesReply);
 }
 
+void ApiController::fetchEpisodeDetails(int id) {
+    QNetworkRequest request(QUrl("https://api.tvmaze.com/episodes/" + QString::number(id)));
+    QNetworkReply *reply = networkManager->get(request);
+    connect(reply, &QNetworkReply::finished, this, &ApiController::onEpisodeDetailsReply);
+}
+
 void ApiController::onCelebrityShowsReply() {
     QNetworkReply *reply = qobject_cast<QNetworkReply*>(sender());
 
@@ -326,6 +332,30 @@ void ApiController::onEpisodesReply() {
         //qDebug() << jsonArray;
 
         emit episodesFetched(jsonArray);
+    } else {
+        emit errorOccurred(reply->errorString());
+    }
+    reply->deleteLater();
+}
+
+void ApiController::onEpisodeDetailsReply() {
+    QNetworkReply *reply = qobject_cast<QNetworkReply*>(sender());
+
+    if(reply->error() == QNetworkReply::NoError) {
+        QJsonDocument doc = QJsonDocument::fromJson(reply->readAll());
+        QJsonObject jsonObj = doc.object();
+
+        // define standart image to episodes with no image
+        if (jsonObj["image"].isNull()) {
+            QJsonObject newJsonObj = jsonObj;
+            newJsonObj["image"] = QJsonObject{
+                {"original", "https://salonlfc.com/wp-content/uploads/2018/01/image-not-found-1-scaled-1150x647.png"}
+            };
+            jsonObj = newJsonObj;
+        }
+
+
+        emit episodeDetailsFetched(jsonObj);
     } else {
         emit errorOccurred(reply->errorString());
     }

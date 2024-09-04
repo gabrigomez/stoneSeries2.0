@@ -98,6 +98,7 @@ Rectangle {
       results.map(cast => castModel.append(cast))
       showDetails.isFetchFinished = true // only load the component after all api calls
     }
+
     function onErrorOccurred(errorString) {
       console.error("Error:", errorString)
     }
