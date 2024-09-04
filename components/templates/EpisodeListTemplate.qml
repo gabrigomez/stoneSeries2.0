@@ -52,6 +52,14 @@ Rectangle {
         imgHeight: 350
         isEpisode: true
         textSize: 32
+
+        MouseArea {
+          anchors.fill: parent
+          onClicked: () => {
+                       episodeId = _id
+                       stackView.push("../pages/EpisodeDetails.qml")
+                     }
+        }
       }
     }
   }

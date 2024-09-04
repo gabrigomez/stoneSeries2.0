@@ -21,6 +21,7 @@ ApplicationWindow {
   property int searchType: 0
   property var showId
   property var celebrity_id
+  property var episodeId
 
   FontLoader {
     id: bodyFont
