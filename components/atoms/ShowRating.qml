@@ -2,11 +2,6 @@ import QtQuick
 
 Text {
   id: trendingShowRating
-  anchors {
-    bottom: showCardContainer.bottom
-    right: showCardContainer.right
-    rightMargin: 5
-  }
 
   color: "white"
   text: ""

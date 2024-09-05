@@ -64,18 +64,17 @@ Rectangle {
       id: showGenresRow
     }
 
-    Atoms.RatingIcon {
-      id: ratingShowImage
+    Molecules.RatingMolecule {
+      id: ratingMolecule
+      width: 80
+      height: 40
       anchors {
-        right: showRating.left
+        bottom: showMainInfoCard.bottom
+        right: showMainInfoCard.right
         rightMargin: 4
-        bottom: showRating.bottom
-        bottomMargin: showDetails.rating === "SEM NOTA" ? 4 : 8
       }
-    }
 
-    Atoms.ShowDetailsRating {
-      id: showRating
+      rating: showDetails.rating ? showDetails.rating : ""
     }
 
     Atoms.CalendarIcon {

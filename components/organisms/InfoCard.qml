@@ -2,6 +2,7 @@ import QtQuick
 import QtQuick.Controls.Material 2.12
 
 import "../atoms" as Atoms
+import "../molecules" as Molecules
 
 Rectangle {
   id: homeCards
@@ -20,11 +21,11 @@ Rectangle {
   property alias text: infoCardTitle.text
   property alias textSize: infoCardTitle.font.pixelSize
   property alias image: infoCardImage.source
-  property alias showRating: infoCardRating.text
-
   property alias imgWidth: infoCardImage.width
+
   property alias imgHeight: infoCardImage.height
   property alias seasonInfo: seasonInfo.text
+  property var showRating
   property bool isEpisode: false
 
   Rectangle {
@@ -66,19 +67,17 @@ Rectangle {
         id: infoCardTitle
       }
 
-      Atoms.RatingIcon {
-        id: ratingShowImage
+      Molecules.RatingMolecule {
+        id: ratingMolecule
+        width: 80
+        height: 40
         anchors {
-          right: infoCardRating.left
-          rightMargin: 6
-          bottom: infoCardRating.bottom
-          bottomMargin: 6
+          bottom: showCardContainer.bottom
+          right: showCardContainer.right
+          rightMargin: 4
         }
-        visible: homeCards.showRating ? true : false
-      }
 
-      Atoms.ShowRating {
-        id: infoCardRating
+        rating: homeCards.showRating
       }
 
       Atoms.SeasonInfo {
