@@ -8,8 +8,10 @@ Rectangle {
 
   Text {
     text: episodeDetailsPage?.episodeAirdate ? episodeDetailsPage.episodeAirdate : ""
-    color: "black"
+    color: "white"
 
+    style: Text.Outline
+    styleColor: "black"
     font.family: bodyFont.font.family
     font.pixelSize: 20
   }

@@ -22,9 +22,7 @@ Rectangle {
     }
 
     text: episodeDetailsPage?.episodeTitle ? episodeDetailsPage.episodeTitle : ""
-    color: "white"
-    style: Text.Outline
-    styleColor: "black"
+    color: "black"
 
     font.family: bodyFont.font.family
     font.pixelSize: 30
