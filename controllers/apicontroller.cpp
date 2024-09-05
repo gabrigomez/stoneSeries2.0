@@ -354,6 +354,15 @@ void ApiController::onEpisodeDetailsReply() {
             jsonObj = newJsonObj;
         }
 
+        // define standart rating to episodes with no data on it
+        if(jsonObj["rating"].toObject()["average"].isNull()) {
+            QJsonObject newJsonObj = jsonObj;
+            newJsonObj["rating"] = QJsonObject{
+                                               {"average", "SEM NOTA"},
+                                               };;
+            jsonObj = newJsonObj;
+        }
+
 
         emit episodeDetailsFetched(jsonObj);
     } else {
