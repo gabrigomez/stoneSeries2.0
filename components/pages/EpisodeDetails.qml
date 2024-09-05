@@ -25,7 +25,7 @@ Rectangle {
       episodeDetailsPage.episodeImage = details.image.original
       episodeDetailsPage.episodeDescription = details.summary
 
-      episodeDetailsPage.episodeAirdate = details.airdate
+      episodeDetailsPage.episodeAirdate = "Airdate: " + details.airdate
       episodeDetailsPage.episodeRating = details.rating.average
     }
 

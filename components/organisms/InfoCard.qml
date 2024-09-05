@@ -77,7 +77,8 @@ Rectangle {
           rightMargin: 4
         }
 
-        rating: homeCards.showRating
+        visible: !isEpisode
+        rating: !isEpisode ? homeCards.showRating : ""
       }
 
       Atoms.SeasonInfo {

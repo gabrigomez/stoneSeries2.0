@@ -52,8 +52,9 @@ Rectangle {
   Organisms.EpisodeInfo {
     anchors {
       top: episodeDetailsCard.bottom
-      topMargin: 10
+      topMargin: 26
       left: episodeDetailsCard.left
     }
+    width: episodeDetailsCard.width
   }
 }
