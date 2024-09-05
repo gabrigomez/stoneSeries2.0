@@ -48,4 +48,12 @@ Rectangle {
     imgHeight: 380
     isEpisode: true
   }
+
+  Organisms.EpisodeInfo {
+    anchors {
+      top: episodeDetailsCard.bottom
+      topMargin: 10
+      left: episodeDetailsCard.left
+    }
+  }
 }
