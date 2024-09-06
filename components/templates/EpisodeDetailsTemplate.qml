@@ -59,7 +59,7 @@ Rectangle {
     width: episodeDetailsCard.width
   }
 
-  Molecules.ShowDetailsDescription {
+  Molecules.Sinopse {
     id: showDetailsSummary
     width: episodeDetailsCard.width
     height: 200

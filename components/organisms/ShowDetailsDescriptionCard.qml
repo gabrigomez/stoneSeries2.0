@@ -51,7 +51,7 @@ Flickable {
     bottomRightRadius: 20
     bottomLeftRadius: 20
 
-    Molecules.ShowDetailsDescription {
+    Molecules.Sinopse {
       id: showDetailsSummary
       sinopseContent: showDetails?.description ? showDetails.description : "Sem descrição"
 
