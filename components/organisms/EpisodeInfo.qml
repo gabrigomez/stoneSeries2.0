@@ -8,6 +8,7 @@ Rectangle {
 
   Text {
     text: episodeDetailsPage?.episodeAirdate ? episodeDetailsPage.episodeAirdate : ""
+    anchors.verticalCenter: parent.verticalCenter
     color: "white"
 
     style: Text.Outline
@@ -19,8 +20,8 @@ Rectangle {
   Molecules.RatingMolecule {
     id: ratingMolecule
     anchors {
-      top: episodeInfoContainer.bottom
-      topMargin: -20
+      top: episodeInfoContainer.top
+      topMargin: -6
       right: episodeInfoContainer.right
       rightMargin: 10
     }

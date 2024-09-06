@@ -51,12 +51,13 @@ Rectangle {
   // todo: add height and fix positioning
   Organisms.EpisodeInfo {
     id: episodeInfoContainer
+    width: episodeDetailsCard.width
+    height: 40
     anchors {
       top: episodeDetailsCard.bottom
-      topMargin: 26
+      topMargin: 10
       left: episodeDetailsCard.left
     }
-    width: episodeDetailsCard.width
   }
 
   Molecules.Sinopse {
@@ -65,7 +66,7 @@ Rectangle {
     height: 200
     anchors {
       top: episodeInfoContainer.bottom
-      topMargin: 26
+      topMargin: 10
       left: episodeInfoContainer.left
     }
 
