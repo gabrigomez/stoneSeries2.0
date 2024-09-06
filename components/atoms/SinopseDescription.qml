@@ -4,7 +4,6 @@ Text {
   id: sinopseDescription
   width: 480
   height: contentHeight
-
   anchors {
     top: sinopseTitle.bottom
     left: showDetailsSummary.left
@@ -12,7 +11,7 @@ Text {
     leftMargin: 2
   }
 
-  text: showDetails?.description ? showDetails.description : "Sem descrição"
+  text: ""
   color: "white"
   style: Text.Outline
   styleColor: "black"

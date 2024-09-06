@@ -53,6 +53,14 @@ Flickable {
 
     Molecules.ShowDetailsDescription {
       id: showDetailsSummary
+      sinopseContent: showDetails?.description ? showDetails.description : "Sem descrição"
+
+      anchors {
+        top: showDescriptionCard.top
+        left: showDescriptionCard.left
+        topMargin: 10
+        leftMargin: 10
+      }
     }
 
     Atoms.ShowDetailsStatus {

@@ -1,6 +1,7 @@
 import QtQuick
 
 import "../organisms" as Organisms
+import "../molecules" as Molecules
 
 Rectangle {
   id: episodeDetailsTemplate
@@ -47,12 +48,28 @@ Rectangle {
     isEpisode: true
   }
 
+  // todo: add height and fix positioning
   Organisms.EpisodeInfo {
+    id: episodeInfoContainer
     anchors {
       top: episodeDetailsCard.bottom
       topMargin: 26
       left: episodeDetailsCard.left
     }
     width: episodeDetailsCard.width
+  }
+
+  Molecules.ShowDetailsDescription {
+    id: showDetailsSummary
+    width: episodeDetailsCard.width
+    height: 200
+    anchors {
+      top: episodeInfoContainer.bottom
+      topMargin: 26
+      left: episodeInfoContainer.left
+    }
+
+    color: settingsConfig.themeColor
+    sinopseContent: episodeDetailsPage?.episodeSinopse ? episodeDetailsPage.episodeSinopse : ""
   }
 }

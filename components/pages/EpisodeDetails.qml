@@ -7,7 +7,7 @@ Rectangle {
 
   property var episodeTitle
   property var episodeImage
-  property var episodeDescription
+  property var episodeSinopse
   property var episodeAirdate
   property var episodeRating
 
@@ -23,7 +23,7 @@ Rectangle {
     function onEpisodeDetailsFetched(details) {
       episodeDetailsPage.episodeTitle = details.name
       episodeDetailsPage.episodeImage = details.image.original
-      episodeDetailsPage.episodeDescription = details.summary
+      episodeDetailsPage.episodeSinopse = details.summary
 
       episodeDetailsPage.episodeAirdate = "Airdate: " + details.airdate
       episodeDetailsPage.episodeRating = details.rating.average

@@ -6,12 +6,7 @@ Rectangle {
   id: showDetailsSummary
   height: sinopseDescription.height
 
-  anchors {
-    top: showDescriptionCard.top
-    left: showDescriptionCard.left
-    topMargin: 10
-    leftMargin: 10
-  }
+  property alias sinopseContent: sinopseDescription.text
 
   Atoms.SinopseTitle {
     id: sinopseTitle
