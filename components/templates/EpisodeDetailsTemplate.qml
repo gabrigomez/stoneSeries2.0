@@ -48,7 +48,6 @@ Rectangle {
     isEpisode: true
   }
 
-  // todo: add height and fix positioning
   Organisms.EpisodeInfo {
     id: episodeInfoContainer
     width: episodeDetailsCard.width
@@ -60,10 +59,10 @@ Rectangle {
     }
   }
 
-  Molecules.Sinopse {
-    id: showDetailsSummary
-    width: episodeDetailsCard.width
-    height: 200
+  Rectangle {
+    id: episodeSinopseContainer
+    width: 712
+    height: 100 + showDetailsSummary.height
     anchors {
       top: episodeInfoContainer.bottom
       topMargin: 10
@@ -71,6 +70,28 @@ Rectangle {
     }
 
     color: settingsConfig.themeColor
-    sinopseContent: episodeDetailsPage?.episodeSinopse ? episodeDetailsPage.episodeSinopse : ""
+    border {
+      color: "black"
+      width: 2
+    }
+
+    topRightRadius: 5
+    topLeftRadius: 5
+    bottomRightRadius: 20
+    bottomLeftRadius: 20
+
+    Molecules.Sinopse {
+      id: showDetailsSummary
+      width: episodeSinopseContainer.width
+      anchors {
+        top: episodeSinopseContainer.top
+        left: episodeSinopseContainer.left
+        topMargin: 10
+        leftMargin: 10
+      }
+
+      contentWidth: episodeSinopseContainer.width - 20
+      sinopseContent: episodeDetailsPage?.episodeSinopse ? episodeDetailsPage.episodeSinopse : ""
+    }
   }
 }
